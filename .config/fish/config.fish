@@ -20,9 +20,14 @@ setenv VISUAL "subl -w"
 
 
 # Alias zone
+alias reload '. ~/.config/fish/config.fish'
+# Git
 alias git hub
 alias g hub
 alias gst "git status"
+
+# Ruby
+alias b "bundle"
 alias bx "bundle exec"
 alias rk "rake"
 alias rb "ruby"
