@@ -18,9 +18,12 @@ set PATH $HOME/.bin $PATH
 setenv EDITOR "subl -w"
 setenv VISUAL "subl -w"
 
+
+# Alias zone
 alias git hub
 alias g hub
 alias gst "git status"
+alias bx "bundle exec"
 
 function fish_prompt --description 'Write out the prompt'
 
