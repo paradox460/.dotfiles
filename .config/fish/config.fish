@@ -1,4 +1,4 @@
-set fish_color_autosuggestion white
+set fish_color_autosuggestion 808080
 set fish_color_command green\x1e--bold
 set fish_color_cwd yellow
 set fish_color_cwd_root yellow\x1e--bold
