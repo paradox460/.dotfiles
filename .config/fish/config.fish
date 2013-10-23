@@ -70,8 +70,6 @@ function fish_prompt --description 'Write out the prompt'
     end
   end
 
-  set -l delim '$ '
-
   switch $USER
 
   case root
@@ -83,11 +81,18 @@ function fish_prompt --description 'Write out the prompt'
         set -g __fish_prompt_cwd (set_color $fish_color_cwd)
       end
     end
+    if not set -q __fish_prompt_delim
+      set -g __fish_prompt_delim '❗ $ '
+    end
 
   case '*'
 
     if not set -q __fish_prompt_cwd
       set -g __fish_prompt_cwd (set_color $fish_color_cwd)
+    end
+
+    if not set -q __fish_prompt_delim
+      set -g __fish_prompt_delim '🍩 $ '
     end
 
   end
@@ -125,7 +130,7 @@ function fish_prompt --description 'Write out the prompt'
     echo -s "$prompt_separator_color" "$prompt_separator_characters"
   end
   echo -s "$__fish_prompt_user" "$USER" "$__fish_prompt_splitter" @ "$__fish_prompt_host" "$__fish_prompt_hostname" "$__fish_prompt_normal" ' ' "$__fish_prompt_cwd" (prompt_pwd) (__fish_git_prompt) "$__fish_prompt_normal" "$prompt_status"
-  echo "$delim"
+  echo -s "$__fish_prompt_delim"
   set -g __fish_prompt 1
 end
 
@@ -142,7 +147,7 @@ if not set -q __prompt_initialized_2
 end
 
 function fish_right_prompt
-  set date (date +%I:%M:%S%P)
+  set -l date (date +%I:%M:%S%P)
   echo "[$date]"
 end
 
