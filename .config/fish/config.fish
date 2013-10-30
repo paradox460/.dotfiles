@@ -1,3 +1,4 @@
+# Fish colors and escape codes
 set fish_color_autosuggestion 808080
 set fish_color_command green\x1e--bold
 set fish_color_cwd yellow
@@ -8,20 +9,25 @@ set fish_color_quote cyan\x1e--bold
 set fish_color_search_match magenta
 set fish_color_valid_path magenta\x1e--underline
 
+# Greeting on new terminal
 set fish_greeting (date)
 
+# Paths
+# While you can use a single fish array to do this (space-separated list), this is easier to read
 set PATH /usr/local/bin /usr/local/sbin $PATH
 set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.rbenv/shims $PATH
 set PATH $HOME/.bin $PATH
 
+# Set my editors to Sublime Text 2
 setenv EDITOR "subl -w"
 setenv VISUAL "subl -w"
 
-
 # Alias zone
+# Rehash fish configs quickly
 alias reload '. ~/.config/fish/config.fish'
 # Git
+# Hub is a useful tool that provides github integration. If you don't use it, I recommend deleting these lines
 alias git hub
 alias g hub
 alias gst "git status"
@@ -32,6 +38,7 @@ alias bx "bundle exec"
 alias rk "rake"
 alias rb "ruby"
 
+# Prompt function
 function fish_prompt --description 'Write out the prompt'
 
   set -l last_status $status
@@ -134,7 +141,6 @@ function fish_prompt --description 'Write out the prompt'
   set -g __fish_prompt 1
 end
 
-
 # initialize our new variables
 # in theory this would be in a fish_prompt event, but this file isn't sourced
 # until the fish_prompt function is called anyway.
@@ -146,6 +152,7 @@ if not set -q __prompt_initialized_2
   set -U __prompt_initialized_2
 end
 
+# Right-hand prompt
 function fish_right_prompt
   set -l date (date +%I:%M:%S%P)
   echo "[$date]"
