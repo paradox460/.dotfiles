@@ -155,6 +155,7 @@ end
 # Right-hand prompt
 function fish_right_prompt
   set -l date (date +%I:%M:%S%P)
-  echo "[$date]"
+  set -l rb_version (ruby -e 'print RUBY_VERSION')
+  echo -s (set_color blue) "(💎  $rb_version)" (set_color normal) "[$date]"
 end
 
