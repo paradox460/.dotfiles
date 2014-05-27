@@ -22,6 +22,7 @@ set PATH $HOME/.bin $PATH
 # Set my editors to Sublime Text 2
 setenv EDITOR "subl -w"
 setenv VISUAL "subl -w"
+setenv PAGER "most"
 
 # Alias zone
 # Rehash fish configs quickly
