@@ -12,6 +12,29 @@ set fish_color_valid_path magenta\x1e--underline
 # Greeting on new terminal
 set fish_greeting (date)
 
+# Prepend sudo when Alt+S is keyed
+function prepend_sudo
+  set current_command (commandline)
+  commandline "sudo $current_command"
+end
+
+bind \es prepend_sudo
+
+# Prepend bx (bundle exec) when Alt+X is keyed
+function prepend_bundle_exec
+  set current_command (commandline)
+  commandline "bx $current_command"
+end
+
+bind \ex prepend_bundle_exec
+
+# Prepend g (git) when Alt+G is keyed
+function prepend_git
+  set current_command (commandline)
+  commandline "g $current_command"
+end
+
+bind \eg prepend_git
 # Paths
 # While you can use a single fish array to do this (space-separated list), this is easier to read
 set PATH /usr/local/bin /usr/local/sbin $PATH
