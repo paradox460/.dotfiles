@@ -47,6 +47,18 @@ setenv EDITOR "subl -w"
 setenv VISUAL "subl -w"
 setenv PAGER "most"
 
+# Git prompt options
+set -g __fish_git_prompt_showstashstate true
+set -g __fish_git_prompt_show_informative_status true
+set -g __fish_git_prompt_showcolorhints true
+
+# Set some individual git colors
+set -g __fish_git_prompt_color_suffix yellow
+
+set -g __fish_git_prompt_color_upstream_ahead red
+set -g __fish_git_prompt_color_upstream_behind violet
+set -g __fish_git_prompt_color_cleanstate green --bold
+
 # Alias zone
 # Rehash fish configs quickly
 alias reload '. ~/.config/fish/config.fish'
