@@ -18,15 +18,11 @@ function prepend_sudo
   commandline "sudo $current_command"
 end
 
-bind \es prepend_sudo
-
 # Prepend bx (bundle exec) when Alt+X is keyed
 function prepend_bundle_exec
   set current_command (commandline)
   commandline "bx $current_command"
 end
-
-bind \ex prepend_bundle_exec
 
 # Prepend g (git) when Alt+G is keyed
 function prepend_git
@@ -34,7 +30,12 @@ function prepend_git
   commandline "g $current_command"
 end
 
-bind \eg prepend_git
+# Actually bind the keys mentioned above
+function fish_user_key_bindings
+  bind \es prepend_sudo
+  bind \ex prepend_bundle_exec
+  bind \eg prepend_git
+end
 # Paths
 # While you can use a single fish array to do this (space-separated list), this is easier to read
 set PATH /usr/local/bin /usr/local/sbin $PATH
