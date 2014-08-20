@@ -121,6 +121,12 @@ function fish_prompt --description 'Write out the prompt'
     end
   end
 
+  function __paradox_command_duration --description "Get the current command duration"
+    if set -q CMD_DURATION
+      echo -s "[⌛️ $CMD_DURATION]"
+    end
+  end
+
   switch $USER
 
   case root
@@ -200,6 +206,6 @@ end
 function fish_right_prompt
   set -l date (date +%I:%M:%S%P)
   set -l rb_version (ruby -e 'print RUBY_VERSION')
-  echo -s (set_color blue) "(💎  $rb_version)" (set_color normal) "[$date]"
+  echo -s (set_color blue) "(💎  $rb_version)" (set_color green) (__paradox_command_duration) (set_color normal) "[$date]"
 end
 
