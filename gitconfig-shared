@@ -1,0 +1,47 @@
+[rerere]
+  enabled = 1
+[color]
+  ui = auto
+[branch]
+  autosetupmerge = always
+  autosetuprebase = always
+[push]
+  default = simple
+[alias]
+  # Returns the name of the current branch
+  current-branch = rev-parse --symbolic-full-name --abbrev-ref HEAD
+  # Publish a new remote branch
+  shove = "!f() { H=$(git current-branch) && git push -u origin $H; }; f"
+  # Show the oldest common ancestor. $1 and $2 are branches, defaulting to master and HEAD by default
+  ancestor = !bash -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | head -1' -
+  # Colorful logs in the terminal
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  # Pull then push
+  pp = "!f() { git pull; git push; }; f"
+  # Create a branch based off the current branch's name. Ex: I'm on "mybranch", the new branch would be called "mybranch-newbranch"
+  cb = "!f() { H=$(git current-branch); git checkout -b $H-$1; }; f"
+  # Checkout a new branch from the specified branch, named off of that branch
+  cob = "!f() { H=$(git current-branch); git checkout -b $1-$H $1; }; f"
+  # Publish a branch and open a pull request
+  pupr = "!f() { H=$(git current-branch); git shove; hub pull-request -b $1 -o -m \"$2\"; }; f"
+[mergetool]
+  keepBackup = true
+  prompt = false
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustexitcode = true
+[merge]
+  tool = Kaleidoscope
+  ff = false
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+  prompt = false
+[diff]
+  tool = Kaleidoscope
+[filter "media"]
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
+[core]
+[hub]
+  protocol = ssh
