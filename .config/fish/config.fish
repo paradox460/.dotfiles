@@ -186,7 +186,7 @@ function fish_prompt --description 'Write out the prompt'
   end
   set -l prompt_separator_width (math $COLUMNS - 1)
   if set -q __fish_prompt
-    set -l prompt_separator_characters (jot -b "━" -s "" $prompt_separator_width)
+    set -l prompt_separator_characters (command jot -b "━" -s "" $prompt_separator_width ^/dev/null)
     echo -s "$prompt_separator_color" "$prompt_separator_characters"
   end
   echo -s "$__fish_prompt_user" "$USER" "$__fish_prompt_splitter" @ "$__fish_prompt_host" "$__fish_prompt_hostname" "$__fish_prompt_normal" ' ' "$__fish_prompt_cwd" (prompt_pwd) (__fish_git_prompt) (set_color blue) (__paradox_git_hash) "$__fish_prompt_normal" "$prompt_status"
@@ -207,8 +207,8 @@ end
 
 # Right-hand prompt
 function fish_right_prompt
-  set -l date (date +%I:%M:%S%P)
-  set -l rb_version (ruby -e 'print RUBY_VERSION')
+  set -l date (command date +%I:%M:%S%P ^/dev/null)
+  set -l rb_version (command ruby -e 'print RUBY_VERSION' ^/dev/null)
   echo -s (set_color blue) "(💎  $rb_version)" (set_color green) (__paradox_command_duration) (set_color normal) "[$date]"
 end
 
