@@ -25,7 +25,6 @@
   # Publish a branch and open a pull request
   pupr = "!f() { H=$(git current-branch); git shove; hub pull-request -b $1 -o -m \"$2\"; }; f"
 [mergetool]
-  keepBackup = true
   prompt = false
 [mergetool "Kaleidoscope"]
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
