@@ -32,6 +32,9 @@
   # Publish a branch and open a pull request
   pupr = "!f() { H=$(git current-branch); git shove; hub pull-request -b $1 -o -m \"$2\"; }; f"
 
+  # Run CTags
+  ctags = !.git/hooks/ctags
+
 [mergetool]
   prompt = false
 [mergetool "Kaleidoscope"]
@@ -52,3 +55,5 @@
 [core]
 [hub]
   protocol = ssh
+[init]
+  templatedir = ~/.dotfiles/git-template
