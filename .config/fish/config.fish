@@ -40,8 +40,12 @@ end
 # While you can use a single fish array to do this (space-separated list), this is easier to read
 set PATH /usr/local/bin /usr/local/sbin $PATH
 set PATH $HOME/.rbenv/bin $PATH
-set PATH $HOME/.rbenv/shims $PATH
 set PATH $HOME/.bin $PATH
+
+
+# Use rbenv's native fish support
+# NOTE: This is only in HEAD of rbenv as of this date (2014/09/02)
+. (rbenv init -|psub)
 
 # Set my editors to Sublime Text 2
 setenv EDITOR "subl -w"
