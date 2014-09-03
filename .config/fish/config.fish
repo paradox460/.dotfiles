@@ -1,3 +1,6 @@
+# If you don't want to run the head version of rbenv, uncomment this line
+# set paradox_old_rbenv true
+
 # Fish colors and escape codes
 set fish_color_autosuggestion 808080
 set fish_color_command green\x1e--bold
@@ -39,13 +42,17 @@ end
 # Paths
 # While you can use a single fish array to do this (space-separated list), this is easier to read
 set PATH /usr/local/bin /usr/local/sbin $PATH
+if set -q paradox_old_rbenv
+  set PATH $HOME/.rbenv/shims $PATH
+end
 set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.bin $PATH
 
-
-# Use rbenv's native fish support
-# NOTE: This is only in HEAD of rbenv as of this date (2014/09/02)
-. (rbenv init -|psub)
+if not set -q paradox_old_rbenv
+  # Use rbenv's native fish support
+  # NOTE: This is only in HEAD of rbenv as of this date (2014/09/02)
+  . (rbenv init -|psub)
+end
 
 # Set my editors to Sublime Text 2
 setenv EDITOR "subl -w"
