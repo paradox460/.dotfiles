@@ -128,7 +128,7 @@ function fish_prompt --description 'Write out the prompt'
   # Get the current Git commit hash
   function __paradox_git_hash --description "Get the current git commit hash, if we're in a git working tree"
     set -l git_info (command git rev-parse --is-inside-work-tree --short HEAD ^/dev/null)
-    if set -q $git_info
+    if set -q git_info
       set -l inside_worktree $git_info[1]
       set -l git_head $git_info[2]
       if test "true" = "$inside_worktree"
