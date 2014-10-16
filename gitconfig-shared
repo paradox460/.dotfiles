@@ -52,8 +52,9 @@
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
-[core]
 [hub]
   protocol = ssh
 [init]
   templatedir = ~/.dotfiles/git-template
+[credential]
+  helper = osxkeychain
