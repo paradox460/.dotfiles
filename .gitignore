@@ -1,3 +1,5 @@
 .config/fish/fish_history
 .config/fish/fishd.*
 .config/hub
+.config/configstore
+.config/fish/generated_completions

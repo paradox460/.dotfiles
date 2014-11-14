@@ -35,6 +35,12 @@
   # Run CTags
   ctags = !.git/hooks/ctags
 
+  # grep
+  g = grep --break --heading --line-number
+
+  # grep everything
+  gg ="!f() { git rev-list --all | xargs git grep $1; }; f"
+
 [mergetool]
   prompt = false
 [mergetool "Kaleidoscope"]
@@ -58,3 +64,6 @@
   templatedir = ~/.dotfiles/git-template
 [credential]
   helper = osxkeychain
+[grep]
+  extendRegexp = true
+  lineNumber = true
