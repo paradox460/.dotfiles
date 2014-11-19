@@ -86,6 +86,9 @@ alias bx "bundle exec"
 alias rk "rake"
 alias rb "ruby"
 
+# Run something in the latest version of ruby
+alias rbl "env RBENV_VERSION=latest "
+
 # Prompt function
 function fish_prompt --description 'Write out the prompt'
 
