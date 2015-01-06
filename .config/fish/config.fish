@@ -33,11 +33,18 @@ function prepend_git
   commandline "g $current_command"
 end
 
+# Prepend rbl (rbenv latest ) when Alt+R is keyed
+function prepend_rbl
+  set current_command (commandline)
+  commandline "rbl $current_command"
+end
+
 # Actually bind the keys mentioned above
 function fish_user_key_bindings
   bind \es prepend_sudo
   bind \ex prepend_bundle_exec
   bind \eg prepend_git
+  bind \er prepend_rbl
 end
 # Paths
 # While you can use a single fish array to do this (space-separated list), this is easier to read
