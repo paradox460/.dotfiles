@@ -170,6 +170,9 @@ function fish_prompt --description 'Write out the prompt'
     set prompt_status "$__paradox_prompt_status [$last_status]$__paradox_prompt_normal"
   end
 
+  if not set -q __paradox_prompt_command_count
+    set -g __paradox_prompt_command_count 1
+    end
 
   # Separator
   set -l prompt_separator_color
@@ -178,14 +181,17 @@ function fish_prompt --description 'Write out the prompt'
   else
     set prompt_separator_color (set_color green)
   end
-  set -l prompt_separator_width (math $COLUMNS - 1)
   if set -q __paradox_prompt
+    set -l prompt_command_count "━┫$__paradox_prompt_command_count┣"
+    set -l prompt_command_count_width (echo $prompt_command_count | command wc -m ^/dev/null)
+    set -l prompt_separator_width (math $COLUMNS - $prompt_command_count_width)
     set -l prompt_separator_characters (command jot -b "━" -s "" $prompt_separator_width ^/dev/null)
-    echo -s "$prompt_separator_color" "$prompt_separator_characters"
+    echo -s $prompt_separator_color $prompt_command_count $prompt_separator_characters
   end
   echo -s "$__paradox_prompt_cwd" (prompt_pwd) (__fish_git_prompt) (set_color blue) (__paradox_git_hash) "$__paradox_prompt_normal" "$prompt_status"
   echo -s "$__paradox_prompt_delim"
   set -g __paradox_prompt 1
+  set -g __paradox_prompt_command_count (math $__paradox_prompt_command_count + 1)
 end
 
 # initialize our new variables
