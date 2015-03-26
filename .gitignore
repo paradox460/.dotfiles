@@ -4,3 +4,4 @@
 .config/configstore
 .config/fish/generated_completions
 .config/.mono
+.config/QtProject
