@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Jeff's Custom settings</name>
+    <appendix>Custom settings I use. YMMV</appendix>
+    <item>
+      <name>PC keyboard specific settings</name>
+      <appendix>Map bottom row to mac-style input (more reliable than apple's)</appendix>
+      <appendix>(Disabled on Apple Keyboards)</appendix>
+      <item>
+        <name>Command_L to Option_L</name>
+        <identifier>private.jeffs.remap.commandL2optionL</identifier>
+        <device_not>DeviceVendor::APPLE_INC</device_not>
+        <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+      </item>
+
+      <item>
+        <name>Command_R to Option_R</name>
+        <identifier>private.jeffs.remap.commandR2optionR</identifier>
+        <device_not>DeviceVendor::APPLE_INC</device_not>
+        <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::OPTION_R</autogen>
+      </item>
+      <item>
+        <name>Option_L to Command_L</name>
+        <identifier>private.jeffs.remap.optionL2commandL</identifier>
+        <device_not>DeviceVendor::APPLE_INC</device_not>
+        <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+       </item>
+      <item>
+        <name>Option_R to Command_R</name>
+        <identifier>private.jeffs.remap.optionrcommandr</identifier>
+        <device_not>DeviceVendor::APPLE_INC</device_not>
+        <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::COMMAND_R</autogen>
+      </item>
+    </item>
+
+    <vkopenurldef>
+      <name>KeyCode::VK_OPEN_URL_APP_Calculator</name>
+      <url type="file">/Applications/PCalc.app</url>
+    </vkopenurldef>
+
+    <item>
+      <name>Application Shortcuts</name>
+      <item>
+        <name>Open Calculator on Insert</name>
+        <appendix>Opens PCalc on "Insert"</appendix>
+        <appendix>Edit config if you don't have PCalc (or get PCalc)</appendix>
+        <identifier>private.jeffs.open_calc_on_ins</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::HELP,
+          KeyCode::VK_OPEN_URL_APP_Calculator
+        </autogen>
+      </item>
+    </item>
+
+    <item>
+      <name>Double-tap shift for caps-lock</name>
+      <identifier>private.jeffs.double_tap_shift_to_caps</identifier>
+      <autogen>
+        __DoublePressModifier__
+        KeyCode::SHIFT_L,
+        KeyCode::SHIFT_L,
+        KeyCode::CAPSLOCK
+      </autogen>
+      <autogen>
+        __DoublePressModifier__
+        KeyCode::SHIFT_R,
+        KeyCode::SHIFT_R,
+        KeyCode::CAPSLOCK
+      </autogen>
+    </item>
+
+    <item>
+      <name>Tap F19 for esc. Hold for Ctrl</name>
+      <appendix>Works better than the built-in one, doesn't fire ctrl all the time</appendix>
+      <identifier>private.jeffs.f19_dual_purpose</identifier>
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::F19,
+        KeyCode::ESCAPE,
+        KeyCode::VK_NONE,
+        KeyCode::CONTROL_L
+      </autogen>
+    </item>
+  </item>
+</root>
