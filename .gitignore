@@ -5,3 +5,4 @@
 .config/fish/generated_completions
 .config/.mono
 .config/QtProject
+.config/menus
