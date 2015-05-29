@@ -66,6 +66,9 @@ setenv EDITOR "atom -w"
 setenv VISUAL "atom -w"
 setenv PAGER "most"
 
+# Homebrew Cask options
+setenv HOMEBREW_CASK_OPTS "--appdir=/Applications"
+
 # Git prompt options
 set -g __fish_git_prompt_showstashstate true
 set -g __fish_git_prompt_show_informative_status true
