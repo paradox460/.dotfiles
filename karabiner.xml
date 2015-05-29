@@ -72,15 +72,15 @@
     </item>
 
     <item>
-      <name>Tap F19 for esc. Hold for Ctrl</name>
+      <name>Tap F19 for esc. Hold for Hyper</name>
       <appendix>Works better than the built-in one, doesn't fire ctrl all the time</appendix>
       <identifier>private.jeffs.f19_dual_purpose</identifier>
       <autogen>
-        __HoldingKeyToKey__
+        __KeyOverlaidModifier__
         KeyCode::F19,
-        KeyCode::ESCAPE,
-        KeyCode::VK_NONE,
-        KeyCode::CONTROL_L
+        KeyCode::COMMAND_L,
+        ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::ESCAPE
       </autogen>
     </item>
   </item>
