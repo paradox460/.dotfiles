@@ -1,11 +1,13 @@
 # If you don't want to run the head version of rbenv, uncomment this line
 # set paradox_old_rbenv true
 
+fish_vi_mode
+
 # Fish colors and escape codes
 set fish_color_autosuggestion 808080
 set fish_color_command green\x1e--bold
 set fish_color_cwd yellow
-set fish_color_cwd_root yellow\x1e--bold
+set fish_color_cwd_root red\x1e--bold
 set fish_color_normal white
 set fish_color_param blue\x1e--bold
 set fish_color_quote cyan\x1e--bold
@@ -39,16 +41,20 @@ function prepend_rbl
   commandline "rbl $current_command"
 end
 
-# Actually bind the keys mentioned above
-function fish_user_key_bindings
-  bind \es prepend_sudo
-  bind \ex prepend_bundle_exec
-  bind \eg prepend_git
-  bind \er prepend_rbl
+# Deal with the hackishness needed to use custom binds in addition to vi mode
+function paradox_binding
+  fish_vi_key_bindings
+  bind --mode insert \es prepend_sudo
+  bind -M insert \ex prepend_bundle_exec
+  bind -M insert \eg prepend_git
+  bind -M insert \er prepend_rbl
 end
+
+set -g fish_key_bindings paradox_binding
+
 # Paths
 # While you can use a single fish array to do this (space-separated list), this is easier to read
-set PATH /usr/local/bin /usr/local/sbin $PATH
+set PATH /usr/texbin /usr/local/bin /usr/local/sbin $PATH
 if set -q paradox_old_rbenv
   set PATH $HOME/.rbenv/shims $PATH
 end
@@ -99,102 +105,23 @@ alias rb "ruby"
 # Run something in the latest version of ruby
 alias rbl "env RBENV_VERSION=latest "
 
-# Prompt function
-function fish_prompt --description 'Write out the prompt'
+################################################################################
+# Prompt methods
+################################################################################
 
+function command_separator -e fish_postexec
   set -l last_status $status
-
-  # Just calculate these once, to save a few cycles when displaying the prompt
-  if not set -q __paradox_prompt_normal
-    set -g __paradox_prompt_normal (set_color normal)
-  end
-
-  if not set -q -g __fish_classic_git_functions_defined
-    set -g __fish_classic_git_functions_defined
-
-    function __fish_repaint_status --on-variable fish_color_status --description "Event handler; repaint when fish_color_status changes"
-      if status --is-interactive
-        set -e __paradox_prompt_status
-        commandline -f repaint ^/dev/null
-      end
-    end
-  end
-
-  # Get the current Git commit hash
-  function __paradox_git_hash --description "Get the current git commit hash, if we're in a git working tree"
-    set -l git_info (command git rev-parse --is-inside-work-tree --short HEAD ^/dev/null)
-    if test (count $git_info) -gt 1
-      set -l inside_worktree $git_info[1]
-      set -l git_head $git_info[2]
-      if test "true" = "$inside_worktree"
-        echo -s "[$git_head]"
-      end
-    end
-  end
-
-  function __paradox_command_duration --description "Get the current command duration"
-    if set -q CMD_DURATION
-      echo -s "[⌛️ $CMD_DURATION]"
-    end
-  end
-
-  switch $USER
-
-  case root
-
-    if not set -q __paradox_prompt_cwd
-      if set -q fish_color_cwd_root
-        set -g __paradox_prompt_cwd (set_color $fish_color_cwd_root)
-      else
-        set -g __paradox_prompt_cwd (set_color $fish_color_cwd)
-      end
-    end
-    if not set -q __paradox_prompt_delim
-      set -g __paradox_prompt_delim '! '
-    end
-
-  case '*'
-
-    if not set -q __paradox_prompt_cwd
-      set -g __paradox_prompt_cwd (set_color $fish_color_cwd)
-    end
-
-    if not set -q __paradox_prompt_delim
-      set -g __paradox_prompt_delim '$ '
-    end
-
-  end
-
-  set -l prompt_status
   if test $last_status -ne 0
-    if not set -q __paradox_prompt_status
-      set -g __paradox_prompt_status (set_color $fish_color_status)
-    end
-    set prompt_status "$__paradox_prompt_status [$last_status]$__paradox_prompt_normal"
-  end
-
-  if not set -q __paradox_prompt_command_count
-    set -g __paradox_prompt_command_count 1
-    end
-
-  # Separator
-  set -l prompt_separator_color
-  if test $last_status -ne 0
-    set prompt_separator_color (set_color red)
+    set paradox_status_color (set_color red)
+    set paradox_status_string "┫$last_status┣"
+    set paradox_status_string_width (echo $paradox_status_string | command wc -m ^/dev/null)
+    set paradox_status_left_width (math \($COLUMNS /2 \) - $paradox_status_string_width)
+    set paradox_status_right_width (math $COLUMNS - \($paradox_status_left_width + $paradox_status_string_width - 1\))
+    echo -s $paradox_status_color (jot -b '━' -s "" $paradox_status_left_width ^/dev/null) $paradox_status_string (jot -b '━' -s "" $paradox_status_right_width ^/dev/null)
   else
-    set prompt_separator_color (set_color green)
+    set paradox_status_color (set_color green)
+    echo -s $paradox_status_color (jot -b '━' -s "" $COLUMNS ^/dev/null)
   end
-  if set -q __paradox_prompt
-    set -l prompt_command_count "━┫$__paradox_prompt_command_count┣"
-    set -l prompt_command_count_width (echo $prompt_command_count | command wc -m ^/dev/null)
-    set -l prompt_separator_width (math $COLUMNS - $prompt_command_count_width)
-    set -l prompt_separator_characters (command jot -b "━" -s "" $prompt_separator_width ^/dev/null)
-    echo -s $prompt_separator_color $prompt_command_count $prompt_separator_characters
-  end
-  echo -s "$__paradox_prompt_cwd" (prompt_pwd) (__fish_git_prompt) (set_color blue) (__paradox_git_hash) "$__paradox_prompt_normal" "$prompt_status"
-  echo -s "$__paradox_prompt_delim"
-  set -g __paradox_prompt 1
-  set -g __paradox_prompt_command_count (math $__paradox_prompt_command_count + 1)
 end
 
 # initialize our new variables
@@ -206,11 +133,4 @@ if not set -q __prompt_initialized_2
   set -U fish_color_status red
   set -U fish_color_splitter red
   set -U __prompt_initialized_2
-end
-
-# Right-hand prompt
-function fish_right_prompt
-  set -l date (command date +%I:%M:%S%P ^/dev/null)
-  set -l rb_version (command ruby -e 'print RUBY_VERSION' ^/dev/null)
-  echo -s (set_color blue) "(💎  $rb_version)" (set_color green) (__paradox_command_duration) (set_color normal) "[$date]"
 end
