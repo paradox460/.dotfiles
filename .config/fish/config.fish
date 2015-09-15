@@ -93,14 +93,15 @@ alias reload '. ~/.config/fish/config.fish'
 # Git
 # Hub is a useful tool that provides github integration. If you don't use it, I recommend deleting these lines
 alias git hub
-alias g hub
-alias gst "git status"
+abbr g="git"
+abbr gst="git status"
+abbr gcm="git commit -m"
 
 # Ruby
-alias b "bundle"
-alias bx "bundle exec"
-alias rk "rake"
-alias rb "ruby"
+abbr b="bundle"
+abbr bx="bundle exec"
+abbr rk="rake"
+abbr rb="ruby"
 
 # Run something in the latest version of ruby
 alias rbl "env RBENV_VERSION=latest "
