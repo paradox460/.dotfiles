@@ -53,13 +53,12 @@ end
 set -g fish_key_bindings paradox_binding
 
 # Paths
-# While you can use a single fish array to do this (space-separated list), this is easier to read
-set PATH /usr/texbin /usr/local/bin /usr/local/sbin $PATH
+set PATH $HOME/.bin \
+  $HOME/.rbenv/bin \
+  $PATH
 if set -q paradox_old_rbenv
   set PATH $HOME/.rbenv/shims $PATH
 end
-set PATH $HOME/.rbenv/bin $PATH
-set PATH $HOME/.bin $PATH
 
 if not set -q paradox_old_rbenv
   # Use rbenv's native fish support
