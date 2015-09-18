@@ -27,7 +27,6 @@ You're highly encouraged to fork this and/or incorporate the changes into your d
 # Other things of note
 + [Fish shell](http://fishshell.com/)
 + [Karabiner](https://pqrs.org/osx/karabiner/) and [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
-+ [My Atom configs](https://github.com/paradox460/.atom)
 
 
 ```
