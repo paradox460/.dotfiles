@@ -134,3 +134,5 @@ if not set -q __prompt_initialized_2
   set -U fish_color_splitter red
   set -U __prompt_initialized_2
 end
+
+source ~/Developer/zendesk/docker-images/dockmaster/zdi.fish
