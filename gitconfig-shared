@@ -1,3 +1,5 @@
+[core]
+  excludesfile = ~/.dotfiles/.config/git/ignore
 [rerere]
   enabled = 1
 [color]
