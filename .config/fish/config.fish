@@ -95,6 +95,7 @@ alias git hub
 abbr g="git"
 abbr gst="git status"
 abbr gcm="git commit -m"
+abbr gu="rbl git up"
 
 # Ruby
 abbr b="bundle"
