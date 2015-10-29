@@ -83,5 +83,16 @@
         KeyCode::ESCAPE
       </autogen>
     </item>
+    <item>
+      <name>Hyper+Space snap cursor to center window</name>
+      <appendix>No more lost cursors</appendix>
+      <appendix>You, of course, need to create a hyper key</appendix>
+      <identifier>private.jeffs.hyper-space-cursor-snap</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::VK_OPEN_URL_SHELL_warp_mouse_cursor_position_front_window_center
+      </autogen>
+    </item>
   </item>
 </root>
