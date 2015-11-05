@@ -139,4 +139,16 @@ if not set -q __prompt_initialized_2
   set -U __prompt_initialized_2
 end
 
+################################################################################
+# Utility functions
+################################################################################
+function -a directory -d Change to Zendesk Directory zd
+  if test -z "$directory"
+    set directory .
+  end
+  cd ~/Developer/zendesk/$directory
+end
+
+complete -c zd -xa "(__fish_complete_path ~/Developer/zendesk/(commandline -ct) | sed  's/.*\/Developer\/zendesk\/\(.*\)\$/\1/')"
+
 source ~/Developer/zendesk/docker-images/dockmaster/zdi.fish
