@@ -63,6 +63,9 @@ end
 # Completion paths (homebrew fix)
 set fish_complete_path ~/.config/fish/completions/ /usr/local/share/fish/completions/ /usr/local/share/fish/vendor_completions.d/ $fish_complete_path
 
+# NVM shite
+set NVM_DIR ~/.nvm
+
 if not set -q paradox_old_rbenv
   # Use rbenv's native fish support
   # NOTE: This is only in HEAD of rbenv as of this date (2014/09/02)
