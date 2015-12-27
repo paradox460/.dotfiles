@@ -7,3 +7,4 @@
 .config/QtProject
 .config/menus
 .config/mpv/fonts.conf
+.config/fish/fundle
