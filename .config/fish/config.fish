@@ -156,3 +156,5 @@ source ~/Developer/zendesk/docker-images/dockmaster/zdi.fish
 # Add autojump, but only if its installed
 # remember, [ == test
 [ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
+
+source ~/.config/fish/fundle_config.fish
