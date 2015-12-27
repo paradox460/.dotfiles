@@ -1,0 +1,9 @@
+AllCops:
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+Metrics/LineLength:
+  Enabled: false
+Style/DotPosition:
+  EnforcedStyle: trailing
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
