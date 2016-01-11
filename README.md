@@ -26,6 +26,7 @@ You're highly encouraged to fork this and/or incorporate the changes into your d
 
 # Other things of note
 + [Fish shell](http://fishshell.com/)
++ [My fish theme](https://github.com/paradox460/paradox-theme)
 + [Karabiner](https://pqrs.org/osx/karabiner/) and [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
 
 
