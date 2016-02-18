@@ -32,13 +32,14 @@ alias git hub
 # Run something in the latest version of ruby
 alias rbl "env RBENV_VERSION=latest "
 
-source ~/Developer/zendesk/docker-images/dockmaster/zdi.fish
+# Zendesk docker utils
+test -e ~/Developer/zendesk/docker-images/dockmaster/zdi.fish ; and source ~/Developer/zendesk/docker-images/dockmaster/zdi.fish
 
-# Add autojump, but only if its installed
-# remember, [ == test
-[ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
+# Autojump (j command)
+test -e /usr/local/share/autojump/autojump.fish ; and source /usr/local/share/autojump/autojump.fish
 
-source ~/.config/fish/fundle_config.fish
+# Fundle fish plugin manager
+test -e ~/.config/fish/fundle_config.fish ; and source ~/.config/fish/fundle_config.fish
 
 # Interactive mode settings
 # Specifically, anything you might not need in scripting should be put here.
