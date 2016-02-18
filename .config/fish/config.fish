@@ -10,7 +10,7 @@ set fish_complete_path ~/.config/fish/completions/ \
   $fish_complete_path
 
 # NVM shit
-set NVM_DIR ~/.nvm
+set -x NVM_DIR ~/.nvm
 
 . (rbenv init -|psub)
 
