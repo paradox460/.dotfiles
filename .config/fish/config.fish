@@ -95,3 +95,6 @@ if status --is-interactive
   abbr rk="rake"
   abbr rb="ruby"
 end
+
+# iTerm 2 stuff
+test -e .iterm2_shell_integration.fish ; and source .iterm2_shell_integration.fish
