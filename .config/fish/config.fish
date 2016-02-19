@@ -97,4 +97,4 @@ if status --is-interactive
 end
 
 # iTerm 2 stuff
-test -e .iterm2_shell_integration.fish ; and source .iterm2_shell_integration.fish
+test -e ~/.config/fish/iterm2_shell_integration.fish ; and source ~/.config/fish/iterm2_shell_integration.fish
