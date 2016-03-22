@@ -94,6 +94,7 @@ if status --is-interactive
   abbr bx="bundle exec"
   abbr rk="rake"
   abbr rb="ruby"
+  abbr bxr="bundle exec rake"
 end
 
 # iTerm 2 stuff
