@@ -51,22 +51,22 @@ moveMode:bind('cmd', 'h', moveWestFine, nil, moveWestFine)
 local moveNorth = function()
   moveWindowDirection('n', 50)
 end
-moveMode:bind('', 'j', moveNorth, nil, moveNorth)
+moveMode:bind('', 'k', moveNorth, nil, moveNorth)
 
 local moveNorthFine = function()
   moveWindowDirection('n', 1)
 end
-moveMode:bind('cmd', 'j', moveNorthFine, nil, moveNorthFine)
+moveMode:bind('cmd', 'k', moveNorthFine, nil, moveNorthFine)
 
 local moveSouth = function()
   moveWindowDirection('s', 50)
 end
-moveMode:bind('', 'k', moveSouth, nil, moveSouth)
+moveMode:bind('', 'j', moveSouth, nil, moveSouth)
 
 local moveSouthFine = function()
   moveWindowDirection('s', 1)
 end
-moveMode:bind('cmd', 'k', moveSouthFine, nil, moveSouthFine)
+moveMode:bind('cmd', 'j', moveSouthFine, nil, moveSouthFine)
 
 local moveEast = function()
   moveWindowDirection('e', 50)
