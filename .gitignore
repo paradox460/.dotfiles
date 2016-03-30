@@ -9,3 +9,6 @@
 .config/mpv/fonts.conf
 .config/fish/fundle
 .config/fish/fish_read_history
+.config/ranger
+.config/inkscape
+.config/gtk-2.0
