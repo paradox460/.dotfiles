@@ -1,16 +1,19 @@
 require 'expandmode'
 require 'movemode'
 
-local screenmon = nil
 local super = {'ctrl', 'alt', 'cmd', 'shift'}
 
 function screensChangedCallback()
-  local screen1 = hs.screen.allScreens()[1]:name()
-  if screen1 == 'Color LCD' then
+  local screens = hs.screen.allScreens()
+  if #screens < 2 then
     hs.notify.show('Switched KWM modes', '', 'Switched to floating window mode',''):withdraw()
     hs.execute('kwmc space -t float', true)
+    hs.execute('kwmc config focused-border off', true)
+  else
+    hs.notify.show('Switched KWM modes', '', 'Switched to bsp window mode',''):withdraw()
+    hs.execute('kwmc space -t bsp', true)
+    hs.execute('kwmc config focused-border on', true)
   end
 end
 
-screenmon = hs.screen.watcher.new(screensChangedCallback)
-screenmon:start()
+hs.screen.watcher.new(screensChangedCallback):start()
