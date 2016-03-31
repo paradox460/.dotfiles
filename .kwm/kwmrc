@@ -154,9 +154,9 @@ kwmc bind cmd+alt-j window -f south
 kwmc bind cmd+alt-k window -f north
 
 # Give Focus To Screen
-kwmc bind cmd+alt-1 screen -f 0
-kwmc bind cmd+alt-2 screen -f 1
-kwmc bind cmd+alt-3 screen -f 2
+kwmc bind prefix-1 screen -f 0
+kwmc bind prefix-2 screen -f 1
+kwmc bind prefix-3 screen -f 2
 
 # Move Focused Window
 kwmc bind ctrl+alt-h window -s west
