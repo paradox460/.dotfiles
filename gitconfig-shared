@@ -73,3 +73,5 @@
     helper = osxkeychain
 [rebase]
   autostash = true
+[commit]
+  gpgsign = true
