@@ -130,6 +130,9 @@ kwmc bind hyper-q quit
 # Launch iTerm2
 # kwmc bind cmd-return sys open -na /Applications/iTerm2.app
 
+# Toggle autofocus
+kwmc bind hyper-t config focus-follows-mouse toggle
+
 # Set Space Tiling Mode To BSP
 kwmc bind cmd+ctrl-a space -t bsp
 
@@ -170,9 +173,9 @@ kwmc bind cmd+alt-n window -fm prev
 kwmc bind cmd+alt-m window -fm next
 
 # Give Focus To Screen
-kwmc bind cmd+alt-1 display -f 0
-kwmc bind cmd+alt-2 display -f 1
-kwmc bind cmd+alt-3 display -f 2
+# kwmc bind cmd+alt-1 display -f 0
+# kwmc bind cmd+alt-2 display -f 1
+# kwmc bind cmd+alt-3 display -f 2
 
 # Swap Focused Window
 kwmc bind ctrl+alt-h window -s west
@@ -188,10 +191,10 @@ kwmc bind ctrl+alt-p window -s prev
 kwmc bind ctrl+alt-n window -s next
 
 # Detach Focused Window And Reinsert In Direction
-kwmc bind ctrl+shift-k window -m north
-kwmc bind ctrl+shift-l window -m east
-kwmc bind ctrl+shift-j window -m south
-kwmc bind ctrl+shift-h window -m west
+kwmc bind ctrl+alt+shift-k window -m north
+kwmc bind ctrl+alt+shift-l window -m east
+kwmc bind ctrl+alt+shift-j window -m south
+kwmc bind ctrl+alt+shift-h window -m west
 
 # Detach Marked Window And Reinsert At Focused Window
 kwmc bind ctrl+shift-x window -m mark
@@ -234,3 +237,6 @@ kwmc bind hyper-r space -r
 # kwmc bind cmd-7 write \
 # kwmc bind cmd-8 write {
 # kwmc bind cmd-9 write }
+
+# Float dash
+kwmc rule owner="Dash" properties={float="true"}
