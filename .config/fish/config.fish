@@ -1,5 +1,5 @@
 # Paths
-set PATH $HOME/.bin \
+set -x PATH $HOME/.bin \
   $HOME/.rbenv/bin \
   $PATH
 
@@ -9,6 +9,9 @@ set fish_complete_path ~/.config/fish/completions/ \
   /usr/local/share/fish/vendor_completions.d/ \
   $fish_complete_path
 
+# Manpath
+set -x MANPATH (brew --cellar) \
+  $MANPAT\H
 # NVM shit
 set -x NVM_DIR ~/.nvm
 
