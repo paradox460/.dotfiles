@@ -70,6 +70,6 @@
   extendRegexp = true
   lineNumber = true
 [credential]
-  	helper = osxkeychain
+    helper = osxkeychain
 [rebase]
   autostash = true
