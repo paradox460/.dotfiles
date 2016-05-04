@@ -102,3 +102,6 @@ end
 
 # iTerm 2 stuff
 test -e ~/.config/fish/iterm2_shell_integration.fish ; and source ~/.config/fish/iterm2_shell_integration.fish
+
+# GPG stuff
+test -e ~/.config/fish/gnupg.fish ; and source ~/.config/fish/gnupg.fish
