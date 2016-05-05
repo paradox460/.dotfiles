@@ -105,3 +105,8 @@ test -e ~/.config/fish/iterm2_shell_integration.fish ; and source ~/.config/fish
 
 # GPG stuff
 test -e ~/.config/fish/gnupg.fish ; and source ~/.config/fish/gnupg.fish
+
+# z
+for file in ~/.config/fish/conf.d/*.fish
+    source $file
+end
