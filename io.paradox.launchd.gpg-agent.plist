@@ -1,0 +1,36 @@
+<!--
+Start gpg-agent, and keep it running
+1. Install GPGagent via brew, you should know how to do this
+2. Edit the file so the /Users/jeffsandberg part points to your local directory
+3. Voila, you now automatically load the gpg agent and write the envar string to ~/.gnupg/.gpg-agent-info.
+
+You may need to configure your shell to read and set this ENV value for gpg to
+work right. If you look at the config files you can see how I did this in fish
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>KeepAlive</key>
+	<dict>
+		<key>SuccessfulExit</key>
+		<false/>
+	</dict>
+	<key>Label</key>
+	<string>io.paradox.launchd.gpg-age t</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/local/bin/gpg-agent</string>
+		<string>--daemon</string>
+		<string>--write-env-file</string>
+		<string>/Users/jeffsandberg/.gnupg/.gpg-agent-info</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/tmp/local.gpg.agent.err</string>
+	<key>StandardOutPath</key>
+	<string>/tmp/local.gpg.agent.out</string>
+</dict>
+</plist>

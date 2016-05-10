@@ -1,0 +1,27 @@
+<!--
+Automatic homebrew updates.
+1. Copy autobrew to your /usr/local/bin
+2. ln -sfv io.paradox.launchd.autobrew.plist ~/Library/LaunchAgents/
+3. launchctl load ~/Library/LaunchAgents/io.paradox.launchd.autobrew.plist
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Disabled</key>
+	<false/>
+	<key>Label</key>
+	<string>io.paradox.launchd.autobrew</string>
+	<key>Program</key>
+	<string>/usr/local/bin/autobrew</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StartCalendarInterval</key>
+	<array>
+		<dict>
+			<key>Hour</key>
+			<integer>12</integer>
+		</dict>
+	</array>
+</dict>
+</plist>
