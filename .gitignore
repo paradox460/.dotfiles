@@ -6,8 +6,10 @@
 .config/fish/fishd.*
 .config/fish/fundle
 .config/fish/generated_completions
+.config/fisherman
 .config/gtk-2.0
 .config/hub
+.config/heroku
 .config/inkscape
 .config/menus
 .config/mpv/fonts.conf
