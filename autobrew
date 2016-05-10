@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Script for automatically updating brew, so you don't have to type brew update
+# all the time
+#
+# cp it to your /usr/local/bin for great justice
+brew=/usr/local/bin/brew
+logger=/usr/bin/logger
+
+$brew update 2>&1  | $logger -t autobrew.update
