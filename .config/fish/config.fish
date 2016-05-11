@@ -35,6 +35,11 @@ alias git hub
 # Run something in the latest version of ruby
 alias rbl "env RBENV_VERSION=latest "
 
+# Disable overcommit
+alias disoc "env OVERCOMMIT_DISABLE=1 "
+
+alias rbldisoc "env OVERCOMMIT_DISABLE=1 RBENV_VERSION=latest "
+
 # Zendesk docker utils
 test -e ~/Developer/zendesk/docker-images/dockmaster/zdi.fish ; and source ~/Developer/zendesk/docker-images/dockmaster/zdi.fish
 
@@ -90,7 +95,7 @@ if status --is-interactive
   abbr g="git"
   abbr gst="git status"
   abbr gcm="git commit -m"
-  abbr gu="rbl git up"
+  abbr gu="rbldisoc git up"
 
   # Ruby
   abbr b="bundle"
