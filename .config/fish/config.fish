@@ -95,6 +95,7 @@ if status --is-interactive
   abbr g="git"
   abbr gst="git status"
   abbr gcm="git commit -m"
+  abbr gc="git checkout"
   abbr gu="rbldisoc git up"
 
   # Ruby
