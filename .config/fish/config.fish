@@ -52,8 +52,6 @@ test -e ~/.config/fish/fundle_config.fish ; and source ~/.config/fish/fundle_con
 # Interactive mode settings
 # Specifically, anything you might not need in scripting should be put here.
 if status --is-interactive
-  fish_vi_mode
-
   # Greeting on new terminal
   set fish_greeting (date)
 
