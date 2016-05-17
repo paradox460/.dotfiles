@@ -1,6 +1,5 @@
 # Paths
 set -x PATH $HOME/.bin \
-  $HOME/.rbenv/bin \
   $PATH
 
 # Completion paths (homebrew fix)
@@ -15,7 +14,7 @@ set -x MANPATH (brew --cellar) \
 # NVM shit
 set -x NVM_DIR ~/.nvm
 
-. (rbenv init -|psub)
+source (rbenv init -|psub)
 
 # Set my editors to Sublime Text 2
 setenv EDITOR "atom -w"
