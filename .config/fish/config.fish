@@ -40,9 +40,6 @@ alias disoc "env OVERCOMMIT_DISABLE=1 "
 
 alias rbldisoc "env OVERCOMMIT_DISABLE=1 RBENV_VERSION=latest "
 
-# Zendesk docker utils
-test -e ~/Developer/zendesk/docker-images/dockmaster/zdi.fish ; and source ~/Developer/zendesk/docker-images/dockmaster/zdi.fish
-
 # Autojump (j command)
 test -e /usr/local/share/autojump/autojump.fish ; and source /usr/local/share/autojump/autojump.fish
 
