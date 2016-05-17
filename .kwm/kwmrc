@@ -240,3 +240,6 @@ kwmc bind hyper-r space -r
 
 # Float dash
 kwmc rule owner="Dash" properties={float="true"}
+
+# Float Fantastical
+kwmc rule owner="Fantastical" properties={float="true"}
