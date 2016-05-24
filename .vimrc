@@ -15,3 +15,6 @@ set relativenumber number
 
 " Pathogen
 execute pathogen#infect()
+
+" fzf
+set rtp+=/usr/local/opt/fzf
