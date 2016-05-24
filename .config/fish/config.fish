@@ -17,8 +17,8 @@ set -x NVM_DIR ~/.nvm
 source (rbenv init -|psub)
 
 # Set my editors to Sublime Text 2
-setenv EDITOR "atom -w"
-setenv VISUAL "atom -w"
+setenv EDITOR "vim"
+setenv VISUAL "vim"
 setenv PAGER "most"
 
 # Homebrew Cask options
@@ -39,8 +39,8 @@ alias disoc "env OVERCOMMIT_DISABLE=1 "
 
 alias rbldisoc "env OVERCOMMIT_DISABLE=1 RBENV_VERSION=latest "
 
-# Add editor override to use vim
-alias vimedit "env EDITOR=vim VISUAL=vim "
+# Add editor override to use atom
+alias atomedit "env EDITOR='atom -w' VISUAL='atom -w' "
 
 # Autojump (j command)
 test -e /usr/local/share/autojump/autojump.fish ; and source /usr/local/share/autojump/autojump.fish
