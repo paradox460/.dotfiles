@@ -100,8 +100,8 @@ if status --is-interactive
   abbr bxr="bundle exec rake"
 end
 
-# iTerm 2 stuff
-test -e ~/.config/fish/iterm2_shell_integration.fish ; and source ~/.config/fish/iterm2_shell_integration.fish
+# iTerm 2 fish integration
+test -e ~/.iterm2_shell_integration.fish ; and source ~/.iterm2_shell_integration.fish
 
 # GPG stuff
 test -e ~/.config/fish/gnupg.fish ; and source ~/.config/fish/gnupg.fish
