@@ -18,3 +18,7 @@ execute pathogen#infect()
 
 " fzf
 set rtp+=/usr/local/opt/fzf
+
+" Statusline
+set laststatus=2
+set statusline=[%n]\ %f%(\ %r%)\%m\ %y%=%4l:%02v/%L\ %3p%%
