@@ -19,6 +19,9 @@
   # Show the oldest common ancestor. $1 and $2 are branches, defaulting to master and HEAD by default
   ancestor = !bash -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | head -1' -
 
+  # Fetch and rebase
+  fup = "!git fetch && git rebase --autostash FETCH_HEAD"
+
   # Colorful logs in the terminal
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
