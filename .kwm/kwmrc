@@ -144,7 +144,7 @@ kwmc bindsym cmd+ctrl-r tree rotate 90
 kwmc bindsym prefix-s window -c split-mode toggle
 kwmc bindsym prefix-h window -c reduce 0.05
 kwmc bindsym prefix-l window -c expand 0.05
-kwmc bindsym prefix-< window -c type toggle
+kwmc bindsym prefix-, window -c type toggle
 
 // Set Temporary Window Container
 kwmc bindsym prefix-f window -z fullscreen
