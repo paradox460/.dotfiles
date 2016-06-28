@@ -168,9 +168,9 @@ kwmc bindsym cmd+alt-n window -fm prev
 kwmc bindsym cmd+alt-m window -fm next
 
 // Give Focus To Screen
-kwmc bindsym cmd+alt-1 display -f 0
-kwmc bindsym cmd+alt-2 display -f 1
-kwmc bindsym cmd+alt-3 display -f 2
+// kwmc bindsym cmd+alt-1 display -f 0
+// kwmc bindsym cmd+alt-2 display -f 1
+// kwmc bindsym cmd+alt-3 display -f 2
 
 // Swap Focused Window
 kwmc bindsym ctrl+alt-h window -s west
