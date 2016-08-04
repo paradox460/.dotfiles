@@ -11,8 +11,6 @@ set fish_complete_path ~/.config/fish/completions/ \
 # Manpath
 set -x MANPATH (brew --cellar) \
   $MANPAT\H
-# NVM shit
-set -x NVM_DIR ~/.nvm
 
 source (rbenv init -|psub)
 
@@ -114,3 +112,10 @@ test -e ~/.config/fish/gnupg.fish ; and source ~/.config/fish/gnupg.fish
 for file in ~/.config/fish/conf.d/*.fish
     source $file
 end
+
+# NVM shit
+if type -q nvm
+  set -x NVM_DIR ~/.nvm
+  nvm >/dev/null ^/dev/null
+end
+
