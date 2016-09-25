@@ -1,4 +1,6 @@
 fisherman/await
+brgmnn/fish-docker-compose
+barnybug/docker-fish-completion
 fisherman/fzf
 fisherman/getopts
 fisherman/last_job_id
