@@ -12,6 +12,11 @@ set fish_complete_path ~/.config/fish/completions/ \
 set -x MANPATH (brew --cellar) \
   $MANPATH
 
+# Lang Settings
+set LANG en_US.UTF-8
+set LANGUAGE en_US.UTF-8
+set LC_ALL en_US.UTF-8
+
 source (rbenv init -|psub)
 
 # Set my editors to Sublime Text 2
