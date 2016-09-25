@@ -13,6 +13,9 @@ syntax on
 " Line numbers
 set relativenumber number
 
+" Show command
+set showcmd
+
 " Pathogen
 execute pathogen#infect()
 
