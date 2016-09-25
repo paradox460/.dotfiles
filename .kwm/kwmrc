@@ -57,9 +57,12 @@ kwmc config focus-follows-mouse off
    a floating window has focus */
 kwmc config standby-on-float on
 
+/* Center window when made floating */
+kwmc config center-on-float on
+
 /* The mouse will automatically move to the center
    of the focused window */
-kwmc config mouse-follows-focus on
+kwmc config mouse-follows-focus off
 
 // Allow window focus to wrap-around
 kwmc config cycle-focus on
@@ -84,13 +87,13 @@ kwmc config spawn left
    does not get tiled by Kwm by default.
    This is because some applications do not have the
    AXWindowRole and AXStandardWindowSubRole */
-kwmc rule owner="iTerm2" properties={role="AXDialog"}
+//kwmc rule owner="iTerm2" properties={role="AXDialog"}
 
 /* The following commands create rules that
    blacklists an application from Kwms tiling
 
-   kwmc rule owner="Steam" properties={float="true"}
-   kwmc rule owner="Photoshop" properties={float="true"} */
+   kwmc rule owner="Steam" properties={float="true"} */
+kwmc rule owner="Photoshop CC" properties={float="true"}
 kwmc rule owner="Dash" properties={float="true"}
 kwmc rule owner="Fantastical" properties={float="true"}
 
@@ -120,7 +123,7 @@ kwmc mode prefix color 0xFFCC6666
 
 /*  Default Keybinds */
 // Activate prefix mode
-kwmc bindsym ctrl-x mode activate prefix
+kwmc bindsym ctrl-s mode activate prefix
 
 // Quit Kwm
 kwmc bindsym hyper-q quit
