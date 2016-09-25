@@ -10,7 +10,7 @@ set fish_complete_path ~/.config/fish/completions/ \
 
 # Manpath
 set -x MANPATH (brew --cellar) \
-  $MANPAT\H
+  $MANPATH
 
 source (rbenv init -|psub)
 
