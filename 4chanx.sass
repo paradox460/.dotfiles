@@ -70,6 +70,7 @@ $base0F: #a3685a
   +gets($base0B)
 .quints
   +gets($base0A)
+
 /* Style flags so no hover
 
 .flag
@@ -112,13 +113,12 @@ $base0F: #a3685a
   &:target, &.highlight
     background: change-color($base0E, $alpha: .2)!important
 
-/*
-/* :root.highlight-you .quotesYou.opContainer, :root.highlight-you .quotesYou > .reply {
-/*    border-left-color: $base0D
-/*    background: change-color($base0D, $alpha: .2)
-/* }
-
-.recolor-even body .board .thread .quotesYou
-  &.opContainer .post.op, &.replyContainer .post.reply
-    border-left-color: $base0D !important
-    background: rgba(130, 163, 191, .2) !important
+html body .board .thread
+  .quotesYou
+    &.opContainer .post.op, &.replyContainer .post.reply
+      border-left-color: $base0D !important
+      background: rgba(130, 163, 191, .2) !important
+  .yourPost
+    &.opContainer .post.op, &.replyContainer .post.reply
+      border-left-color: $base0B !important
+      background: change-color($base0B, $alpha: .2) !important
