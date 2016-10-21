@@ -114,6 +114,10 @@ $base0F: #a3685a
     background: change-color($base0E, $alpha: .2)!important
 
 html body .board .thread
+  .replyContainer:nth-of-type(even):not(.hidden)
+    .post
+      background-color: darken($base02, 2%) !important
+
   .quotesYou
     &.opContainer .post.op, &.replyContainer .post.reply
       border-left-color: $base0D !important
