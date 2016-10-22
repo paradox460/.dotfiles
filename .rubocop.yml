@@ -7,3 +7,6 @@ Style/DotPosition:
   EnforcedStyle: trailing
 Style/AlignParameters:
   EnforcedStyle: with_fixed_indentation
+Style/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
