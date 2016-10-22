@@ -46,6 +46,9 @@
   # grep everything
   gg ="!f() { git rev-list --all | xargs git grep $1; }; f"
 
+  # Clean up old branches
+  dm = "!f() { git branch --merged | sed -E '/^\\*|master/D; s/\\s+//' | xargs git branch -D; }; f"
+
 [mergetool]
   prompt = false
 [mergetool "Kaleidoscope"]
