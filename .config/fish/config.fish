@@ -45,9 +45,6 @@ alias rbldisoc "env OVERCOMMIT_DISABLE=1 RBENV_VERSION=latest "
 # Add editor override to use atom
 alias atomedit "env EDITOR='atom -w' VISUAL='atom -w' "
 
-# Autojump (j command)
-test -e /usr/local/share/autojump/autojump.fish ; and source /usr/local/share/autojump/autojump.fish
-
 # Fundle fish plugin manager
 test -e ~/.config/fish/fundle_config.fish ; and source ~/.config/fish/fundle_config.fish
 
