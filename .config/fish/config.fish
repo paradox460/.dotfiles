@@ -102,6 +102,9 @@ if status --is-interactive
   abbr rk="rake"
   abbr rb="ruby"
   abbr bxr="bundle exec rake"
+
+  # Docker
+  abbr dcc="docker-compose"
 end
 
 # iTerm 2 fish integration
@@ -120,4 +123,3 @@ if type -q nvm
   set -x NVM_DIR ~/.nvm
   nvm >/dev/null ^/dev/null
 end
-
