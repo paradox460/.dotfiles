@@ -281,8 +281,3 @@ cmd + alt + ctrl - h    :   kwmc window -mk west wrap
 cmd + alt + ctrl - l    :   kwmc window -mk east wrap
 cmd + alt + ctrl - j    :   kwmc window -mk south wrap
 cmd + alt + ctrl - k    :   kwmc window -mk north wrap
-
-cmd - 0x2A              :   khd -w "aasvi93@hotmail.com"
-cmd - 7                 :   khd -w "\\"
-cmd - 8                 :   khd -w "{"
-cmd - 9                 :   khd -w "}"
