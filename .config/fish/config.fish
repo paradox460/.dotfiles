@@ -102,9 +102,6 @@ if status --is-interactive
   abbr rk="rake"
   abbr rb="ruby"
   abbr bxr="bundle exec rake"
-
-  # Docker
-  abbr dcc="docker-compose"
 end
 
 # iTerm 2 fish integration
