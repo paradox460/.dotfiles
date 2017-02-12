@@ -14,33 +14,7 @@ $base0C: #8abeb7
 $base0D: #81a2be
 $base0E: #b294bb
 $base0F: #a3685a
-/* Highlight gets
 
-// .postNum.desktop > a, .trips .postNum.desktop > a, .quads .postNum.desktop > a, .quints .postNum.desktop > a
-//   color: #373b41 !important
-//
-// .dubs .postNum.desktop > a:first-of-type, .trips .postNum.desktop > a:first-of-type, .quads .postNum.desktop > a:first-of-type, .quints .postNum.desktop > a:first-of-type
-//   padding-left: 2px
-//   border-top-left-radius: 3px
-//   border-bottom-left-radius: 3px
-//
-// .dubs .postNum.desktop > a:last-of-type, .trips .postNum.desktop > a:last-of-type, .quads .postNum.desktop > a:last-of-type, .quints .postNum.desktop > a:last-of-type
-//   padding-right: 2px
-//   border-top-right-radius: 3px
-//   border-bottom-right-radius: 3px
-//
-// .dubs .postNum.desktop > a
-//   background: #81a2be
-//
-// .trips .postNum.desktop > a
-//   background: #8abeb7
-//
-// .quads .postNum.desktop > a
-//   background: #b5bd68
-//
-// .quints .postNum.desktop > a
-//   background: #f0c674
-//
 %gets
   .postNum.desktop > a
     color: #373b41 !important
@@ -91,24 +65,20 @@ $base0F: #a3685a
 
 /* Style 4chan pass flair
 
-.n-pu
+.post .n-pu
   width: auto !important
 
   color: #282a2e
   border-radius: 3px
-  background-color: change-color($base0B, $alpha: .75)
-  background-repeat: no-repeat
-  background-position: bottom left
+  background-color: change-color($base0B, $alpha: .75) !important
+  background-repeat: no-repeat !important
+  background-position: bottom left !important
   &::after
     margin-left: 19px
     padding-right: 3px
 
     content: attr(title)
 
-/* .lost.postContainer > .reply {
-/*   border-color: $base0D
-/* }
-/*
 .reply
   &:target, &.highlight
     background: change-color($base0E, $alpha: .2)!important
