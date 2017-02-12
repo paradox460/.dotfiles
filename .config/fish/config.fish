@@ -131,3 +131,4 @@ if type -q nvm
   set -x NVM_DIR ~/.nvm
   nvm >/dev/null ^/dev/null
 end
+source (which env_parallel.fish)
