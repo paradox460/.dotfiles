@@ -62,7 +62,7 @@ kwmc config focus-follows-mouse off
 kwmc config standby-on-float on
 
 # Center window when made floating
-kwmc config center-on-float on
+kwmc config center-on-float off
 
 /*
     The mouse will automatically move to the center
