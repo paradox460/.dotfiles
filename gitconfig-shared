@@ -13,6 +13,9 @@
   # Returns the name of the current branch
   current-branch = rev-parse --symbolic-full-name --abbrev-ref HEAD
 
+  # Returns a short version of the current SHA
+  current-sha = rev-parse --verify --short @
+
   # Publish a new remote branch
   shove = "!f() { H=$(git current-branch) && git push -u origin $H; }; f"
 
