@@ -3,6 +3,7 @@ set -e
 PATH="/usr/local/bin:$PATH"
 dir="`git rev-parse --git-dir`"
 trap 'rm -f "$dir/$$.tags"' EXIT
-git ls-files | \
-  ctags -L - -f"$dir/$$.tags" --languages=-javascript,sql
+git ls-files -z | xargs -0 env RBENV_VERSION=latest ripper-tags -f"$dir/$$.tags"
+git ls-files | ctags -f"$dir/$$.tags" --languages=-javascript,sql,ruby --extras=qpg -a -L -
 mv "$dir/$$.tags" "$dir/../.tags"
+
