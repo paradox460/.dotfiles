@@ -102,3 +102,19 @@ html body .board .thread
 
 .postMessage
   max-width: 50em
+
+/* Use to hide stupid images
+.noimage
+  .fileThumb
+    display: none
+  .fileText
+    &::before
+      $local-base: change-color($base08, $alpha: .8)
+      content: 'awoo'
+      background: $local-base
+      color: $base02
+      padding: 0 2px
+      border-radius: 3px
+      margin: -1px
+      margin-right: .5ex
+      border: 1px solid mix($local-base, $base00, 60%)
