@@ -13,19 +13,19 @@ set -x MANPATH (brew --cellar) \
   $MANPATH
 
 # Lang Settings
-set LANG en_US.UTF-8
-set LANGUAGE en_US.UTF-8
-set LC_ALL en_US.UTF-8
+set -x LANG en_US.UTF-8
+set -x LANGUAGE en_US.UTF-8
+set -x LC_ALL en_US.UTF-8
 
 source (rbenv init -|psub)
 
 # Set my editors to Sublime Text 2
-setenv EDITOR "vim"
-setenv VISUAL "vim"
-setenv PAGER "most"
+set -x EDITOR "vim"
+set -x VISUAL "vim"
+set -x PAGER "most"
 
 # Homebrew Cask options
-setenv HOMEBREW_CASK_OPTS "--appdir=/Applications"
+set -x HOMEBREW_CASK_OPTS "--appdir=/Applications"
 
 # Alias zone
 # Doesn't really reload, more of launches a new shell, but the results the same
