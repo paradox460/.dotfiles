@@ -1,5 +1,5 @@
 # Paths
-set -x PATH $HOME/.bin \
+set -gx PATH $HOME/.bin \
   $PATH
 
 # Completion paths (homebrew fix)
@@ -9,23 +9,24 @@ set fish_complete_path ~/.config/fish/completions/ \
   $fish_complete_path
 
 # Manpath
-set -x MANPATH (brew --cellar) \
+set -gx MANPATH (brew --cellar) \
   $MANPATH
 
 # Lang Settings
-set -x LANG en_US.UTF-8
-set -x LANGUAGE en_US.UTF-8
-set -x LC_ALL en_US.UTF-8
+set -gx LANG en_US.UTF-8
+set -gx LANGUAGE en_US.UTF-8
+set -gx LC_ALL en_US.UTF-8
 
-source (rbenv init -|psub)
+
+source (rbenv init - | sed 's/setenv/set -gx/g' | psub)
 
 # Set my editors to Sublime Text 2
-set -x EDITOR "vim"
-set -x VISUAL "vim"
-set -x PAGER "most"
+set -gx EDITOR "vim"
+set -gx VISUAL "vim"
+set -gx PAGER "most"
 
 # Homebrew Cask options
-set -x HOMEBREW_CASK_OPTS "--appdir=/Applications"
+set -gx HOMEBREW_CASK_OPTS "--appdir=/Applications"
 
 # Alias zone
 # Doesn't really reload, more of launches a new shell, but the results the same
@@ -128,7 +129,7 @@ end
 
 # NVM shit
 if type -q nvm
-  set -x NVM_DIR ~/.nvm
+  set -gx NVM_DIR ~/.nvm
   nvm >/dev/null ^/dev/null
 end
 source (which env_parallel.fish)
