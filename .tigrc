@@ -5,4 +5,8 @@ bind main U !env RBENV_VERSION=latest OVERCOMMIT_DISABLE=1 git up
 bind main E ?git commit --fixup %(commit)
 bind status A ?git commit --amend --no-edit
 
-set main-view	= line-number:no,interval=5 id:yes date:default author:full commit-title:yes,graph,refs,overflow=no
+set main-view-id = yes
+
+set diff-view-line-number = yes
+
+set mouse = yes
