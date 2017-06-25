@@ -1,12 +1,39 @@
 AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
+
+################################################################################
+# METRICS
+################################################################################
 Metrics/LineLength:
-  Enabled: false
-Style/DotPosition:
-  EnforcedStyle: trailing
-Style/AlignParameters:
-  EnforcedStyle: with_fixed_indentation
+  Max: 120
+
+################################################################################
+# STYLES
+################################################################################
 Style/AlignHash:
   EnforcedHashRocketStyle: table
   EnforcedColonStyle: table
+
+# The `do this and return` pattern is too useful to discard, but we don't want
+# to deal with them in conditionals, where order-of-operations matters. So we
+# restrict to that.
+# see http://www.prestonlee.com/2010/08/04/ruby-on-the-perl-origins-of-and-versus-and-and-or/
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/DotPosition:
+  EnforcedStyle: trailing
+
+# DoubleNegation is a useful pattern
+Style/DoubleNegation:
+  Enabled: false
+
+Style/TernaryParentheses:
+  Enabled: false
