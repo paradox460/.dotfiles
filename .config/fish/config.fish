@@ -28,6 +28,9 @@ set -gx PAGER "most"
 # Homebrew Cask options
 set -gx HOMEBREW_CASK_OPTS "--appdir=/Applications"
 
+# Ruby Options
+set -gx RUBYOPT -r$HOME/.rubyrc.rb
+
 # Alias zone
 # Doesn't really reload, more of launches a new shell, but the results the same
 alias reload 'exec fish -l'
