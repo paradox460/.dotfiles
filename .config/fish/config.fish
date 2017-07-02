@@ -135,4 +135,8 @@ if type -q nvm
   set -gx NVM_DIR ~/.nvm
   nvm >/dev/null ^/dev/null
 end
+
+# Homebrew command not found
+brew command command-not-found-init > /dev/null 2>&1; and . (brew command-not-found-init)
+
 source (which env_parallel.fish)
