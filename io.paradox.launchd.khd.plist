@@ -2,36 +2,34 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>Label</key>
-  <string>io.paradox.launchd.khd</string>
-  <key>ProgramArguments</key>
-  <array>
-  <string>/usr/local/Cellar/khd/2.2.2/bin/khd</string>
-  </array>
-  <key>EnvironmentVariables</key>
-  <dict>
-      <key>PATH</key>
-      <string>$PATH:/usr/local/Cellar/khd/2.2.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
-      <key>SHELL</key>
-      <string>/bin/bash</string>
-  </dict>
-  <key>KeepAlive</key>
-  <true/>
-  <key>StandardOutPath</key>
-  <string>/tmp/khd.out</string>
-  <key>StandardErrorPath</key>
-  <string>/tmp/khd.err</string>
-  <key>Sockets</key>
-  <dict>
-    <key>Listeners</key>
-    <dict>
-      <key>SockServiceName</key>
-      <string>3021</string>
-      <key>SockType</key>
-      <string>dgram</string>
-      <key>SockFamily</key>
-      <string>IPv4</string>
-  </dict>
-</dict>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/usr/local/Cellar/khd/3.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+		<key>SHELL</key>
+		<string>/bin/bash</string>
+	</dict>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>io.paradox.launchd.khd</string>
+	<key>Program</key>
+	<string>/usr/local/Cellar/khd/3.0.0/bin/khd</string>
+	<key>Sockets</key>
+	<dict>
+		<key>Listeners</key>
+		<dict>
+			<key>SockFamily</key>
+			<string>IPv4</string>
+			<key>SockServiceName</key>
+			<string>3021</string>
+			<key>SockType</key>
+			<string>dgram</string>
+		</dict>
+	</dict>
+	<key>StandardErrorPath</key>
+	<string>/tmp/khd.err</string>
+	<key>StandardOutPath</key>
+	<string>/tmp/khd.out</string>
 </dict>
 </plist>
