@@ -69,39 +69,6 @@ if status --is-interactive
   # Greeting on new terminal
   set fish_greeting (date)
 
-  # Prepend sudo when Alt+S is keyed
-  function prepend_sudo
-    set current_command (commandline)
-    commandline "sudo $current_command"
-  end
-
-  # Prepend bx (bundle exec) when Alt+X is keyed
-  function prepend_bundle_exec
-    set current_command (commandline)
-    commandline "bx $current_command"
-  end
-
-  # Prepend g (git) when Alt+G is keyed
-  function prepend_git
-    set current_command (commandline)
-    commandline "g $current_command"
-  end
-
-  # Prepend rbl (rbenv latest ) when Alt+R is keyed
-  function prepend_rbl
-    set current_command (commandline)
-    commandline "rbl $current_command"
-  end
-
-  # Deal with the hackishness needed to use custom binds in addition to vi mode
-  function paradox_binding
-    fish_vi_key_bindings
-    bind --mode insert \es prepend_sudo
-    bind -M insert \ex prepend_bundle_exec
-    bind -M insert \eg prepend_git
-    bind -M insert \er prepend_rbl
-  end
-
   set -g fish_key_bindings paradox_binding
 
   abbr g="git"
@@ -125,7 +92,7 @@ test -e ~/.iterm2_shell_integration.fish ; and source ~/.iterm2_shell_integratio
 # GPG stuff
 test -e ~/.config/fish/gnupg.fish ; and source ~/.config/fish/gnupg.fish
 
-# z
+# fisherman
 for file in ~/.config/fish/conf.d/*.fish
     source $file
 end
