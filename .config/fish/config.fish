@@ -18,7 +18,6 @@ set -gx LANGUAGE en_US.UTF-8
 set -gx LC_ALL en_US.UTF-8
 
 
-source (rbenv init - | sed 's/setenv/set -gx/g' | psub)
 
 # Set my editors to Sublime Text 2
 set -gx EDITOR "vim"
@@ -91,6 +90,9 @@ test -e ~/.iterm2_shell_integration.fish ; and source ~/.iterm2_shell_integratio
 
 # GPG stuff
 test -e ~/.config/fish/gnupg.fish ; and source ~/.config/fish/gnupg.fish
+
+# asdf
+test -e /usr/local/opt/asdf/asdf.fish ; and source /usr/local/opt/asdf/asdf.fish
 
 # fisherman
 for file in ~/.config/fish/conf.d/*.fish
