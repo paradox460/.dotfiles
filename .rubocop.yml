@@ -7,14 +7,19 @@ AllCops:
 ################################################################################
 Metrics/LineLength:
   Max: 120
+################################################################################
+# LAYOUT
+################################################################################
+Layout/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
 
 ################################################################################
 # STYLES
 ################################################################################
-Style/AlignHash:
-  EnforcedHashRocketStyle: table
-  EnforcedColonStyle: table
-
 # The `do this and return` pattern is too useful to discard, but we don't want
 # to deal with them in conditionals, where order-of-operations matters. So we
 # restrict to that.
@@ -27,9 +32,6 @@ Style/ClassAndModuleChildren:
 
 Style/Documentation:
   Enabled: false
-
-Style/DotPosition:
-  EnforcedStyle: trailing
 
 # DoubleNegation is a useful pattern
 Style/DoubleNegation:
