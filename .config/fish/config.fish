@@ -31,7 +31,7 @@ set -gx HOMEBREW_CASK_OPTS "--appdir=/Applications"
 set -gx RUBYOPT -r$HOME/.rubyrc.rb
 
 # Elixir Options
-set -gx ERL_AFLAGS -kernel shell_history enabled
+set -gx ERL_AFLAGS "-kernel shell_history enabled"
 
 
 
