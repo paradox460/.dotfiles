@@ -27,6 +27,9 @@ map('J', 'E');
 settings.hintAlign = "left";
 settings.smartPageBoundary = true;
 
+settings.nextLinkRegex = /((>>|next|→)+)/i;
+settings.prevLinkRegex = 	/((<<|←|prev(ious)?)+)/i;
+
 // Search aliases
 removeSearchAliasX('b', 's'); // Get rid of baidu
 removeSearchAliasX('w', 's'); // Get rid of bing
