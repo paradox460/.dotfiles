@@ -15,3 +15,4 @@
 .config/mpv/fonts.conf
 .config/QtProject
 .config/yarn
+.config/direnv/allow
