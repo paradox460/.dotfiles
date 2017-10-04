@@ -24,15 +24,11 @@ map('K', 'R');
 map('J', 'E');
 
 
-settings.hintAlign = "left";
-settings.smartPageBoundary = true;
-
-settings.nextLinkRegex = /((>>|next|→)+)/i;
-settings.prevLinkRegex = 	/((<<|←|prev(ious)?)+)/i;
+settings.hintAlign = "left"
 
 // Search aliases
-removeSearchAliasX('b', 's'); // Get rid of baidu
-removeSearchAliasX('w', 's'); // Get rid of bing
+removeSearchAliasX('b', 's') // Get rid of baidu
+removeSearchAliasX('w', 's') // Get rid of bing
 
 // Wikipedia search alias
 addSearchAliasX(
@@ -50,7 +46,7 @@ addSearchAliasX(
   'pivotal story id',
   'https://www.pivotaltracker.com/story/show/',
   's'
-);
+)
 
 // click `Save` button to make above settings to take effect.
 // set theme
