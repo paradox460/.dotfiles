@@ -33,7 +33,9 @@ set -gx RUBYOPT -r$HOME/.rubyrc.rb
 # Elixir Options
 set -gx ERL_AFLAGS "-kernel shell_history enabled"
 
+set -gx GOPATH ~/.go
 
+set -gx PATH $PATH $GOPATH/bin
 
 # Alias zone
 # Doesn't really reload, more of launches a new shell, but the results the same
@@ -107,7 +109,7 @@ end
 # Homebrew command not found
 brew command command-not-found-init > /dev/null 2>&1; and . (brew command-not-found-init)
 
-# TRR env overrides
-test -e ~/.config/fish/trr.fish ; and source ~/.config/fish/trr.fish
+# Direnv
+eval (direnv hook fish)
 
 source (which env_parallel.fish)
