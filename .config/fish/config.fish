@@ -110,6 +110,7 @@ end
 brew command command-not-found-init > /dev/null 2>&1; and . (brew command-not-found-init)
 
 # Direnv
-eval (direnv hook fish)
+test -e /usr/local/bin/direnv ; and eval (direnv hook fish)
 
-source (which env_parallel.fish)
+# env_parallel for gnu parallel
+test -e /usr/local/bin/env_parallel.fish ; and source (which env_parallel.fish)
