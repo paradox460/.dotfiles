@@ -48,6 +48,7 @@ addSearchAliasX(
   's'
 )
 
+Hints.style(`font-family: "Helvetica Neue" `);
 // click `Save` button to make above settings to take effect.
 // set theme
 // settings.theme = `
