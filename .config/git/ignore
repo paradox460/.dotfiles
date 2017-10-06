@@ -21,3 +21,6 @@ Temporary Items
 
 # CTags
 .tags
+
+# direnv
+.envrc
