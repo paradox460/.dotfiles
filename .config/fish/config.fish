@@ -33,9 +33,9 @@ set -gx RUBYOPT -r$HOME/.rubyrc.rb
 # Elixir Options
 set -gx ERL_AFLAGS "-kernel shell_history enabled"
 
-set -gx GOPATH ~/.go
+test -e ~/.go; and set -gx GOPATH ~/.go
 
-set -gx PATH $PATH $GOPATH/bin
+test -e ~/.go/bin; and set -gx PATH $PATH $GOPATH/bin
 
 # Alias zone
 # Doesn't really reload, more of launches a new shell, but the results the same
