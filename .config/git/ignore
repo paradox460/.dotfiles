@@ -24,3 +24,6 @@ Temporary Items
 
 # direnv
 .envrc
+
+# pt
+.pt 
