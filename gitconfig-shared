@@ -33,6 +33,7 @@
 
   # Push Gently
   pf = push --force-with-lease
+
   # Create a branch based off the current branch's name. Ex: I'm on "mybranch", the new branch would be called "mybranch-newbranch"
   cb = "!f() { H=$(git current-branch); git checkout -b $H-$1; }; f"
 
@@ -53,6 +54,9 @@
 
   # Clean up old branches
   dm = "!f() { git branch --merged | gsed -E '/^\\*|master/D; s/\\s+//' | vipe | xargs git branch -D; }; f"
+
+  # Reset to remote hard
+  ro = "!f() { H=$(git current-branch); git reset --hard origin/$H; }; f"
 
 [mergetool]
   prompt = false
