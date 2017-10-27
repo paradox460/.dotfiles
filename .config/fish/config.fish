@@ -45,12 +45,12 @@ alias reload 'exec fish -l'
 alias git hub
 
 # Run something in the latest version of ruby
-alias rbl "env ASDF_RUBY_VERSION=2.4.1 "
+alias rbl "env ASDF_RUBY_VERSION=2.4.2 "
 
 # Disable overcommit
 alias disoc "env OVERCOMMIT_DISABLE=1 "
 
-alias rbldisoc "env OVERCOMMIT_DISABLE=1 ASDF_RUBY_VERSION=2.4.1 "
+alias rbldisoc "env OVERCOMMIT_DISABLE=1 ASDF_RUBY_VERSION=2.4.2 "
 
 # Add editor override to use atom
 alias atomedit "env EDITOR='atom -w' VISUAL='atom -w' "
