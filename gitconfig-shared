@@ -87,6 +87,7 @@
 [credential]
     helper = osxkeychain
 [rebase]
+  autosquash = true
   autostash = true
 [commit]
   gpgsign = true
