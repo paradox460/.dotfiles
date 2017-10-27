@@ -1,9 +1,10 @@
 # Main bindings
 bind main O ?git rebase -i %(commit)^
-bind main P ?git rebase %(prompt)
+bind main P ?git rebase "%(prompt Enter branch name: )"
 bind main U !env RBENV_VERSION=latest OVERCOMMIT_DISABLE=1 git up
-bind main E ?git commit --fixup %(commit)
-bind status A ?git commit --amend --no-edit
+bind main E ?@git commit --fixup %(commit)
+bind status A ?@git commit --amend --no-edit
+bind status X ?@rm %(file)
 
 set main-view-id = yes
 
