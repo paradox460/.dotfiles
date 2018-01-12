@@ -77,19 +77,19 @@ if status --is-interactive
 
   set -g fish_key_bindings paradox_binding
 
-  abbr g="git"
-  abbr gst="git status"
-  abbr gcm="git commit -m"
-  abbr gc="git checkout"
-  abbr gcb="git checkout -b"
-  abbr gu="rbldisoc git up"
+  abbr --add g "git"
+  abbr --add gst "git status"
+  abbr --add gcm "git commit -m"
+  abbr --add gc "git checkout"
+  abbr --add gcb "git checkout -b"
+  abbr --add gu "rbldisoc git up"
 
   # Ruby
-  abbr b="bundle"
-  abbr bx="bundle exec"
-  abbr rk="rake"
-  abbr rb="ruby"
-  abbr bxr="bundle exec rake"
+  abbr --add b "bundle"
+  abbr --add bx "bundle exec"
+  abbr --add rk "rake"
+  abbr --add rb "ruby"
+  abbr --add bxr "bundle exec rake"
 end
 
 # iTerm 2 fish integration
