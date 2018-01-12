@@ -107,7 +107,7 @@ for file in ~/.config/fish/conf.d/*.fish
 end
 
 # Homebrew command not found
-brew command command-not-found-init > /dev/null 2>&1; and . (brew command-not-found-init)
+# brew command command-not-found-init > /dev/null 2>&1; and source (brew command-not-found-init)
 
 # Direnv
 test -e /usr/local/bin/direnv ; and eval (direnv hook fish)
