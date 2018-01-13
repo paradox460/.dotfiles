@@ -5,26 +5,28 @@ mapkey('p', "Open the clipboard's URL in the current tab", function() {
         window.location.href = response.data;
     });
 });
-map('P', 'cc');
+map('P' , 'cc');
 map('gi', 'i');
-map('F', 'C');
+map('_F', 'F');
+map('F' , 'C');
+map('C' , '_F');
 map('gf', 'w');
-map('`', '\'');
-// save default key `t` to temp key `>_t`
-map('>_t', 't');
-// create a new key `t` for default key `on`
-map('t', 'on');
-// create a new key `o` for saved temp key `>_t`
-map('o', '>_t');
-map('H', 'S');
-map('L', 'D');
+map('`' , '\'');
+map('H' , 'S');
+map('L' , 'D');
 map('gt', 'R');
 map('gT', 'E');
-map('K', 'R');
-map('J', 'E');
+map('K' , 'R');
+map('J' , 'E');
+
+// Unmap temporary keys
+unmap('_F');
 
 
 settings.hintAlign = "left"
+
+// Smart Page Boundary
+settings.smartPageBoundary = true;
 
 // Search aliases
 removeSearchAliasX('b', 's') // Get rid of baidu
@@ -47,6 +49,7 @@ addSearchAliasX(
   'https://www.pivotaltracker.com/story/show/',
   's'
 )
+
 
 Hints.style(`font-family: "Helvetica Neue" `);
 // click `Save` button to make above settings to take effect.
@@ -72,3 +75,5 @@ Hints.style(`font-family: "Helvetica Neue" `);
 // .sk_theme .focused {
 //     background: #aaa;
 // }`;
+
+
