@@ -1,1 +1,1 @@
-mpv-scripts/seek-to.lua
+mpv-scripts/scripts/seek-to.lua
