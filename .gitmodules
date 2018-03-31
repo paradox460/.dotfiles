@@ -19,3 +19,6 @@
 [submodule ".vim/bundle/vim-easymotion"]
 	path = .vim/bundle/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion
+[submodule ".vim/bundle/vim-sort-motion"]
+	path = .vim/bundle/vim-sort-motion
+	url = https://github.com/christoomey/vim-sort-motion
