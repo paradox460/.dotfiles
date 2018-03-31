@@ -1,1 +1,1 @@
-mpv-scripts/crop.lua
+mpv-scripts/scripts/crop.lua
