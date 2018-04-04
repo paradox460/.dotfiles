@@ -3,7 +3,7 @@
 	url = git://github.com/godlygeek/tabular.git
 [submodule ".config/mpv/scripts/mpv-scripts"]
 	path = .config/mpv/scripts/mpv-scripts
-	url = git@github.com:occivink/mpv-scripts.git
+	url = https://github.com/occivink/mpv-scripts.git
 [submodule ".vim/bundle/Vundle.vim"]
 	path = .vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
