@@ -8,7 +8,8 @@ mapkey('p', "Open the clipboard's URL in the current tab", function() {
 map('P' , 'cc');
 map('gi', 'i');
 map('_F', 'F');
-map('F' , 'C');
+map('_C', 'C');
+map('F' , '_C');
 map('C' , '_F');
 map('gf', 'w');
 map('`' , '\'');
@@ -75,5 +76,6 @@ Hints.style(`font-family: "Helvetica Neue" `);
 // .sk_theme .focused {
 //     background: #aaa;
 // }`;
+
 
 
