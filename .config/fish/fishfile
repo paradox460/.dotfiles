@@ -1,9 +1,4 @@
-fisherman/await
 brgmnn/fish-docker-compose
 barnybug/docker-fish-completion
-fishgretel/fasd
-fisherman/fzf
-fisherman/get
-fisherman/getopts
-fisherman/last_job_id
+paradox460/fasd
 fisherman/settitle
