@@ -33,6 +33,22 @@ set -gx RUBYOPT -r$HOME/.rubyrc.rb
 # Elixir Options
 set -gx ERL_AFLAGS "-kernel shell_history enabled"
 
+if command -sq fzf
+  # Utilities
+  set -l dirpreview "--preview 'tree --dirsfirst -C {} | head -200'"
+
+  # FZF Config
+  set -gx FZF_DEFAULT_OPTS "--height 40% --reverse --border --multi --cycle --inline-info"
+  # Options for history mode
+  set -gx FZF_CTRL_R_OPTS "--no-multi --prompt='history> ' --preview 'echo {}' --preview-window='down:3:wrap'"
+  # Options for CD mode
+  set -gx FZF_ALT_C_OPTS "--no-multi --select-1 --exit-0 --prompt='cd> ' $dirpreview"
+  # Options for file mode
+  set -gx FZF_CTRL_T_OPTS "--prompt='file> ' --select-1 --exit-0 --preview 'if test -e {}; begin; highlight -O ansi -l {} ^/dev/null; or cat {}; or tree --dirsfirst -C {}; end ^/dev/null | head -200;end'"
+  # Options for Z mode
+  set -gx FZF_Z_OPTS $dirpreview
+end
+
 test -e ~/.go; and set -gx GOPATH ~/.go
 
 test -e ~/.go/bin; and set -gx PATH $PATH $GOPATH/bin
@@ -63,8 +79,14 @@ alias d='fasd -d'        # directory
 alias f='fasd -f'        # file
 alias sd='fasd -sid'     # interactive directory selection
 alias sf='fasd -sif'     # interactive file selection
-alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias z='fzf_z'          # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
+
+# Up
+alias u='fzf_up'
+
+# CDHist
+alias cdh='fzf_cdhist'
 
 # Fundle fish plugin manager
 test -e ~/.config/fish/fundle_config.fish ; and source ~/.config/fish/fundle_config.fish
