@@ -216,6 +216,7 @@ swap - c                :   kwmc window -m space right
 swap + shift - 1        :   kwmc window -m display 0
 swap + shift - 2        :   kwmc window -m display 1
 swap + shift - 3        :   kwmc window -m display 2
+swap + shift - 4        :   kwmc window -m display 3
 
 
 
