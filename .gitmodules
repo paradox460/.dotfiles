@@ -1,24 +1,3 @@
-[submodule ".vim/bundle/tabular"]
-	path = .vim/bundle/tabular
-	url = git://github.com/godlygeek/tabular.git
 [submodule ".config/mpv/scripts/mpv-scripts"]
 	path = .config/mpv/scripts/mpv-scripts
 	url = https://github.com/occivink/mpv-scripts.git
-[submodule ".vim/bundle/Vundle.vim"]
-	path = .vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule ".vim/bundle/vim-surround"]
-	path = .vim/bundle/vim-surround
-	url = git://github.com/tpope/vim-surround.git
-[submodule ".vim/bundle/vim-repeat"]
-	path = .vim/bundle/vim-repeat
-	url = git://github.com/tpope/vim-repeat.git
-[submodule ".vim/bundle/vim-textobj-user"]
-	path = .vim/bundle/vim-textobj-user
-	url = git://github.com/kana/vim-textobj-user.git
-[submodule ".vim/bundle/vim-easymotion"]
-	path = .vim/bundle/vim-easymotion
-	url = https://github.com/easymotion/vim-easymotion
-[submodule ".vim/bundle/vim-sort-motion"]
-	path = .vim/bundle/vim-sort-motion
-	url = https://github.com/christoomey/vim-sort-motion
