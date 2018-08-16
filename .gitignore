@@ -16,3 +16,5 @@
 .config/QtProject
 .config/yarn
 .config/direnv/allow
+
+.vim/bundle
