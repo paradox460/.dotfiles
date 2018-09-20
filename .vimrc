@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+set shell=bash " Bash shell is needed for Vundle, it complains without it
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -35,7 +36,7 @@ endtry
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -81,6 +82,9 @@ let g:EasyMotion_keys='qwertzxcvbgasdf'
 
 " Asterisk
 let g:asterisk#keeppos = 1
+
+" Tables
+let g:table_mode_corner='|'
 
 " Load custom keybinds
 try
