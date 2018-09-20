@@ -121,7 +121,7 @@ test -e ~/.iterm2_shell_integration.fish ; and source ~/.iterm2_shell_integratio
 test -e ~/.config/fish/gnupg.fish ; and source ~/.config/fish/gnupg.fish
 
 # asdf
-test -e /usr/local/opt/asdf/asdf.fish ; and source /usr/local/opt/asdf/asdf.fish
+test -e ~/.asdf/asdf.fish ; and source ~/.asdf/asdf.fish
 
 # fisherman
 for file in ~/.config/fish/conf.d/*.fish
