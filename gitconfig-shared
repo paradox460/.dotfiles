@@ -58,6 +58,9 @@
   # Reset to remote hard
   ro = "!f() { H=$(git current-branch); git reset --hard origin/$H; }; f"
 
+  # View a range-diff of the previous rebase
+  rd = range-diff @{u} @{1} @
+
 [mergetool]
   prompt = false
 [mergetool "Kaleidoscope"]
