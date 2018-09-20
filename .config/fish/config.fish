@@ -8,10 +8,6 @@ set fish_complete_path ~/.config/fish/completions/ \
   /usr/local/share/fish/vendor_completions.d/ \
   $fish_complete_path
 
-# Manpath
-set -gx MANPATH (brew --cellar) \
-  $MANPATH
-
 # Lang Settings
 set -gx LANG en_US.UTF-8
 set -gx LANGUAGE en_US.UTF-8
