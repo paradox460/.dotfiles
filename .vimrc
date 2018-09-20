@@ -45,6 +45,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
 set backspace=2    " more powerful backspacing
 
 " Fix some indent shit
@@ -60,6 +61,13 @@ set relativenumber number
 " Show command
 set showcmd
 
+" Search enhancements
+set hlsearch " enable highlight search queries
+set incsearch " highlight search as you type
+
+" Hidden buffer support
+set hidden
+
 " fzf
 set rtp+=/usr/local/opt/fzf
 
@@ -70,6 +78,9 @@ set statusline=[%n]\ %f%(\ %r%)\%m\ %y%=%4l:%02v/%L\ %3p%%
 " EasyMotion
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_keys='qwertzxcvbgasdf'
+
+" Asterisk
+let g:asterisk#keeppos = 1
 
 " Load custom keybinds
 try
