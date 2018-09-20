@@ -9,14 +9,10 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'kana/vim-textobj-user'
-Plugin 'christoomey/vim-sort-motion'
-Plugin 'plasticboy/vim-markdown'
-
+try
+  source ~/.vim/config/plugins.vim
+catch
+endtry
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -74,3 +70,9 @@ set statusline=[%n]\ %f%(\ %r%)\%m\ %y%=%4l:%02v/%L\ %3p%%
 " EasyMotion
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_keys='qwertzxcvbgasdf'
+
+" Load custom keybinds
+try
+  source ~/.vim/config/keybinds.vim
+catch
+endtry
