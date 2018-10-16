@@ -27,3 +27,6 @@ Temporary Items
 
 # pt
 .pt 
+
+# Emacs
+.dir-locals.el
