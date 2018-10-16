@@ -312,19 +312,41 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+  ;; Typewriter mode
   (spacemacs/toggle-centered-point-globally-on)
+
+  ;; Indent guides
   (spacemacs/toggle-indent-guide-globally-on)
 
+  ;; Don't pollute the system clipboard
   (setq x-select-enable-clipboard nil)
+  (fset 'evil-visual-update-x-selection 'ignore)
 
+  ;; Fix powerline to not be hideously ugly
+  (setq powerline-image-apple-rgb t)
+  (setq powerline-default-separator 'roundstub)
+
+  ;; Whenever a PDF changes, reload it
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
+  ;; Enable magithub to inject into magit
   ;; Eventually need to move this and the init to its own layer. But for now this is good enough
   (use-package magithub
     :after magit
     :config (magithub-feature-autoinject t))
 
-)
+  ;; ⌘-/ for comment toggle
+  (evil-define-key '( normal insert visual ) 'global (kbd "s-/") 'spacemacs/comment-or-uncomment-lines)
+
+  ;;⌘-v in insert mode = system clipboard paste
+  (defun my-evil-system-paste ()
+    (interactive)
+    (evil-paste-from-register ?+))
+
+  (evil-define-key 'insert 'global (kbd "s-v") 'my-evil-system-paste)
+
+  )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
