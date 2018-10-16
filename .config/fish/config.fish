@@ -45,6 +45,9 @@ if command -sq fzf
   set -gx FZF_Z_OPTS $dirpreview
 end
 
+# ripgrep config
+set -gx RIPGREP_CONFIG_PATH $HOME/.ripgreprc
+
 test -e ~/.go; and set -gx GOPATH ~/.go
 
 test -e ~/.go/bin; and set -gx PATH $PATH $GOPATH/bin
