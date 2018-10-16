@@ -33,8 +33,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
-     api-keys
+   '(api-keys
      auto-completion
      better-defaults
      elixir
@@ -42,6 +41,8 @@ This function should only modify configuration layer settings."
      git
      github
      helm
+     html
+     imenu-list
      javascript
      latex
      markdown
@@ -465,6 +466,9 @@ you should place your code here."
   ;; Indent guides
   (spacemacs/toggle-indent-guide-globally-on)
 
+  ;; Indent column highlight
+  (spacemacs/toggle-highlight-indentation-current-column-on)
+
   ;; Don't pollute the system clipboard
   (setq x-select-enable-clipboard nil)
   (fset 'evil-visual-update-x-selection 'ignore)
@@ -479,6 +483,7 @@ you should place your code here."
   ;; Eventually need to move this and the init to its own layer. But for now this is good enough
   (use-package magithub
     :after magit
+    :ensure t
     :config (magithub-feature-autoinject t))
 
   ;; ⌘-/ for comment toggle
@@ -491,8 +496,15 @@ you should place your code here."
 
   (evil-define-key 'insert 'global (kbd "s-v") 'my-evil-system-paste)
 
-  (custom-set-faces
-   '(ediff-fine-diff-B ((t (:background "dark green")))))
+  ;; Tweak indentation highlight styles
+  (set-face-attribute 'highlight-indentation-current-column-face nil :background (plist-get base16-tomorrow-night-colors :base02))
+
+  ;; Ediff color changes for readability
+  (eval-after-load 'ediff '(progn
+     (set-face-attribute 'ediff-fine-diff-A nil)
+     (set-face-attribute 'ediff-fine-diff-B nil :background (plist-get base16-tomorrow-night-colors :base0B) :foreground (plist-get base16-tomorrow-night-colors :base00))
+     ))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
