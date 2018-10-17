@@ -284,7 +284,7 @@ It should only modify the values of Spacemacs settings."
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
    ;; right; if there is insufficient space it displays it at the bottom.
    ;; (default 'bottom)
-   dotspacemacs-which-key-position 'right
+   dotspacemacs-which-key-position 'bottom
 
    ;; Control where `switch-to-buffer' displays the buffer. If nil,
    ;; `switch-to-buffer' displays the buffer in the current window even if
