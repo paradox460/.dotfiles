@@ -1,5 +1,5 @@
 # Force context
---context 3
+--context=3
 
 # SmartCase
 --smart-case
