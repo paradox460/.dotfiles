@@ -30,3 +30,6 @@ Temporary Items
 
 # Emacs
 .dir-locals.el
+
+# Elixir-ls
+.elixir_ls
