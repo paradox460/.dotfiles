@@ -33,7 +33,8 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(api-keys
+   '(yaml
+     api-keys
      auto-completion
      better-defaults
      elixir
@@ -51,10 +52,12 @@ This function should only modify configuration layer settings."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
+     shell-scripts
      spell-checking
      syntax-checking
+     ruby
      (version-control :variables
-                       version-control-diff-side 'left)
+                      version-control-diff-side 'left)
      )
 
    ;; List of additional packages that will be installed without being
@@ -501,8 +504,15 @@ you should place your code here."
 
   ;; Ediff color changes for readability
   (eval-after-load 'ediff '(progn
-     (set-face-attribute 'ediff-fine-diff-A nil)
-     (set-face-attribute 'ediff-fine-diff-B nil :background (plist-get base16-tomorrow-night-colors :base0B) :foreground (plist-get base16-tomorrow-night-colors :base00))
-     ))
+                             (set-face-attribute 'ediff-fine-diff-A nil)
+                             (set-face-attribute 'ediff-fine-diff-B nil :background (plist-get base16-tomorrow-night-colors :base0B) :foreground (plist-get base16-tomorrow-night-colors :base00))
+                             ))
+
+  ;; Configuration for autocompletion
+  (setq-default dotspacemacs-configuration-layers
+                '((auto-completion :variables
+                                   auto-completion-enable-help-tooltip t auto-completion-enable-snippets-in-popup t)))
+
+
 
   )
