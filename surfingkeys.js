@@ -24,7 +24,7 @@ map('J' , 'E');
 unmap('_F');
 
 
-settings.hintAlign = "left"
+// settings.hintAlign = "left"
 
 // Smart Page Boundary
 settings.smartPageBoundary = true;
@@ -76,6 +76,3 @@ Hints.style(`font-family: "Helvetica Neue" `);
 // .sk_theme .focused {
 //     background: #aaa;
 // }`;
-
-
-
