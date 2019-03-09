@@ -17,4 +17,6 @@
 .config/yarn
 .config/direnv/allow
 
-.vim/bundle
+# Vim bundles, except vundle
+.vim/bundle/*
+!.vim/bundle/Vundle.vim
