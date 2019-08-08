@@ -33,3 +33,6 @@ Temporary Items
 
 # Elixir-ls
 .elixir_ls
+
+# VsCode
+.vscode/
