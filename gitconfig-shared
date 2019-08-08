@@ -52,8 +52,8 @@
   # grep everything
   gg ="!f() { git rev-list --all | xargs git grep $1; }; f"
 
-  # Clean up old branches
-  dm = "!f() { git branch --merged | gsed -E '/^\\*|master/D; s/\\s+//' | vipe | xargs git branch -D; }; f"
+  # Clean up branches
+  dm = "!f() { git branch | gsed -E '/^\\*|master/D; s/\\s+//' | vipe | xargs git branch -D; }; f"
 
   # Reset to remote hard
   ro = "!f() { H=$(git current-branch); git reset --hard origin/$H; }; f"
