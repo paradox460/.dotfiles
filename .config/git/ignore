@@ -36,3 +36,6 @@ Temporary Items
 
 # VsCode
 .vscode/
+
+# VSCode Local History
+.history/
