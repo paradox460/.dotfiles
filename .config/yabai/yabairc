@@ -16,7 +16,7 @@ yabai -m config mouse_follows_focus          off
 yabai -m config focus_follows_mouse          off
 yabai -m config window_placement             second_child
 yabai -m config window_topmost               off
-yabai -m config window_opacity               on
+yabai -m config window_opacity               off
 yabai -m config window_opacity_duration      0.0
 yabai -m config window_shadow                on
 yabai -m config window_border                off
@@ -42,5 +42,10 @@ yabai -m config bottom_padding                0
 yabai -m config left_padding                  0
 yabai -m config right_padding                 0
 yabai -m config window_gap                   10
+
+
+# Rules for apps
+# System prefs should always float
+yabai -m rule --add label="Floating SysPrefs" app="System Preferences" manage=off
 
 echo "yabai configuration loaded.."

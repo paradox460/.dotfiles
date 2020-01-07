@@ -43,6 +43,7 @@ layout < p : yabai -m window --toggle sticky;\
              yabai -m window --toggle pip
 
 layout < z : yabai -m window --toggle zoom-fullscreen
+layout < f : yabai -m window --toggle float
 
 layout < h : yabai -m window --resize left:20:0
 layout < j : yabai -m window --resize bottom:0:20
