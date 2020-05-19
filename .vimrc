@@ -86,6 +86,10 @@ let g:asterisk#keeppos = 1
 " Tables
 let g:table_mode_corner='|'
 
+" NERDCommenter
+let g:NERDSpaceDelims = 1
+let g:NERDTrimTrailingWhitespace = 1
+
 " Load custom keybinds
 try
   source ~/.vim/config/keybinds.vim
