@@ -250,11 +250,4 @@ input {
 .ace_marker-layer .ace_selection {
   background: var(--select) !important;
 }
-.ace_editor,
-.ace_dialog span,
-.ace_dialog input {
-  font-family: var(--font);
-  font-size: var(--font-size);
-  font-weight: var(--font-weight);
-}
 `;
