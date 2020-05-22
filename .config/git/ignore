@@ -39,3 +39,6 @@ Temporary Items
 
 # VSCode Local History
 .history/
+
+# Patch files
+*.patch
