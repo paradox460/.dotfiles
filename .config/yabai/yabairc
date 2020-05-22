@@ -47,5 +47,7 @@ yabai -m config window_gap                   10
 # Rules for apps
 # System prefs should always float
 yabai -m rule --add label="Floating SysPrefs" app="System Preferences" manage=off
+# Floating dash windows
+yabai -m rule --add label="Floating Dash" app="Dash" manage=off
 
 echo "yabai configuration loaded.."
