@@ -59,18 +59,6 @@ alias reload 'exec fish -l'
 # Hub is a useful tool that provides github integration. If you don't use it, I recommend deleting these lines
 alias git hub
 
-# Run something in the latest version of ruby
-alias rbl "env ASDF_RUBY_VERSION=2.5.1"
-
-# Disable overcommit
-alias disoc "env OVERCOMMIT_DISABLE=1 "
-
-alias rbldisoc "env OVERCOMMIT_DISABLE=1 ASDF_RUBY_VERSION=2.5.1 "
-
-# Add editor override to use atom
-alias atomedit "env EDITOR='atom -w' VISUAL='atom -w' "
-
-
 # fasd
 alias a='fasd -a'        # any
 alias s='fasd -si'       # show / search / select
@@ -111,6 +99,9 @@ if status --is-interactive
   abbr --add rk "rake"
   abbr --add rb "ruby"
   abbr --add bxr "bundle exec rake"
+
+  # Github Slack Spammer
+  abbr --add ghss "github_slack_spammer"
 end
 
 # iTerm 2 fish integration
