@@ -16,6 +16,7 @@
 .config/QtProject
 .config/yarn
 .config/direnv/allow
+.config/mpv/script-opts/sponsorblock.conf
 
 # Vim bundles, except vundle
 .vim/bundle/*
