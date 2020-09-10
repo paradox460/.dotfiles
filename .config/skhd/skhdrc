@@ -62,6 +62,10 @@ swap < h : yabai -m window --swap west
 swap < j : yabai -m window --swap south
 swap < k : yabai -m window --swap north
 swap < l : yabai -m window --swap east
+swap < shift - h : yabai -m window --stack west
+swap < shift - j : yabai -m window --stack south
+swap < shift - k : yabai -m window --stack north
+swap < shift - l : yabai -m window --stack east
 
 swap < n :  yabai -m window --display prev; yabai -m display --focus prev
 swap < m : yabai -m window --display next; yabai -m display --focus next
