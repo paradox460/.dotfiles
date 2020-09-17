@@ -35,5 +35,7 @@ yabai -m config window_gap                    5
 yabai -m rule --add label="Floating SysPrefs" app="System Preferences" manage=off
 # Floating dash windows
 yabai -m rule --add label="Floating Dash" app="Dash" manage=off
+# Fantastical floats
+yabai -m rule --add label="Floating Fantastical" app="Fantastical Helper" manage=off
 
 echo "yabai configuration loaded.."
