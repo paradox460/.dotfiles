@@ -54,6 +54,28 @@ addSearchAliasX(
   's'
 )
 
+// Improve default remove query/fragment
+mapkey('g?', '#Reload current page without query', function() {
+  window.location.href = window.location.href.replace(/\?[^?#]*/, '');
+});
+mapkey('g#', '#Reload current page without hash fragment', function() {
+  window.location.href = window.location.href.replace(/\#[^#]*/, '');
+});
+mapkey('gB', '#Reload current page without query or hash fragment', function() {
+  window.location.href = window.location.href.replace(/[#?].*/, '');
+});
+
+// Add copy without query/fragment
+mapkey('y?', "#7Copy current page's URL without query", function() {
+  Clipboard.write(window.location.href.replace(/\?[^?#]*/, ''))
+});
+mapkey('y#', "#7Copy current page's URL without hash fragment", function() {
+  Clipboard.write(window.location.href.replace(/#[^#]*/, ''))
+});
+mapkey('yb', "#7Copy current page's URL without query or hash fragment", function() {
+  Clipboard.write(window.location.href.replace(/[#?].*$/, ''))
+});
+
 // Bottom-style omnibar
 settings.omnibarPosition = 'bottom'
 
