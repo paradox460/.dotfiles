@@ -14,10 +14,9 @@ set -gx LANGUAGE en_US.UTF-8
 set -gx LC_ALL en_US.UTF-8
 
 
-
 # Set my editors to Sublime Text 2
-set -gx EDITOR "vim"
-set -gx VISUAL "vim"
+set -gx EDITOR "nvim"
+set -gx VISUAL "nvim"
 set -gx PAGER "most"
 
 # Homebrew Cask options
@@ -74,6 +73,9 @@ alias u='fzf_up'
 
 # CDHist
 alias cdh='fzf_cdhist'
+
+# Nvim all the time
+alias vim='nvim'
 
 # Fundle fish plugin manager
 test -e ~/.config/fish/fundle_config.fish ; and source ~/.config/fish/fundle_config.fish
