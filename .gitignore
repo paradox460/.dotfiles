@@ -18,6 +18,7 @@
 .config/direnv/allow
 .config/mpv/script-opts/sponsorblock.conf
 
-# Vim bundles, except vundle
-.vim/bundle/*
-!.vim/bundle/Vundle.vim
+# Vim raw plugins
+.vim/plugged
+.config/coc
+
