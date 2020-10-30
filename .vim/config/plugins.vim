@@ -8,7 +8,13 @@ Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+
+"Textobjects
 Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-line'
+
 Plug 'christoomey/vim-sort-motion' "Sort Motions
 Plug 'haya14busa/vim-asterisk' " Better * search
 Plug 'haya14busa/is.vim' " Incremental Switch enhancements
@@ -17,6 +23,8 @@ Plug 'vim-pandoc/vim-pandoc' " Pandoc for great justice. Also better markdown th
 Plug 'vim-pandoc/vim-pandoc-syntax' " Syntax Plug for pandoc styles
 Plug 'dhruvasagar/vim-table-mode' " Markdown tables, made easier
 Plug 'scrooloose/nerdcommenter' " Easier commenting
+Plug 'vim-scripts/ReplaceWithRegister' " Replaces selection/textobj with register
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Code Completion
 
 call plug#end()
