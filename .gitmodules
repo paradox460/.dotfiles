@@ -7,3 +7,6 @@
 [submodule ".config/mpv/scripts/mpv_sponsorblock"]
 	path = .config/mpv/scripts/mpv_sponsorblock
 	url = https://github.com/po5/mpv_sponsorblock
+[submodule ".config/mpv/scripts/mpv-createchapter"]
+	path = .config/mpv/scripts/mpv-createchapter
+	url = https://github.com/shinchiro/mpv-createchapter
