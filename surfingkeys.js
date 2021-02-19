@@ -23,11 +23,13 @@ map('J' , 'E');
 // Unmap temporary keys
 unmap('_F');
 
+// Unmap emoji input
+iunmap(':');
 
 // settings.hintAlign = "left"
 
 //Add shift-toggle for background hints
-settings.hintShiftNonActive = true
+settings.hintShiftNonActive = true;
 
 // Smart Page Boundary
 settings.smartPageBoundary = true;
@@ -52,16 +54,24 @@ addSearchAliasX(
   'pivotal story id',
   'https://www.pivotaltracker.com/story/show/',
   's'
-)
+);
+
+// Change open detected URL to new tab
+unmap("O");
+mapkey('O', '#1Open detected links from text', function() {
+  Hints.create(runtime.conf.clickablePat, function(element) {
+      window.open(element[2]);
+  }, {statusLine: "Open detected links from text"});
+});
 
 // Improve default remove query/fragment
-mapkey('g?', '#Reload current page without query', function() {
+mapkey('g?', '#4Reload current page without query', function() {
   window.location.href = window.location.href.replace(/\?[^?#]*/, '');
 });
-mapkey('g#', '#Reload current page without hash fragment', function() {
+mapkey('g#', '#4Reload current page without hash fragment', function() {
   window.location.href = window.location.href.replace(/\#[^#]*/, '');
 });
-mapkey('gB', '#Reload current page without query or hash fragment', function() {
+mapkey('gB', '#4Reload current page without query or hash fragment', function() {
   window.location.href = window.location.href.replace(/[#?].*/, '');
 });
 
@@ -76,8 +86,24 @@ mapkey('yb', "#7Copy current page's URL without query or hash fragment", functio
   Clipboard.write(window.location.href.replace(/[#?].*$/, ''))
 });
 
+// Base64 stuff
+vmapkey("dy", "#9Base64 decode and copy selection", function() {
+  const text = window.getSelection().toString()
+  Clipboard.write(atob(text))
+  Visual.toggle();
+});
+
+vmapkey("do", "#9Base64 decode selection and open as URL", function() {
+  const text = window.getSelection().toString()
+  window.open(atob(text));
+  Visual.toggle()
+});
+
 // Bottom-style omnibar
-settings.omnibarPosition = 'bottom'
+settings.omnibarPosition = 'bottom';
+
+// Open new tabs at end
+settings.newTabPosition = 'last';
 
 // Tomorrow night style hints
 Hints.style('font-family: system-ui;');
