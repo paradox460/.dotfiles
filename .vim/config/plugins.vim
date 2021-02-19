@@ -8,6 +8,7 @@ Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug '907th/vim-auto-save'
 
 "Textobjects
 Plug 'kana/vim-textobj-user'
@@ -26,5 +27,6 @@ Plug 'scrooloose/nerdcommenter' " Easier commenting
 Plug 'vim-scripts/ReplaceWithRegister' " Replaces selection/textobj with register
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Code Completion
+
 
 call plug#end()
