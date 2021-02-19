@@ -37,5 +37,10 @@ yabai -m rule --add label="Floating SysPrefs" app="System Preferences" manage=of
 yabai -m rule --add label="Floating Dash" app="Dash" manage=off
 # Fantastical floats
 yabai -m rule --add label="Floating Fantastical" app="Fantastical Helper" manage=off
+# Scrcpy floats
+yabai -m rule --add label="Floating Scrcpy" app="scrcpy" manage=off
+# Gnuplot floats
+yabai -m rule --add label="Floating GNUplot" app="gnuplot_qt" manage=off
+
 
 echo "yabai configuration loaded.."
