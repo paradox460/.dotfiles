@@ -55,3 +55,6 @@ try
   source ~/.vim/config/keybinds.vim
 catch
 endtry
+
+" Customize AutoAave
+let g:auto_save_events = ["InsertLeave", "TextChanged", "CursorHoldI"]
