@@ -1,5 +1,8 @@
 require "mp.msg"
 function write_name(filename)
+  if string.find(mp.get_property("path"), "youtube.com") then
+    return
+  end
   file = io.open(filename, "a+")
   path = mp.get_property("path")
   file:write(mp.get_property("path"), "\n")
@@ -14,7 +17,6 @@ function watched()
 end
 
 function failed()
-
   write_name("failed")
 end
 
