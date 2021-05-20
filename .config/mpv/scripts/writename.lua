@@ -1,6 +1,6 @@
 require "mp.msg"
 function write_name(filename)
-  if string.find(mp.get_property("path"), "youtube.com") then
+  if string.find(mp.get_property("path"), "http") then
     return
   end
   file = io.open(filename, "a+")
@@ -12,14 +12,10 @@ function write_name(filename)
   file:close()
 end
 
-function watched()
-  write_name("watched")
-end
-
 function failed()
   write_name("failed")
 end
 
-mp.add_key_binding(nil, "write_name", watched)
+mp.add_key_binding(nil, "write_name", write_name)
 
 mp.add_hook("on_load_fail", 50, failed)
