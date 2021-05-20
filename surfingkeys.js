@@ -102,9 +102,6 @@ vmapkey("do", "#9Base64 decode selection and open as URL", function() {
 // Bottom-style omnibar
 settings.omnibarPosition = 'bottom';
 
-// Open new tabs at end
-settings.newTabPosition = 'last';
-
 // Tomorrow night style hints
 Hints.style('font-family: system-ui;');
 Hints.style("font-family: system-ui;", "text");
