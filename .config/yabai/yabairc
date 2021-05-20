@@ -41,6 +41,9 @@ yabai -m rule --add label="Floating Fantastical" app="Fantastical Helper" manage
 yabai -m rule --add label="Floating Scrcpy" app="scrcpy" manage=off
 # Gnuplot floats
 yabai -m rule --add label="Floating GNUplot" app="gnuplot_qt" manage=off
-
+# Harvest window
+yabai -m rule --add label="Floating Harvest" app="Harvest" manage=off
+# Pcalc
+yabai -m rule --add label="Floating PCalc" app="PCalc" manage=off
 
 echo "yabai configuration loaded.."
