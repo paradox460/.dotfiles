@@ -1,1 +1,1 @@
-mpv-scripts/scripts/misc.lua
+../script_sources/mpv-scripts/scripts/misc.lua
