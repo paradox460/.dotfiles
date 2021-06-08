@@ -1,1 +1,1 @@
-mpv-scripts/scripts/encode.lua
+../script_sources/mpv-scripts/scripts/encode.lua
