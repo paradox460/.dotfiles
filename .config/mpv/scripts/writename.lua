@@ -1,15 +1,27 @@
 require "mp.msg"
-function write_name(filename)
+
+function unmute()
+  mp.unregister_event(unmute)
+  mp.set_property_bool("mute", false)
+end
+
+function write_name(filename, no_skip, mute)
   if string.find(mp.get_property("path"), "http") then
     return
   end
   file = io.open(filename, "a+")
   path = mp.get_property("path")
   file:write(mp.get_property("path"), "\n")
-  mp.command("playlist-next force")
+  if not no_skip then
+    mp.command("playlist-next force")
+  end
   mp.msg.info("Wrote " .. path .. " to " .. filename)
   file:flush()
   file:close()
+  if mute then
+    mp.set_property_bool("mute", true)
+    mp.register_event("end-file", unmute)
+  end
 end
 
 function failed()
