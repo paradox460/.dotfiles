@@ -20,6 +20,7 @@ function write_crop(filename)
   end
 
   file:write(mp.get_property("path"), "\t", croprules, "\n")
+  mp.osd_message("Wrote crop data to " .. filename)
   mp.msg.info("Wrote " .. path .. " to " .. filename)
   file:flush()
   file:close()
