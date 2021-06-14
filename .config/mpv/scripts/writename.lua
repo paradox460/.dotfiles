@@ -6,15 +6,13 @@ function unmute()
 end
 
 function write_name(filename, no_skip, mute)
-  if string.find(mp.get_property("path"), "http") then
-    return
-  end
   file = io.open(filename, "a+")
   path = mp.get_property("path")
   file:write(mp.get_property("path"), "\n")
   if not no_skip then
     mp.command("playlist-next force")
   end
+  mp.osd_message("Wrote to " .. filename)
   mp.msg.info("Wrote " .. path .. " to " .. filename)
   file:flush()
   file:close()
@@ -25,6 +23,9 @@ function write_name(filename, no_skip, mute)
 end
 
 function failed()
+  if string.find(mp.get_property("path"), "http") then
+    return
+  end
   write_name("failed")
 end
 
