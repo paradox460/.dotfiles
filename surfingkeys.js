@@ -99,8 +99,16 @@ vmapkey("do", "#9Base64 decode selection and open as URL", function() {
   Visual.toggle()
 });
 
+// Passthrough key
+mapkey('p', '#0enter ephemeral PassThrough mode to temporarily suppress SurfingKeys', function() {
+  Normal.passThrough(1500);
+});
+
 // Bottom-style omnibar
 settings.omnibarPosition = 'bottom';
+
+// Ensure we try to use neovim
+settings.useNeovim = true;
 
 // Tomorrow night style hints
 Hints.style('font-family: system-ui;');
@@ -158,6 +166,12 @@ input {
   background: var(--bg-dark);
   border: 1px solid var(--border);
   color: var(--fg);
+}
+#sk_tabs .sk_tab_title {
+  color: var(--fg);
+}
+#sk_tabs .sk_tab_url {
+  color: var(--accent-fg);
 }
 #sk_tabs .sk_tab_hint {
   background: var(--bg);
