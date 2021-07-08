@@ -47,10 +47,6 @@ end
 # ripgrep config
 set -gx RIPGREP_CONFIG_PATH $HOME/.ripgreprc
 
-test -e ~/.go; and set -gx GOPATH ~/.go
-
-test -e ~/.go/bin; and set -gx PATH $PATH $GOPATH/bin
-
 # Alias zone
 # Doesn't really reload, more of launches a new shell, but the results the same
 alias reload 'exec fish -l'
