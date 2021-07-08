@@ -29,6 +29,10 @@ set incsearch " highlight search as you type
 " Hidden buffer support
 set hidden
 
+" Word wrap
+set wrap
+set linebreak
+
 " fzf
 set rtp+=/usr/local/opt/fzf
 
@@ -58,3 +62,28 @@ endtry
 
 " Customize AutoAave
 let g:auto_save_events = ["InsertLeave", "TextChanged", "CursorHoldI"]
+
+" Settings for FireNvim
+let g:firenvim_config = {
+  \ 'localSettings': {
+    \ '.*': {
+      \ 'takeover': 'never'
+    \ }
+  \ }
+\ }
+
+function! s:IsFirenvimActive(event) abort
+  if !exists('*nvim_get_chan_info')
+    return 0
+  endif
+  let l:ui = nvim_get_chan_info(a:event.chan)
+  return has_key(l:ui, 'client') && has_key(l:ui.client, 'name') &&
+      \ l:ui.client.name =~? 'Firenvim'
+endfunction
+
+function! OnUIEnter(event) abort
+  if s:IsFirenvimActive(a:event)
+    set guifont=Millbrae:h20
+  endif
+endfunction
+autocmd UIEnter * call OnUIEnter(deepcopy(v:event))

@@ -28,5 +28,6 @@ Plug 'vim-scripts/ReplaceWithRegister' " Replaces selection/textobj with registe
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Code Completion
 
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Firenvim, vim in browser
 
 call plug#end()
