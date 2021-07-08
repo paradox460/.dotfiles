@@ -1,6 +1,5 @@
 # Paths
-set -gx PATH $HOME/.bin \
-  $PATH
+fish_add_path -P $HOME/.bin $HOME/.dotfiles/.bin
 
 # Completion paths (homebrew fix)
 set fish_complete_path ~/.config/fish/completions/ \
