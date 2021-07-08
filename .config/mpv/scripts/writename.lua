@@ -10,7 +10,7 @@ function write_name(filename, no_skip, mute)
   path = mp.get_property("path")
   file:write(mp.get_property("path"), "\n")
   if not no_skip then
-    mp.command("playlist-next force")
+    mp.command("playlist-remove current")
   end
   mp.osd_message("Wrote to " .. filename)
   mp.msg.info("Wrote " .. path .. " to " .. filename)
