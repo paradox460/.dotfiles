@@ -75,6 +75,21 @@ let g:firenvim_config = {
   \ }
 \ }
 
+let g:dont_write = v:false
+function! My_Write(timer) abort
+  let g:dont_write = v:false
+  write
+endfunction
+
+function! Delay_My_Write() abort
+   if g:dont_write
+    return
+  end
+  let g:dont_write = v:true
+  call timer_start(10000, 'My_Write')
+endfunction
+
+
 function! s:IsFirenvimActive(event) abort
   if !exists('*nvim_get_chan_info')
     return 0
@@ -87,6 +102,8 @@ endfunction
 function! OnUIEnter(event) abort
   if s:IsFirenvimActive(a:event)
     set guifont=Millbrae:h20
+    au TextChanged * ++nested call Delay_My_Write()
+    au TextChangedI * ++nested call Delay_My_Write()
   endif
 endfunction
 autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
