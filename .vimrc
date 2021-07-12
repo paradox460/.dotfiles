@@ -7,6 +7,9 @@ try
 catch
 endtry
 
+let base16colorspace=256
+colorscheme base16-tomorrow-night
+
 set backspace=2    " more powerful backspacing
 
 " Fix some indent shit
