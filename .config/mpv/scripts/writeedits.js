@@ -1,12 +1,18 @@
-function extractCrop(crop, filterList) {
+// Crop can also be used for delogo, hence filterName
+function extractCrop(crop, filterList, filterName) {
   filterList = (typeof filterList !== "undefined") ? filterList : []
+  filterName = (typeof filterName !== "undefined") ? filterName : "crop"
   // Some filter scripts do positional crop attributes
   var w = crop.params["@0"] || crop.params.w
   var x = crop.params["@2"] || crop.params.x
   var h = crop.params["@1"] || crop.params.h
   var y = crop.params["@3"] || crop.params.y
-  filterList.push("crop=x=" + x + ":y=" + y + ":w=" + w + ":h=" + h)
+  filterList.push(filterName + "=x=" + x + ":y=" + y + ":w=" + w + ":h=" + h)
   return filterList;
+}
+
+function extractDelogo(delogo, filterList) {
+  return extractCrop(delogo, filterList, "delogo");
 }
 
 function processRotation(filterList) {
@@ -38,6 +44,9 @@ function buildFilterList() {
     switch (filter.name) {
       case "crop":
         extractCrop(filter, filterList);
+        break;
+      case "delogo":
+        extractDelogo(filter, filterList);
         break;
       case "hflip":
       case "vflip":
