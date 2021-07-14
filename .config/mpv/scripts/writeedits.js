@@ -70,6 +70,14 @@ function objectIsEmpty(obj) {
   return true;
 }
 
+function cleanup() {
+  mp.unregister_event(cleanup);
+  mp.set_property("ab-loop-a", "no");
+  mp.set_property("ab-loop-b", "no");
+  mp.set_property("vf", "");
+  mp.set_property("video-rotate", 0);
+}
+
 function writeEdits(filename) {
   var path = mp.get_property("path");
   var filterList = buildFilterList();
@@ -80,11 +88,6 @@ function writeEdits(filename) {
     mp.osd_message(message);
     mp.msg.info(message);
     return;
-  }
-
-  if (!objectIsEmpty(loopTimes)) {
-    mp.set_property("ab-loop-a", "no");
-    mp.set_property("ab-loop-b", "no");
   }
 
   var line = [
@@ -104,6 +107,8 @@ function writeEdits(filename) {
   mp.utils.write_file("file://" + filename, line);
   mp.osd_message("Wrote edit data to \"" + filename + "\"");
   mp.msg.info("Wrote \"" + path + "\" to \"" + filename + "\"");
+
+  mp.register_event("end-file", cleanup)
 }
 
 mp.add_key_binding(null, "write_edits", writeEdits)
