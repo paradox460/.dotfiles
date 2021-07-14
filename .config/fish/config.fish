@@ -46,6 +46,10 @@ end
 # ripgrep config
 set -gx RIPGREP_CONFIG_PATH $HOME/.ripgreprc
 
+# Rust config
+# Don't need docs, I have dash
+set -gx RUST_WITHOUT rust-docs
+
 # Alias zone
 # Doesn't really reload, more of launches a new shell, but the results the same
 alias reload 'exec fish -l'
