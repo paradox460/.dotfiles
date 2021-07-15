@@ -10,3 +10,6 @@
 [submodule ".config/mpv/scripts/mpv-createchapter"]
 	path = .config/mpv/script_sources/mpv-createchapter
 	url = https://github.com/shinchiro/mpv-createchapter
+[submodule ".config/mpv/script_sources/mpv-chapters"]
+	path = .config/mpv/script_sources/mpv-chapters
+	url = https://github.com/zxhzxhz/mpv-chapters
