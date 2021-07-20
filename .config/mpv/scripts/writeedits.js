@@ -43,6 +43,7 @@ function buildFilterList() {
   filters.forEach(function(filter) {
     switch (filter.name) {
       case "crop":
+      case "lavfi-crop":
         extractCrop(filter, filterList);
         break;
       case "delogo":
