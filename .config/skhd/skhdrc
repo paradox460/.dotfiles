@@ -7,8 +7,9 @@
 :: layout @ : hs -c "hs.alert('Layout')"; yabai -m config window_border on; yabai -m config window_opacity on
 
 # Mode escape hatch
-switcher, swap, layout < escape ; default
-swap, layout < shift - escape ; switcher
+swap, layout < escape ; switcher
+switcher < escape ; default
+switcher, swap, layout < shift - escape ; default
 
 # Switcher mode
 hyper - f ; switcher
