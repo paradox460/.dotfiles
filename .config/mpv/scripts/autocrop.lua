@@ -156,7 +156,7 @@ function detect_crop()
 
     mp.command(
         string.format(
-            'vf pre @%s:cropdetect=limit=%s:round=%d:reset=0',
+            'vf add @%s:cropdetect=limit=%s:round=%d:reset=0',
             labels.cropdetect, limit, round
         )
     )
