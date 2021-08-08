@@ -15,14 +15,22 @@ function extractDelogo(delogo, filterList) {
   return extractCrop(delogo, filterList, "delogo");
 }
 
+// Transpose is used instead of rotate, because rotate can lose video information
 function processRotation(filterList) {
   filterList = (typeof filterList !== "undefined") ? filterList : []
   var rotateDegrees = mp.get_property_native("video-rotate");
-  if (rotateDegrees === 0) {
-    return filterList;
+
+  switch (rotateDegrees) {
+    case 90:
+      filterList.push("transpose=clock");
+      break;
+    case 180:
+      filterList.push("hflip,vflip");
+      break;
+    case 270:
+      filterList.push("transpose=cclock");
+      break;
   }
-  var rotateRadians = rotateDegrees * (Math.PI / 180);
-  filterList.push("rotate="+rotateRadians);
   return filterList;
 }
 
