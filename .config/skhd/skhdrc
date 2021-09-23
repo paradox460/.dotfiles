@@ -30,6 +30,7 @@ switcher < l : yabai -m window --focus east
 switcher < n :  yabai -m display --focus prev
 switcher < m : yabai -m display --focus next
 
+
 # Layout Mode
 layout < a : yabai -m space --layout bsp; hs -c "hs.alert('BSP')"
 layout < s : yabai -m space --layout stack; hs -c "hs.alert('Stack')"
@@ -68,6 +69,7 @@ swap < h : yabai -m window --swap west
 swap < j : yabai -m window --swap south
 swap < k : yabai -m window --swap north
 swap < l : yabai -m window --swap east
+swap < x : yabai -m window --swap mouse
 
 swap < alt - h :  yabai -m window --insert west
 swap < alt - j :  yabai -m window --insert south
@@ -79,11 +81,13 @@ swap < shift - h : yabai -m window --stack west
 swap < shift - j : yabai -m window --stack south
 swap < shift - k : yabai -m window --stack north
 swap < shift - l : yabai -m window --stack east
+swap < shift - x : yabai -m window --stack mouse
 
 swap < cmd - h : yabai -m window --warp west
 swap < cmd - j : yabai -m window --warp south
 swap < cmd - k : yabai -m window --warp north
 swap < cmd - l : yabai -m window --warp east
+swap < cmd - x : yabai -m window --warp mouse
 
 swap < n :  yabai -m window --display prev; yabai -m display --focus prev
 swap < m : yabai -m window --display next; yabai -m display --focus next

@@ -46,4 +46,7 @@ yabai -m rule --add label="Floating Harvest" app="Harvest" manage=off
 # Pcalc
 yabai -m rule --add label="Floating PCalc" app="PCalc" manage=off
 
+# Tab Outliner for chrome
+yabai -m rule --add label="Don't resize chrome outliner" app="Google Chrome" title="Tabs Outliner"
+
 echo "yabai configuration loaded.."
