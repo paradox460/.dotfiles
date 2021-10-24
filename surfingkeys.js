@@ -104,6 +104,13 @@ mapkey('p', '#0enter ephemeral PassThrough mode to temporarily suppress SurfingK
   Normal.passThrough(1500);
 });
 
+// Copy image url key
+mapkey(';yi', "#7Copy image URL", function() {
+  Hints.create('img', function(element) {
+    Clipboard.write(element.src);
+  });
+});
+
 // Bottom-style omnibar
 settings.omnibarPosition = 'bottom';
 
