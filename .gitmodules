@@ -13,3 +13,6 @@
 [submodule ".config/mpv/script_sources/mpv-chapters"]
 	path = .config/mpv/script_sources/mpv-chapters
 	url = https://github.com/zxhzxhz/mpv-chapters
+[submodule ".config/mpv/script_sources/paradox-scripts"]
+	path = .config/mpv/script_sources/paradox-scripts
+	url = https://github.com/paradox460/mpv-scripts
