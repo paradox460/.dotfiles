@@ -104,6 +104,7 @@ function! OnUIEnter(event) abort
     set guifont=Millbrae:h20
     au TextChanged * ++nested call Delay_My_Write()
     au TextChangedI * ++nested call Delay_My_Write()
+    inoremap <D-v> <c-r>+
   endif
 endfunction
 autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
