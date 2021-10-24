@@ -20,5 +20,5 @@ end
 if test -n "$_flag_f"
   string join \n $urls >> $_flag_f
 else
-  youtube-dl -i -a (string join \n $urls | psub) $argv
+  yt-dlp -i -a (string join \n $urls | psub) $argv
 end
