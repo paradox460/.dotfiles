@@ -16,7 +16,7 @@ base0E = #b294bb
 base0F = #a3685a
 
 $gets
-  .postNum.desktop > a
+  .post .postInfo .postNum.desktop > a
     color: #373b41 !important
 
     &:first-of-type
