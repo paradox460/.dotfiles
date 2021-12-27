@@ -46,7 +46,6 @@ layout < b : yabai -m space --balance
 # Window specific layout commands
 layout < p : yabai -m window --toggle sticky;\
              yabai -m window --toggle topmost;\
-             yabai -m window --toggle border;\
              yabai -m window --toggle pip;\
              yabai -m window --toggle float
 
