@@ -27,20 +27,8 @@ set -gx RUBYOPT -r$HOME/.rubyrc.rb
 # Elixir Options
 set -gx ERL_AFLAGS "-kernel shell_history enabled"
 
-if command -sq fzf
-  # Utilities
-  set -l dirpreview "--preview 'tree --dirsfirst -C {} | head -200'"
-
-  # FZF Config
-  set -gx FZF_DEFAULT_OPTS "--height 40% --reverse --border --multi --cycle --inline-info"
-  # Options for history mode
-  set -gx FZF_CTRL_R_OPTS "--no-multi --prompt='history> ' --preview 'echo {}' --preview-window='down:3:wrap'"
-  # Options for CD mode
-  set -gx FZF_ALT_C_OPTS "--no-multi --select-1 --exit-0 --prompt='cd> ' $dirpreview"
-  # Options for file mode
-  set -gx FZF_CTRL_T_OPTS "--prompt='file> ' --select-1 --exit-0 --preview 'if test -e {}; begin; highlight -O ansi -l {} ^/dev/null; or cat {}; or tree --dirsfirst -C {}; end ^/dev/null | head -200;end'"
-  # Options for Z mode
-  set -gx FZF_Z_OPTS $dirpreview
+if command -sq fzf && type -q fzf_configure_bindings
+  fzf_configure_bindings --directory=\ct
 end
 
 # ripgrep config
@@ -113,11 +101,6 @@ test -e ~/.config/fish/gnupg.fish ; and source ~/.config/fish/gnupg.fish
 
 # asdf
 test -e ~/.asdf/asdf.fish ; and source ~/.asdf/asdf.fish
-
-# fisherman
-for file in ~/.config/fish/conf.d/*.fish
-    source $file
-end
 
 # Homebrew command not found
 # brew command command-not-found-init > /dev/null 2>&1; and source (brew command-not-found-init)
