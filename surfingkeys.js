@@ -1,3 +1,14 @@
+const {
+  map,
+  unmap,
+  iunmap,
+  mapkey,
+  removeSearchAlias,
+  addSearchAlias,
+  vmapkey,
+  Hints
+} = api;
+
 // Vimium/cVim
 map('u', 'e');
 mapkey('p', "Open the clipboard's URL in the current tab", function() {
@@ -35,11 +46,11 @@ settings.hintShiftNonActive = true;
 settings.smartPageBoundary = true;
 
 // Search aliases
-removeSearchAliasX('b', 's') // Get rid of baidu
-removeSearchAliasX('w', 's') // Get rid of bing
+removeSearchAlias('b', 's') // Get rid of baidu
+removeSearchAlias('w', 's') // Get rid of bing
 
 // Wikipedia search alias
-addSearchAliasX(
+addSearchAlias(
   'w', // Alias
   'wikipedia', // Prompt
   'https://en.wikipedia.org/w/index.php?title=Special:Search&search=', // search url
@@ -49,7 +60,7 @@ addSearchAliasX(
 );
 
 // Pivotal tracker search alias
-addSearchAliasX(
+addSearchAlias(
   'p',
   'pivotal story id',
   'https://www.pivotaltracker.com/story/show/',
