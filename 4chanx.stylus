@@ -129,3 +129,7 @@ span.postNum.desktop > a
 
 #navlinks
   display none
+
+// Wrap white space in code blocks
+.prettyprint
+  white-space pre-wrap
