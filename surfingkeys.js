@@ -6,7 +6,8 @@ const {
   removeSearchAlias,
   addSearchAlias,
   vmapkey,
-  Hints
+  Hints,
+  RUNTIME
 } = api;
 
 // Vimium/cVim
@@ -120,6 +121,19 @@ mapkey(';yi', "#7Copy image URL", function() {
   Hints.create('img', function(element) {
     Clipboard.write(element.src);
   });
+});
+
+// Download url
+mapkey(';df', "#1Download link", function() {
+  Hints.create("*[href]", function(element) {
+    RUNTIME('download', {url: element.href})
+  })
+});
+
+mapkey(';dm', "#1Download multiple links", function() {
+  Hints.create("*[href]", function(element) {
+    RUNTIME('download', {url: element.href})
+  }, {multipleHits: true})
 });
 
 // Bottom-style omnibar
