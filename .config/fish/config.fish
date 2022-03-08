@@ -21,9 +21,6 @@ set -gx PAGER "most"
 # Homebrew Cask options
 set -gx HOMEBREW_CASK_OPTS "--appdir=/Applications"
 
-# Ruby Options
-set -gx RUBYOPT -r$HOME/.rubyrc.rb
-
 # Elixir Options
 set -gx ERL_AFLAGS "-kernel shell_history enabled"
 
