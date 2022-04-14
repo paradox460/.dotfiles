@@ -13,13 +13,10 @@ set -gx LANGUAGE en_US.UTF-8
 set -gx LC_ALL en_US.UTF-8
 
 
-# Set my editors to Sublime Text 2
+# Set my editors
 set -gx EDITOR "nvim"
 set -gx VISUAL "nvim"
 set -gx PAGER "most"
-
-# Homebrew Cask options
-set -gx HOMEBREW_CASK_OPTS "--appdir=/Applications"
 
 # Elixir Options
 set -gx ERL_AFLAGS "-kernel shell_history enabled"
@@ -78,16 +75,6 @@ if status --is-interactive
   abbr --add gc "git checkout"
   abbr --add gcb "git checkout -b"
   abbr --add gu "hub sync"
-
-  # Ruby
-  abbr --add b "bundle"
-  abbr --add bx "bundle exec"
-  abbr --add rk "rake"
-  abbr --add rb "ruby"
-  abbr --add bxr "bundle exec rake"
-
-  # Github Slack Spammer
-  abbr --add ghss "github_slack_spammer"
 end
 
 # iTerm 2 fish integration
@@ -106,4 +93,5 @@ test -e ~/.asdf/asdf.fish ; and source ~/.asdf/asdf.fish
 test -e /usr/local/bin/direnv ; and eval (direnv hook fish)
 
 # env_parallel for gnu parallel
-test -e /usr/local/bin/env_parallel.fish ; and source (which env_parallel.fish)
+# Disabling temporarily because it seems broken right now
+# test -e /usr/local/bin/env_parallel.fish ; and source (which env_parallel.fish)
