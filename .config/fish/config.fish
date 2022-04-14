@@ -74,7 +74,7 @@ if status --is-interactive
   abbr --add gcm "git commit -m"
   abbr --add gc "git checkout"
   abbr --add gcb "git checkout -b"
-  abbr --add gu "hub sync"
+  abbr --add gu "gh repo sync"
 end
 
 # iTerm 2 fish integration
