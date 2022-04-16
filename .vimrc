@@ -57,14 +57,19 @@ let g:table_mode_corner='|'
 let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 
+" Customize AutoAave
+let g:auto_save_events = ["InsertLeave", "TextChanged", "CursorHoldI"]
+
+" Better leader
+nnoremap <Space> <Nop>
+let mapleader = "\<Space>"
+let maplocalleader=","
+
 " Load custom keybinds
 try
   source ~/.vim/config/keybinds.vim
 catch
 endtry
-
-" Customize AutoAave
-let g:auto_save_events = ["InsertLeave", "TextChanged", "CursorHoldI"]
 
 " Settings for FireNvim
 let g:firenvim_config = {

@@ -31,4 +31,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " Code Completion
 
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Firenvim, vim in browser
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
 call plug#end()
