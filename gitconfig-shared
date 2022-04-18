@@ -62,6 +62,9 @@
   # View a range-diff of the previous rebase
   rd = range-diff @{u} @{1} @
 
+  # Get the last tag name
+  last-tag = describe --abbrev=0 --tags @^
+
 [mergetool]
   prompt = false
 [mergetool "Kaleidoscope"]
