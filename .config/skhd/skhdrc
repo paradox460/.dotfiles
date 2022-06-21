@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
 
 # Mode definitions
-:: default : hs -c "hs.alert('Default')"; yabai -m config window_border off; yabai -m config window_opacity off
-:: switcher @ : hs -c "hs.alert('Switcher')"; yabai -m config window_border on; yabai -m config window_opacity on
-:: swap @ : hs -c "hs.alert('Swap')"; yabai -m config window_border on; yabai -m config window_opacity on
-:: layout @ : hs -c "hs.alert('Layout')"; yabai -m config window_border on; yabai -m config window_opacity on
+:: default : /usr/local/bin/hs -c "hs.alert('Default')"; yabai -m config window_border off; yabai -m config window_opacity off
+:: switcher @ : /usr/local/bin/hs -c "hs.alert('Switcher')"; yabai -m config window_border on; yabai -m config window_opacity on
+:: swap @ : /usr/local/bin/hs -c "hs.alert('Swap')"; yabai -m config window_border on; yabai -m config window_opacity on
+:: layout @ : /usr/local/bin/hs -c "hs.alert('Layout')"; yabai -m config window_border on; yabai -m config window_opacity on
 
 # Mode escape hatch
 swap, layout < escape ; switcher
@@ -18,8 +18,8 @@ switcher < a ; swap
 switcher < s ; layout
 
 # Config change reloaders
-switcher < r : hs -c "hs.alert('Reloading skhd')"; yabai -m config window_border off; yabai -m config window_opacity off; skhd -r
-switcher < shift - r : hs -c "hs.alert('Restarting yabai')"; pkill yabai
+switcher < r : /usr/local/bin/hs -c "hs.alert('Reloading skhd')"; yabai -m config window_border off; yabai -m config window_opacity off; skhd -r
+switcher < shift - r : /usr/local/bin/hs -c "hs.alert('Restarting yabai')"; pkill yabai
 
 # Switcher move focus
 switcher < h : yabai -m window --focus west
@@ -32,9 +32,9 @@ switcher < m : yabai -m display --focus next
 
 
 # Layout Mode
-layout < a : yabai -m space --layout bsp; hs -c "hs.alert('BSP')"
-layout < s : yabai -m space --layout stack; hs -c "hs.alert('Stack')"
-layout < d : yabai -m space --layout float; hs -c "hs.alert('Float')"
+layout < a : yabai -m space --layout bsp; /usr/local/bin/hs -c "hs.alert('BSP')"
+layout < s : yabai -m space --layout stack; /usr/local/bin/hs -c "hs.alert('Stack')"
+layout < d : yabai -m space --layout float; /usr/local/bin/hs -c "hs.alert('Float')"
 
 layout < r : yabai -m space --rotate 90
 
