@@ -139,8 +139,13 @@ mapkey(';dm', "#1Download multiple links", function() {
 // Bottom-style omnibar
 settings.omnibarPosition = 'bottom';
 
-// Ensure we try to use neovim
-settings.useNeovim = true;
+// Neovim hasn't ever worked for me, because it whines about websocket
+// security. I use firenvim for large inputs anyways, which seems to have
+// better performance, so this is mostly about editing single line inputs and
+// multiselects
+settings.useNeovim = false;
+
+settings.newTabPosition="last";
 
 // Tomorrow night style hints
 Hints.style('font-family: system-ui;');
