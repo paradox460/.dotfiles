@@ -1,5 +1,5 @@
 jorgebucaran/fisher
-brgmnn/fish-docker-compose
-barnybug/docker-fish-completion
 paradox460/fasd
-PatrickF1/fzf.fish
+barnybug/docker-fish-completion
+brgmnn/fish-docker-compose
+patrickF1/fzf.fish
