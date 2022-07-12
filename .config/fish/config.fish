@@ -61,6 +61,10 @@ alias cdh='fzf_cdhist'
 # Nvim all the time
 alias vim='nvim'
 
+
+# Get duration of file via ffprobe
+alias ff_duration='ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1'
+
 # Fundle fish plugin manager
 test -e ~/.config/fish/fundle_config.fish ; and source ~/.config/fish/fundle_config.fish
 
