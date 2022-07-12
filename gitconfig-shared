@@ -75,12 +75,15 @@
   ff = false
 [pull]
   rebase = true
-[difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+[difftool "code"]
+  cmd = code --diff --wait "$LOCAL" "$REMOTE"
 [difftool]
   prompt = false
 [diff]
-  tool = Kaleidoscope
+  tool = difftastic
+  external = difft
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
