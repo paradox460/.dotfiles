@@ -17,6 +17,7 @@
 .config/yarn
 .config/direnv/allow
 .config/mpv/script-opts/sponsorblock.conf
+.config/gh/hosts.yml
 
 # Vim raw plugins
 .vim/plugged
