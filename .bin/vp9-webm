@@ -1,0 +1,17 @@
+#! /usr/bin/env fish
+
+argparse -i 'c/crf=' -- $argv
+
+if not set -q _flag_c
+       and test -z "$_flag_c"
+          set _flag_c 32
+end
+
+for f in $argv
+  set -l ext (string split --right --max 1 '.' -- $f)[-1]
+  set -l newname (basename $f "."$ext)'.webm'
+
+  ffmpeg -hide_banner -i $f -c:v libvpx-vp9 -an -b:v 0 -crf $_flag_c -pass 1 -f null /dev/null && \
+  ffmpeg -hide_banner -i $f -c:v libvpx-vp9 -c:a libopus -b:v 0 -crf $_flag_c -pass 2 $newname
+end
+rm ffmpeg2pass-*.log
