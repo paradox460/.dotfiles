@@ -1,17 +1,76 @@
 #! /usr/bin/env fish
 
-argparse -i 'c/crf=' -- $argv
+argparse -x 'c,t' -i 'e/edit' 'c/crf=' 't/targetfs=' 'h/help' -- $argv
+
+if set -q _flag_h
+  echo -e "\
+Convert a video to a VP9/opus webm, suitable for uploading to imageboards
+Usage: vp9-webm [options] video-file
+Options:
+  -h, --help Show this help message and exit
+  -e, --edit Open the command in vim before editing. Requires the vipe command
+      to be installed
+  -c, --crf=<crf> Specify the desired CRF to be used
+  -t, --targetfs=<fs> Specify the target file size. Will conduct a binary search
+        to find a suitable CRF that comes smaller, but as close to the specified
+        file size as possible.
+        Accepts basic file size multipliers (k, m, etc).
+  "
+  exit 0
+end
 
 if not set -q _flag_c
        and test -z "$_flag_c"
-          set _flag_c 32
+          set _flag_c 31
 end
 
-for f in $argv
+set -l fs_limit ""
+if set -q _flag_t
+  set fs_limit "-fs $_flag_t"
+end
+
+
+set -l f $argv[1]
+set -l original_duration (ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 $f)
+
+set -l l_crf 0
+set -l r_crf 63
+
+while true
   set -l ext (string split --right --max 1 '.' -- $f)[-1]
   set -l newname (basename $f "."$ext)'.webm'
 
-  ffmpeg -hide_banner -i $f -c:v libvpx-vp9 -an -b:v 0 -crf $_flag_c -pass 1 -f null /dev/null && \
-  ffmpeg -hide_banner -i $f -c:v libvpx-vp9 -c:a libopus -b:v 0 -crf $_flag_c -pass 2 $newname
+
+  set -l command "ffmpeg -hide_banner -i $f -c:v libvpx-vp9 -an -b:v 0 -crf $_flag_c $fs_limit -pass 1 -f null /dev/null && ffmpeg -y -hide_banner -i $f -c:v libvpx-vp9 -c:a libopus -b:v 0 -crf $_flag_c $fs_limit -pass 2 $newname"
+
+  if set -q _flag_e
+    set command (printf $command | vipe)
+  end
+
+  fish -c $command
+  rm ffmpeg2pass-*.log
+
+  if not set -q _flag_t
+    break
+  end
+
+  set -l duration (ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 $newname)
+
+  if test $duration -ge $original_duration
+    test "pass, no truncate"
+    set r_crf $_flag_c
+    mv $newname "maybe-$newname"
+  else if test $duration -lt $original_duration
+    test "fail, truncate"
+    set l_crf $_flag_c
+  end
+
+  if test (math $r_crf - $l_crf) -le 1
+    echo "Found target size, exiting"
+    mv "maybe-$newname" $newname
+    exit 0
+  end
+
+
+  set _flag_c (math "max(0,min(63, floor(($l_crf + $r_crf)/2)))")
 end
-rm ffmpeg2pass-*.log
