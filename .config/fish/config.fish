@@ -19,7 +19,7 @@ set -gx LC_ALL en_US.UTF-8
 # Set my editors
 set -gx EDITOR "nvim"
 set -gx VISUAL "nvim"
-set -gx PAGER "most"
+set -gx PAGER "less -FRX"
 
 # Elixir Options
 set -gx ERL_AFLAGS "-kernel shell_history enabled"
