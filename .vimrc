@@ -106,7 +106,7 @@ endfunction
 
 function! OnUIEnter(event) abort
   if s:IsFirenvimActive(a:event)
-    set guifont=Millbrae:h20
+    set guifont=JetBrains\ Mono:h20
     au TextChanged * ++nested call Delay_My_Write()
     au TextChangedI * ++nested call Delay_My_Write()
     inoremap <D-v> <c-r>+
