@@ -102,3 +102,13 @@ test -e /usr/local/bin/direnv ; and eval (direnv hook fish)
 # env_parallel for gnu parallel
 # Disabling temporarily because it seems broken right now
 # test -e /usr/local/bin/env_parallel.fish ; and source (which env_parallel.fish)
+
+
+set -gx BASE16_THEME_DEFAULT "tomorrow-night"
+# Base16 Shell
+if status --is-interactive
+  set BASE16_SHELL_PATH "$HOME/.config/base16-shell"
+  if test -s "$BASE16_SHELL_PATH"
+    source "$BASE16_SHELL_PATH/profile_helper.fish"
+  end
+end

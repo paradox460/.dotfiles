@@ -16,3 +16,6 @@
 [submodule ".config/mpv/script_sources/paradox-scripts"]
 	path = .config/mpv/script_sources/paradox-scripts
 	url = https://github.com/paradox460/mpv-scripts
+[submodule ".config/base16-shell"]
+	path = .config/base16-shell
+	url = https://github.com/tinted-theming/base16-shell.git
