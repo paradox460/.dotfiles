@@ -42,16 +42,6 @@ alias reload 'exec fish -l'
 # Hub is a useful tool that provides github integration. If you don't use it, I recommend deleting these lines
 alias git hub
 
-# fasd
-alias a='fasd -a'        # any
-alias s='fasd -si'       # show / search / select
-alias d='fasd -d'        # directory
-alias f='fasd -f'        # file
-alias sd='fasd -sid'     # interactive directory selection
-alias sf='fasd -sif'     # interactive file selection
-alias z='fzf_z'          # cd, same functionality as j in autojump
-alias zz='fasd_cd -d -i' # cd with interactive selection
-
 # Up
 alias u='fzf_up'
 
@@ -112,3 +102,6 @@ if status --is-interactive
     source "$BASE16_SHELL_PATH/profile_helper.fish"
   end
 end
+
+# Zoxide
+zoxide init fish | source
