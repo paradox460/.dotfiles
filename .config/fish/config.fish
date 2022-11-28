@@ -31,22 +31,6 @@ set -gx RIPGREP_CONFIG_PATH $HOME/.ripgreprc
 # Don't need docs, I have dash
 set -gx RUST_WITHOUT rust-docs
 
-# iTerm 2 fish integration
-test -e ~/.iterm2_shell_integration.fish ; and source ~/.iterm2_shell_integration.fish
-
-# # GPG stuff
-# test -e ~/.config/fish/gnupg.fish ; and source ~/.config/fish/gnupg.fish
-
-# asdf
-test -e ~/.asdf/asdf.fish ; and source ~/.asdf/asdf.fish
-
-# # Direnv
-test -e /usr/local/bin/direnv ; and eval (direnv hook fish)
-
-
-# Zoxide
-zoxide init fish | source
-
 # Interactive mode settings
 # Specifically, anything you might not need in scripting should be put here.
 if status --is-interactive
@@ -96,3 +80,18 @@ if status --is-interactive
     source "$BASE16_SHELL_PATH/profile_helper.fish"
   end
 end
+
+# iTerm 2 fish integration
+test -e ~/.iterm2_shell_integration.fish ; and source ~/.iterm2_shell_integration.fish
+
+# # GPG stuff
+# test -e ~/.config/fish/gnupg.fish ; and source ~/.config/fish/gnupg.fish
+
+# asdf
+test -e ~/.asdf/asdf.fish ; and source ~/.asdf/asdf.fish
+
+# # Direnv
+test -e /usr/local/bin/direnv ; and eval (direnv hook fish)
+
+# Zoxide
+zoxide init fish | source
