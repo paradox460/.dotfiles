@@ -23,6 +23,7 @@ set -gx PAGER "less -FRX"
 
 # Elixir Options
 set -gx ERL_AFLAGS "-kernel shell_history enabled"
+set -gx KERL_BUILD_DOCS "yes"
 
 # ripgrep config
 set -gx RIPGREP_CONFIG_PATH $HOME/.ripgreprc
