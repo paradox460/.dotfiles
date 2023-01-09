@@ -7,10 +7,8 @@ try
 catch
 endtry
 
-if  (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
-  let base16colorspace=256
-  colorscheme base16-tomorrow-night
-endif
+set termguicolors
+colorscheme base16-tomorrow-night
 
 set backspace=2    " more powerful backspacing
 
