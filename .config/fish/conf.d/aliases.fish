@@ -1,10 +1,7 @@
 # Launch a new fish shell, we pretend we're reloading configuration
 alias reload 'exec fish -l'
 
-# Use hub to wrap git. Kind of legacy at this point, but old habits die hard
-if command -sq hub && type -q hub
-  alias git hub
-end
+alias git hub
 
 alias vim nvim
 
