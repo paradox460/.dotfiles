@@ -1,0 +1,5 @@
+gui:
+  expandFocusedSidePanel: true
+  showRandomTip: false
+  showFileTree: false
+confirmOnQuit: true

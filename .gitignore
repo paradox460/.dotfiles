@@ -23,3 +23,4 @@
 .vim/plugged
 .config/coc
 
+.config/lazygit/state.yml
