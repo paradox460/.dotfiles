@@ -41,7 +41,7 @@ while true
   set -l newname (basename $f "."$ext)'.webm'
 
 
-  set -l command "ffmpeg -hide_banner -i $f -c:v libvpx-vp9 -an -b:v 0 -crf $_flag_c $fs_limit -pass 1 -f null /dev/null && ffmpeg -y -hide_banner -i $f -c:v libvpx-vp9 -c:a libopus -b:v 0 -crf $_flag_c $fs_limit -pass 2 $newname"
+  set -l command "ffmpeg -hide_banner -i \"$f\" -c:v libvpx-vp9 -an -b:v 0 -crf $_flag_c $fs_limit -pass 1 -f null /dev/null && ffmpeg -y -hide_banner -i \"$f\" -c:v libvpx-vp9 -c:a libopus -b:v 0 -crf $_flag_c $fs_limit -pass 2 \"$newname\""
 
   if set -q _flag_e
     set command (printf $command | vipe)
