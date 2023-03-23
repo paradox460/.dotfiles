@@ -33,4 +33,7 @@ if status is-interactive
   set -g fish_key_bindings fish_vi_key_bindings
 end
 
+# Direnv loads need to happen _after_ path is set
+test -e /usr/local/bin/direnv ; and eval (direnv hook fish)
+
 zoxide init fish | source
