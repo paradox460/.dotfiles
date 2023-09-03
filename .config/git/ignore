@@ -34,6 +34,9 @@ Temporary Items
 # Elixir-ls
 .elixir_ls
 
+# Elixir-tools
+.elixir-tools
+
 # VsCode
 .vscode/
 
