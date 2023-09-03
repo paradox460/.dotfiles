@@ -37,3 +37,6 @@ end
 test -e /usr/local/bin/direnv ; and eval (direnv hook fish)
 
 zoxide init fish | source
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
