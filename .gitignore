@@ -24,3 +24,6 @@
 .config/coc
 
 .config/lazygit/state.yml
+
+# Karabiner-config
+karabiner-config/node_modules
