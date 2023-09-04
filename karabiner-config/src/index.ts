@@ -19,7 +19,7 @@ writeToProfile('Default', [
   ]),
 
   rule("Foot Pedals", ifDevice(footPedal)).manipulators([
-    withCondition(ifApp({ file_paths: ["^/opt/homebrew/bin/mpv$"] }))([
+    withCondition(ifApp({ bundle_identifiers: [/^io\.mpv$/], file_paths: ["^/opt/homebrew/bin/mpv$"] }))([
       from("a").to("rewind"),
       from("b").to("play_or_pause"),
       from("c").to("fastforward")

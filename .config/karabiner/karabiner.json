@@ -70,6 +70,9 @@
                     "type": "frontmost_application_if",
                     "file_paths": [
                       "^/opt/homebrew/bin/mpv$"
+                    ],
+                    "bundle_identifiers": [
+                      "^io\\.mpv$"
                     ]
                   },
                   {
@@ -98,6 +101,9 @@
                     "type": "frontmost_application_if",
                     "file_paths": [
                       "^/opt/homebrew/bin/mpv$"
+                    ],
+                    "bundle_identifiers": [
+                      "^io\\.mpv$"
                     ]
                   },
                   {
@@ -126,6 +132,9 @@
                     "type": "frontmost_application_if",
                     "file_paths": [
                       "^/opt/homebrew/bin/mpv$"
+                    ],
+                    "bundle_identifiers": [
+                      "^io\\.mpv$"
                     ]
                   },
                   {
