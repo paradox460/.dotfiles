@@ -77,9 +77,10 @@ diff@^4.0.1:
   resolved "https://registry.yarnpkg.com/diff/-/diff-4.0.2.tgz#60f3aecb89d5fae520c11aa19efc2bb982aade7d"
   integrity sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==
 
-"karabiner.ts@link:../../Developer/karabiner.ts":
-  version "0.0.0"
-  uid ""
+karabiner.ts@^1.25.0:
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/karabiner.ts/-/karabiner.ts-1.25.0.tgz#aff5f7dc0bd7907264e5bcddb3d98cfcd2cd7031"
+  integrity sha512-xZrIL4YoEQd+RWtIz7u2f5xCqDBf4NOMgvcS53X5agu+JfMefVDiGqO1Cqo5RmTiYjov/U1ethtN6HaIF+qYEQ==
 
 make-error@^1.1.1:
   version "1.3.6"
