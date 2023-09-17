@@ -1,3 +1,6 @@
+// Run with Deno via
+// deno run --allow-env --allow-read --allow-write karabiner.ts
+
 import {
   DeviceIdentifier,
   ModifierParam,
@@ -7,7 +10,7 @@ import {
   rule,
   withCondition,
   writeToProfile
-} from 'karabiner.ts';
+} from 'https://deno.land/x/karabinerts@1.25.0/deno.ts';
 
 const footPedal: DeviceIdentifier = { product_id: 45057, vendor_id: 13651 };
 
