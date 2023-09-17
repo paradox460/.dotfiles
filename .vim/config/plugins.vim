@@ -6,6 +6,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'tinted-theming/base16-vim'
 Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
