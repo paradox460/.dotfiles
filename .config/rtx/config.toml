@@ -7,3 +7,4 @@ deno = "latest"
 
 [settings]
 jobs = 8
+asdf_compat = true
