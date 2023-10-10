@@ -1,0 +1,9 @@
+[tools]
+rust = ["latest"]
+node = "latest"
+elixir = "latest"
+erlang = "latest"
+deno = "latest"
+
+[settings]
+jobs = 8
