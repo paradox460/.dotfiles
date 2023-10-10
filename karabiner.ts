@@ -1,5 +1,4 @@
-// Run with Deno via
-// deno run --allow-env --allow-read --allow-write karabiner.ts
+#! /usr/bin/env -S deno run --allow-env --allow-read --allow-write 
 
 import {
   DeviceIdentifier,
