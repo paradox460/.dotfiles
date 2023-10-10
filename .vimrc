@@ -106,6 +106,7 @@ endfunction
 
 function! OnUIEnter(event) abort
   if s:IsFirenvimActive(a:event)
+    set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
     set guifont=JetBrains\ Mono:h20
     au TextChanged * ++nested call Delay_My_Write()
     au TextChangedI * ++nested call Delay_My_Write()
