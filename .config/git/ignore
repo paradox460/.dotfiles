@@ -45,3 +45,6 @@ Temporary Items
 
 # Patch files
 *.patch
+
+# Node
+node_modules/
