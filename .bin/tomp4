@@ -1,23 +1,25 @@
 #! /usr/bin/env fish
-argparse 'c/copy' -- $argv
+argparse 'c/copy' 'y/yoink' -- $argv
 
 if set -q _flag_copy
   if test (count $argv) -gt 1
-    echo "Copy only works with one file at a time, exiting"
+    echo "Copy only works with one file at a time, exiting" >&2
     exit 1
   end
   if not command -sq file-to-clipboard
-    echo "No file-to-clipboard command, will not copy"
-    set -e _flag_copy
+    echo "No file-to-clipboard command, will not copy" >&2
+    exit 1
   end
 end
+
 for i in $argv
   set -l ext (string split --right --max 1 '.' -- $i)[-1]
   set -l newname (basename $i "."$ext)'.mp4'
-  if set -q _flag_copy
+  if set -q _flag_copy; or set -q _flag_yoink
     set newname /tmp/$newname
   end
   set -S newname
   ffmpeg -hide_banner -i $i -c:v libx264 -c:a aac -pix_fmt yuv420p -map_metadata -1 -vf "scale=ceil(iw/2)*2:ceil(ih/2)*2" $newname
   set -q _flag_copy; and file-to-clipboard $newname
+  set -q _flag_yoink; and yoink $newname
 end
