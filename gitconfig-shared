@@ -89,8 +89,6 @@
   smudge = git-media-smudge %f
 [hub]
   protocol = ssh
-[init]
-  templatedir = ~/.dotfiles/git-template
 [credential]
   helper = osxkeychain
 [grep]
