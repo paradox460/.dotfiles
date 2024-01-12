@@ -36,7 +36,7 @@
 
 ## which filter mode to use
 ## possible values: global, host, session, directory
-# filter_mode = "global"
+filter_mode = "host"
 
 ## With workspace filtering enabled, Atuin will filter for commands executed
 ## in any directory within a git repository tree (default: false)
@@ -130,14 +130,15 @@ enter_accept = true
 # Set commands where we should consider the subcommand for statistics. Eg, kubectl get vs just kubectl
 common_subcommands = [
   "cargo",
-  "go",
-  "git",
   "gh",
-  "npm",
-  "yarn",
-  "pnpm",
+  "git",
+  "go",
   "kubectl",
-  "mix"
+  "mix",
+  "npm",
+  "pnpm",
+  "rtx",
+  "yarn",
 ]
 
 # Set commands that should be totally stripped and ignored from stats
