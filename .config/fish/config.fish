@@ -23,14 +23,23 @@ set -gx KERL_BUILD_DOCS yes
 # ripgrep config
 set -gx RIPGREP_CONFIG_PATH $HOME/.ripgreprc
 
+set -gx ATUIN_NOBIND "true"
+
 if status is-interactive
-  if command -sq fzf && type -q fzf_configure_bindings
-      fzf_configure_bindings --directory=\ct
+  set -g fish_key_bindings fish_vi_key_bindings
+  # atuin (synced history) config
+  if command -q atuin
+    atuin init fish | source
+  end
+
+  # fzf.fish config
+  if command -q fzf && type -q fzf_configure_bindings
   end
 
   set fish_greeting (date)
 
-  set -g fish_key_bindings fish_vi_key_bindings
+
+  fzf_configure_bindings --directory=\ct --history=
 end
 
 # Direnv loads need to happen _after_ path is set
@@ -38,5 +47,5 @@ test -e /usr/local/bin/direnv ; and eval (direnv hook fish)
 
 zoxide init fish | source
 
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-
+bind \cr _atuin_search
+bind -M insert \cr _atuin_search
