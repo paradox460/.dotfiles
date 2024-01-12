@@ -10,3 +10,5 @@ alias ff_duration 'ffprobe -v error -show_entries format=duration -of default=no
 alias lg 'lazygit'
 
 alias yoink 'open -a Yoink'
+
+alias current-issue 'git rev-parse --abbrev-ref HEAD | gsed -E "s/.*\/(.*?)\/.*/\1/"'
