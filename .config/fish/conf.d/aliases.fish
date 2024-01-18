@@ -12,3 +12,5 @@ alias lg 'lazygit'
 alias yoink 'open -a Yoink'
 
 alias current-issue 'git rev-parse --abbrev-ref HEAD | gsed -E "s/.*\/(.*?)\/.*/\1/"'
+
+alias zq 'zoxide query'

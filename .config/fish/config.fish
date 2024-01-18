@@ -47,5 +47,6 @@ test -e /usr/local/bin/direnv ; and eval (direnv hook fish)
 
 zoxide init fish | source
 
+# Atuin bindings
 bind \cr _atuin_search
 bind -M insert \cr _atuin_search
