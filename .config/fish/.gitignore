@@ -1,0 +1,8 @@
+*
+!.gitignore
+!config.fish
+!fish_plugins
+!/conf.d/abbreviations.fish
+!/conf.d/aliases.fish
+!/conf.d/iterm2.fish
+!/conf.d/rtx.fish
