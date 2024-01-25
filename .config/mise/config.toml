@@ -1,9 +1,9 @@
 [tools]
-rust = ["latest"]
-node = "latest"
+rust = "latest"
+node = "21.6.1"
 elixir = "latest"
 erlang = "latest"
-deno = "latest"
+deno = "1.40.0"
 
 [settings]
 jobs = 8

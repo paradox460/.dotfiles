@@ -5,6 +5,7 @@
   abbr --add gcb "git checkout -b"
   abbr --add gu "gh repo sync"
   abbr --add j "jira"
+  abbr --add rtx "mise"
 
 function multicd
     echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
