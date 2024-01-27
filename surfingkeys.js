@@ -12,25 +12,25 @@ const {
 
 // Vimium/cVim
 map('u', 'e');
-mapkey('p', "Open the clipboard's URL in the current tab", function() {
-    Front.getContentFromClipboard(function(response) {
-        window.location.href = response.data;
-    });
+mapkey('p', "Open the clipboard's URL in the current tab", function () {
+  Front.getContentFromClipboard(function (response) {
+    window.location.href = response.data;
+  });
 });
-map('P' , 'cc');
+map('P', 'cc');
 map('gi', 'i');
 map('_F', 'F');
 map('_C', 'C');
-map('F' , '_C');
-map('C' , '_F');
+map('F', '_C');
+map('C', '_F');
 map('gf', 'w');
-map('`' , '\'');
-map('H' , 'S');
-map('L' , 'D');
+map('`', '\'');
+map('H', 'S');
+map('L', 'D');
 map('gt', 'R');
 map('gT', 'E');
-map('K' , 'R');
-map('J' , 'E');
+map('K', 'R');
+map('J', 'E');
 
 // Unmap temporary keys
 unmap('_F');
@@ -49,6 +49,7 @@ settings.smartPageBoundary = true;
 // Search aliases
 removeSearchAlias('b', 's') // Get rid of baidu
 removeSearchAlias('w', 's') // Get rid of bing
+removeSearchAlias('g', 's') // Get rid of Google, I use kagi
 
 // Wikipedia search alias
 addSearchAlias(
@@ -57,83 +58,86 @@ addSearchAlias(
   'https://en.wikipedia.org/w/index.php?title=Special:Search&search=', // search url
   's', // leader key
   'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&formatversion=2&namespace=0&limit=20&suggest=true&search=', // suggestion url
-  (response) =>  JSON.parse(response.text)[1] // Response parser
+  (response) => JSON.parse(response.text)[1] // Response parser
 );
 
-// Pivotal tracker search alias
 addSearchAlias(
-  'p',
-  'pivotal story id',
-  'https://www.pivotaltracker.com/story/show/',
-  's'
+  'g',
+  'kagi',
+  'https://kagi.com/search?q=',
+  's',
+  "https://kagi.com/api/autosuggest?q=",
+  (response) => JSON.parse(response.text)[1]
 );
+
+addSearchAlias('G', 'google', 'https://www.google.com/search?q=', 's', 'https://www.google.com/complete/search?client=chrome-omni&gs_ri=chrome-ext&oit=1&cp=1&pgcl=7&q=', (response) => JSON.parse(response.text)[1]);
 
 // Change open detected URL to new tab
 unmap("O");
-mapkey('O', '#1Open detected links from text', function() {
-  Hints.create(runtime.conf.clickablePat, function(element) {
-      window.open(element[2]);
-  }, {statusLine: "Open detected links from text"});
+mapkey('O', '#1Open detected links from text', function () {
+  Hints.create(runtime.conf.clickablePat, function (element) {
+    window.open(element[2]);
+  }, { statusLine: "Open detected links from text" });
 });
 
 // Improve default remove query/fragment
-mapkey('g?', '#4Reload current page without query', function() {
+mapkey('g?', '#4Reload current page without query', function () {
   window.location.href = window.location.href.replace(/\?[^?#]*/, '');
 });
-mapkey('g#', '#4Reload current page without hash fragment', function() {
+mapkey('g#', '#4Reload current page without hash fragment', function () {
   window.location.href = window.location.href.replace(/\#[^#]*/, '');
 });
-mapkey('gB', '#4Reload current page without query or hash fragment', function() {
+mapkey('gB', '#4Reload current page without query or hash fragment', function () {
   window.location.href = window.location.href.replace(/[#?].*/, '');
 });
 
 // Add copy without query/fragment
-mapkey('y?', "#7Copy current page's URL without query", function() {
+mapkey('y?', "#7Copy current page's URL without query", function () {
   Clipboard.write(window.location.href.replace(/\?[^?#]*/, ''))
 });
-mapkey('y#', "#7Copy current page's URL without hash fragment", function() {
+mapkey('y#', "#7Copy current page's URL without hash fragment", function () {
   Clipboard.write(window.location.href.replace(/#[^#]*/, ''))
 });
-mapkey('yb', "#7Copy current page's URL without query or hash fragment", function() {
+mapkey('yb', "#7Copy current page's URL without query or hash fragment", function () {
   Clipboard.write(window.location.href.replace(/[#?].*$/, ''))
 });
 
 // Base64 stuff
-vmapkey("dy", "#9Base64 decode and copy selection", function() {
+vmapkey("dy", "#9Base64 decode and copy selection", function () {
   const text = window.getSelection().toString()
   Clipboard.write(atob(text))
   Visual.toggle();
 });
 
-vmapkey("do", "#9Base64 decode selection and open as URL", function() {
+vmapkey("do", "#9Base64 decode selection and open as URL", function () {
   const text = window.getSelection().toString()
   window.open(atob(text));
   Visual.toggle()
 });
 
 // Passthrough key
-mapkey('p', '#0enter ephemeral PassThrough mode to temporarily suppress SurfingKeys', function() {
+mapkey('p', '#0enter ephemeral PassThrough mode to temporarily suppress SurfingKeys', function () {
   Normal.passThrough(1500);
 });
 
 // Copy image url key
-mapkey(';yi', "#7Copy image URL", function() {
-  Hints.create('img', function(element) {
+mapkey(';yi', "#7Copy image URL", function () {
+  Hints.create('img', function (element) {
     Clipboard.write(element.src);
   });
 });
 
 // Download url
-mapkey(';df', "#1Download link", function() {
-  Hints.create("*[href]", function(element) {
-    RUNTIME('download', {url: element.href})
+mapkey(';df', "#1Download link", function () {
+  Hints.create("*[href]", function (element) {
+    RUNTIME('download', { url: element.href })
   })
 });
 
-mapkey(';dm', "#1Download multiple links", function() {
-  Hints.create("*[href]", function(element) {
-    RUNTIME('download', {url: element.href})
-  }, {multipleHits: true})
+mapkey(';dm', "#1Download multiple links", function () {
+  Hints.create("*[href]", function (element) {
+    RUNTIME('download', { url: element.href })
+  }, { multipleHits: true })
 });
 
 // Bottom-style omnibar
@@ -145,7 +149,7 @@ settings.omnibarPosition = 'bottom';
 // multiselects
 settings.useNeovim = false;
 
-settings.newTabPosition="last";
+settings.newTabPosition = "last";
 
 // Tomorrow night style hints
 Hints.style('font-family: system-ui;');
