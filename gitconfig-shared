@@ -45,10 +45,7 @@
   cob = "!f() { H=$(git current-branch); git checkout -b $1-$H $1; }; f"
 
   # Publish a branch and open a pull request
-  pupr = "!f() { H=$(git current-branch); git shove; hub pull-request -b $1 -d -o; }; f"
-
-  # Run CTags
-  ctags = !.git/hooks/ctags
+  pupr = "!f() { H=$(git current-branch); git shove; gh pr create; }; f"
 
   # grep
   g = grep --break --heading --line-number
