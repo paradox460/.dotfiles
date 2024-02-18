@@ -1,6 +1,7 @@
 [core]
   excludesfile = ~/.dotfiles/.config/git/ignore
   attributesFile = ~/.dotfiles/.config/git/attributes
+  pager = delta
 [rerere]
   enabled = 1
 [color]
@@ -8,8 +9,10 @@
 [branch]
   autosetupmerge = always
   autosetuprebase = always
+  sort = -committerdate
 [push]
   default = simple
+  followtags = true
 [alias]
   # Returns the name of the current branch
   current-branch = rev-parse --symbolic-full-name --abbrev-ref HEAD
@@ -67,12 +70,9 @@
 
 [mergetool]
   prompt = false
-[mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustexitcode = true
 [merge]
-  tool = Kaleidoscope
   ff = false
+  conflictStyle = zdiff3
 [pull]
   rebase = true
 [difftool "difftastic"]
@@ -84,6 +84,9 @@
 [diff]
   tool = difftastic
   external = difft
+  submodule = log
+  colorMoved = default
+  colorMovedWS = allow-indentation-change
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
@@ -94,10 +97,25 @@
 [grep]
   extendRegexp = true
   lineNumber = true
-[credential]
-    helper = osxkeychain
 [rebase]
   autosquash = true
   autostash = true
+  updateRefs = true
 [commit]
   gpgsign = true
+  cleanup = scissors
+[help]
+  autocorrect = prompt
+[status]
+  submoduleSummary = true
+[submodule]
+  recurse = true
+[fetch]
+  prune = true
+  prunetags = true
+[log]
+  date = iso
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
