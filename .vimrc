@@ -17,7 +17,7 @@ set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 filetype plugin indent on " per-filetype indent options
 
 " Highlighting on (durr)
-syntax on
+syntax enable
 
 " Line numbers
 set relativenumber number
