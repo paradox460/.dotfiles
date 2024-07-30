@@ -1,6 +1,6 @@
 #! /usr/bin/env fish
 
-argparse -x 'c,t' -i 'e/edit' 'c/crf=' 't/targetfs=' 'h/help' 'copy' 'y/yoink' -- $argv
+argparse -x 'c,t' -i 'e/edit' 'c/crf=' 't/targetfs=' 'h/help' 'copy' 'y/yoink' 'tmp' -- $argv
 
 if set -q _flag_h
   echo -e "\
@@ -41,10 +41,14 @@ set -l l_crf 0
 set -l r_crf 63
 
 set -l newname
+set -l dir_prefix
+if set -q _flag_tmp
+  set dir_prefix '/tmp/'
+end
 
 while true
   set -l ext (string split --right --max 1 '.' -- $f)[-1]
-  set newname (basename $f "."$ext)'.webm'
+  set newname "$dir_prefix"(basename $f "."$ext)'.webm'
 
 
   set -l command "ffmpeg -hide_banner -i \"$f\" -c:v libvpx-vp9 -an -b:v 0 -crf $_flag_c $fs_limit -pass 1 -f null /dev/null && ffmpeg -y -hide_banner -i \"$f\" -c:v libvpx-vp9 -c:a libopus -b:v 0 -crf $_flag_c $fs_limit -pass 2 \"$newname\""

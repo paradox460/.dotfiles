@@ -22,4 +22,5 @@ for i in $argv
   set newname (readlink -f $newname)
   set -q _flag_copy; and file-to-clipboard $newname
   set -q _flag_yoink; and yoink $newname
+  echo $newname
 end
