@@ -6,6 +6,7 @@ alias git hub
 alias vim nvim
 
 alias ff_duration 'ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1'
+alias ff_frames 'ffprobe -v error -select_streams v:0 -count_frames -show_entries stream=nb_read_frames -print_format default=nokey=1:noprint_wrappers=1'
 
 alias lg 'lazygit'
 
