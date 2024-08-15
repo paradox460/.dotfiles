@@ -8,7 +8,7 @@ switch (uname -m)
 end
 source (command $brew_root/bin/brew shellenv | psub)
 
-fish_add_path -P $HOME/.bin $HOME/.dotfiles/.bin $HOME/.cargo/bin
+fish_add_path -P $HOME/.bin $HOME/.dotfiles/bin $HOME/.cargo/bin
 
 # Set Editors
 set -gx EDITOR nvim

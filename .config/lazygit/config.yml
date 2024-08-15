@@ -5,7 +5,7 @@ gui:
   branchColors:
     'jeffs': 'cyan'
 confirmOnQuit: true
-quitOnTopLevelReturn: true
+quitOnTopLevelReturn: false
 keybinding:
   universal:
     quit: Q
