@@ -8,3 +8,4 @@ deno = "1.44.4"
 [settings]
 jobs = 8
 asdf_compat = true
+disable_tools = ["postgres"]

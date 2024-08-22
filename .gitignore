@@ -28,6 +28,7 @@
 !.config/karabiner/karabiner.json
 !.config/latexmk/latexmkrc
 !.config/lazygit/config.yml
+!.config/mise
 !.config/mise/config.toml
 !.config/mpv/input.conf
 !.config/mpv/mpv.conf
