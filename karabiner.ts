@@ -1,4 +1,4 @@
-#! /usr/bin/env -S deno run --allow-env --allow-read --allow-write 
+#! /usr/bin/env -S mise x deno@latest -- deno run --allow-env --allow-read --allow-write
 
 import {
   DeviceIdentifier,
