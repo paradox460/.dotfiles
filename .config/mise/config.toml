@@ -3,7 +3,7 @@ rust = "latest"
 node = "21.6.1"
 elixir = "latest"
 erlang = "latest"
-deno = "1.44.4"
+deno = "latest"
 
 [settings]
 jobs = 8
