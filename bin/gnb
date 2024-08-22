@@ -2,14 +2,14 @@
 
 function __gnb_new_branch
   read -d \t -a -l args
-  set -l name (string trim $args[3] | string lower | string replace -a ' ' "-" -- | string replace -a -r "[^\-0-9a-z]" "" --)
-  git switch -c jeffs/$args[1]/$name main
+  set -l name (string trim $args[2] | string lower | string replace -a ' ' "-" -- | string replace -a -r "[^\-0-9a-z]" "" --)
+  git switch -c jeffs/$args[1]/$name
 end
 
-gh issue list | \
+jira list --template list-separated --query "resolution = unresolved and assignee=currentuser() ORDER BY priority asc, created" | \
   fzf \
     --delimiter "\t" \
     --reverse \
-    --preview="GH_FORCE_TTY=true CLICOLOR_FORCE=1 gh issue view {1}" \
-    --bind="ctrl-e:become(gh issue view -w {1})" | \
-    __gnb_new_branch
+    --preview="jira view {1}" \
+    --bind="ctrl-e:execute(jira view -b {1})" | \
+  __gnb_new_branch
