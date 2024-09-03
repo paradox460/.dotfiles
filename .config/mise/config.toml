@@ -1,6 +1,6 @@
 [tools]
 rust = "latest"
-node = "21.6.1"
+node = "latest"
 elixir = "latest"
 erlang = "latest"
 deno = "latest"
@@ -9,3 +9,4 @@ deno = "latest"
 jobs = 8
 asdf_compat = true
 disable_tools = ["postgres"]
+experimental = true
