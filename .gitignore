@@ -11,10 +11,8 @@
 !.config/.gnuplot
 !.config/atuin/config.toml
 !.config/fish/
-!.config/fish/conf.d/abbreviations.fish
-!.config/fish/conf.d/aliases.fish
-!.config/fish/conf.d/iterm2.fish
-!.config/fish/conf.d/mise.fish
+!.config/fish/conf.d/
+!.config/fish/conf.d/jeffs_*.fish
 !.config/fish/config.fish
 !.config/fish/fish_plugins
 !.config/fish/functions/
