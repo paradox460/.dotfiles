@@ -4,9 +4,10 @@ node = "latest"
 elixir = "latest"
 erlang = "latest"
 deno = "latest"
+"cargo:cargo-binstall" = "1.10.8"
+"cargo:lucky_commit" = "2.2.3"
 
 [settings]
 jobs = 8
 asdf_compat = true
-disable_tools = ["postgres"]
 experimental = true
