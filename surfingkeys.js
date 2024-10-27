@@ -27,8 +27,14 @@ map('F', '_C');
 map('C', '_F');
 map('gf', 'w');
 map('`', '\'');
-map('H', 'S');
-map('L', 'D');
+map('_H', 'H');
+map('_S', 'S');
+map('_D', 'D');
+map('_L', 'L');
+map('H', '_S');
+map('S', '_H')
+map('D', '_L');
+map('L', '_D');
 map('gt', 'R');
 map('gT', 'E');
 map('K', 'R');
@@ -36,6 +42,11 @@ map('J', 'E');
 
 // Unmap temporary keys
 unmap('_F');
+unmap('_C');
+unmap('_S');
+unmap('_H');
+unmap('_D');
+unmap('_L');
 
 // Unmap emoji input
 iunmap(':');
