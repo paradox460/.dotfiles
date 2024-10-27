@@ -7,7 +7,9 @@ const {
   addSearchAlias,
   vmapkey,
   Hints,
-  RUNTIME
+  RUNTIME,
+  Normal,
+  Visual
 } = api;
 
 // Vimium/cVim
