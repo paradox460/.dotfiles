@@ -28,6 +28,7 @@
 !.config/lazygit/config.yml
 !.config/mise
 !.config/mise/config.toml
+!.config/mpv
 !.config/mpv/input.conf
 !.config/mpv/mpv.conf
 !.config/mpv/script-opts/
