@@ -14,6 +14,8 @@ const {
 
 // Vimium/cVim
 map('u', 'e');
+
+unmap('p');
 mapkey('p', "Open the clipboard's URL in the current tab", function () {
   Front.getContentFromClipboard(function (response) {
     window.location.href = response.data;
@@ -151,6 +153,15 @@ mapkey(';dm', "#1Download multiple links", function () {
   Hints.create("*[href]", function (element) {
     RUNTIME('download', { url: element.href })
   }, { multipleHits: true })
+});
+
+mapkey('sx', "#6Open current page in kagi summary page in a new tab", function () {
+  window.open(`https://kagi.com/summarizer/index.html?target_language=&summary=takeaway&url=${window.location.href}`)
+});
+mapkey('sX', "#6Open selected hint with Kagi summarizer", function () {
+  Hints.create("*[href]", function (element) {
+    window.open(`https://kagi.com/summarizer/index.html?target_language=&summary=takeaway&url=${element[2]}`)
+  });
 });
 
 // Bottom-style omnibar
