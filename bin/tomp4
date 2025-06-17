@@ -1,5 +1,5 @@
 #! /usr/bin/env fish
-argparse 't/tmp' 'c/copy' 'y/yoink' 'o/output=' -- $argv
+argparse 't/tmp' 'c/copy' 'y/yoink' 'o/output=' 'm/mute' -- $argv
 
 if set -q _flag_copy; or set -q _flag_output; and test (count $argv) -gt 1
   echo "Only works with one file at a time, exiting" >&2
@@ -19,7 +19,12 @@ for i in $argv
   if set -q _flag_t
     set newname /tmp/$newname
   end
-  ffmpeg -hide_banner -i $i -c:v libx264 -c:a aac -pix_fmt yuv420p -map_metadata -1 -vf "scale=ceil(iw/2)*2:ceil(ih/2)*2" $newname
+  if set -q _flag_m
+    set audio_codec -an
+  else
+    set audio_codec -c:a aac
+  end
+  ffmpeg -hide_banner -i $i -c:v libx264 $audio_codec -pix_fmt yuv420p -map_metadata -1 -vf "scale=ceil(iw/2)*2:ceil(ih/2)*2" -y $newname
   set newname (readlink -f $newname)
   set -q _flag_copy; and file-to-clipboard $newname
   set -q _flag_yoink; and yoink $newname
