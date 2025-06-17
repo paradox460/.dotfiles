@@ -160,7 +160,7 @@ mapkey('sx', "#6Open current page in kagi summary page in a new tab", function (
 });
 mapkey('sX', "#6Open selected hint with Kagi summarizer", function () {
   Hints.create("*[href]", function (element) {
-    window.open(`https://kagi.com/summarizer/index.html?target_language=&summary=takeaway&url=${element[2]}`)
+    window.open(`https://kagi.com/summarizer/index.html?target_language=&summary=takeaway&url=${element.href}`)
   });
 });
 
