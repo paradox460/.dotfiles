@@ -42,3 +42,7 @@ zoxide init fish | source
 # Atuin bindings
 bind \cr _atuin_search
 bind -M insert \cr _atuin_search
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.fish 2>/dev/null || :
