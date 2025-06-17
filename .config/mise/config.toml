@@ -6,6 +6,7 @@ erlang = "latest"
 deno = "latest"
 "cargo:cargo-binstall" = "1.10.8"
 "cargo:lucky_commit" = "2.2.3"
+"cargo:spurdify" = "0.1.1"
 
 [settings]
 jobs = 8
