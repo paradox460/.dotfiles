@@ -1,0 +1,24 @@
+#!/usr/bin/env fish
+
+# This function takes any trailers set on the branch description
+# and appends them to the commit message.
+# If you use `-m` or `-F` to set the commit message, it will append them without
+# giving you a chance to edit
+# If you edit commit messages in an editor, they will appear at the bottom
+
+set commit_msg_path $argv[1]
+set commit_msg_kind $argv[2]
+
+set branch (git branch --show-current | tr -d '\n')
+
+
+set trailers (git config --get "branch.$branch.description" | git interpret-trailers --parse)
+
+test -z "$trailers"; and exit 0
+
+switch $commit_msg_kind
+  case "message"
+    printf "\n\n%s" "$trailers" >> $commit_msg_path
+  case "template" ''
+    sd --max-replacements=1 "\n#" "\n$trailers\n#" "$commit_msg_path"
+end

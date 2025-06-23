@@ -2,8 +2,11 @@
 
 function __gnb_new_branch
   read -d \t -a -l args
+  set -l ticket $args[1]
   set -l name (string trim $args[2] | string lower | string replace -a ' ' "-" -- | string replace -a -r "[^\-0-9a-z]" "" --)
-  git switch -c jeffs/$args[1]/$name
+  set -l branchname "jeffs/$ticket/$name"
+  git switch -c $branchname
+  git config "branch.$branchname.description" "Branch for JIRA ticket $ticket\n\nTicket-Ref: $ticket\nTicket-Name: $args[2]"
 end
 
 jira list --template list-separated --query "resolution = unresolved and assignee=currentuser() ORDER BY priority asc, created" | \
