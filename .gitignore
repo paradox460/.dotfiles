@@ -70,6 +70,8 @@
 !bin/
 !bin/**
 !gitconfig-shared
+!git-template
+!git-template/**
 !iosevka.toml
 !karabiner.ts
 !surfingkeys.js
