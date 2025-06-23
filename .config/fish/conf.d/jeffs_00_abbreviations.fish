@@ -1,13 +1,13 @@
-  abbr --add g "git"
-  abbr --add gst "git status"
-  abbr --add gcm "git commit -m"
-  abbr --add gc "git checkout"
-  abbr --add gcb "git checkout -b"
-  abbr --add --set-cursor gcbj "git checkout -b jeffs/%"
-  abbr --add gu "gh repo sync"
-  abbr --add j "jira"
-  abbr --add rtx "mise"
-  abbr --add mr "mise run"
+abbr --add g "git"
+abbr --add gst "git status"
+abbr --add gcm "git commit -m"
+abbr --add gc "git checkout"
+abbr --add gcb "git checkout -b"
+abbr --add --set-cursor gcbj "git checkout -b jeffs/%"
+abbr --add gu "gh repo sync"
+abbr --add j "jira"
+abbr --add rtx "mise"
+abbr --add mr "mise run"
 
 function multicd
     echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
