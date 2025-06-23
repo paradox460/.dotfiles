@@ -35,7 +35,7 @@ if status is-interactive
 end
 
 # Direnv loads need to happen _after_ path is set
-test -e /usr/local/bin/direnv ; and eval (direnv hook fish)
+test -e /usr/local/bin/direnv ; or test -e /opt/homebrew/bin/direnv ; and eval (direnv hook fish)
 
 zoxide init fish | source
 
