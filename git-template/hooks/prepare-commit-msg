@@ -9,16 +9,18 @@
 set commit_msg_path $argv[1]
 set commit_msg_kind $argv[2]
 
+test -n "$(cat $commit_msg_path | git interpret-trailers --parse)"; and exit 0
+
 set branch (git branch --show-current | tr -d '\n')
-
-
 set trailers (git config --get "branch.$branch.description" | git interpret-trailers --parse)
 
 test -z "$trailers"; and exit 0
 
+set trailers "$(string join \n $trailers)"
+
 switch $commit_msg_kind
   case "message"
-    printf "\n\n%s" "$trailers" >> $commit_msg_path
+    printf "\n\n%s" $trailers >> $commit_msg_path
   case "template" ''
     sd --max-replacements=1 "\n#" "\n$trailers\n#" "$commit_msg_path"
 end
