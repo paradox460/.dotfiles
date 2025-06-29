@@ -3,7 +3,8 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -26,7 +27,7 @@ Temporary Items
 .envrc
 
 # pt
-.pt 
+.pt
 
 # Emacs
 .dir-locals.el
@@ -48,3 +49,9 @@ Temporary Items
 
 # Node
 node_modules/
+
+# Mise local configs
+mise.local.toml
+.mise.local.toml
+mise.*.local.toml
+.mise.*.local.toml
