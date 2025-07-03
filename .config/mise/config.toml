@@ -4,13 +4,18 @@ node = "latest"
 elixir = "latest"
 erlang = "latest"
 deno = "latest"
-"cargo:cargo-binstall" = "1.14.1"
 "cargo:cargo-generate" = "0.23.3"
 "cargo:lucky_commit" = "2.2.5"
 "cargo:sd" = "1.0.0"
 "cargo:spurdify" = "0.1.1"
 bun = "latest"
+slsa-verifier = "latest"
+cosign = "latest"
+cargo-binstall = "latest"
 
 [settings]
 jobs = 8
 experimental = true
+
+[settings.npm]
+bun = true
