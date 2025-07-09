@@ -8,8 +8,9 @@ function __gnb_new_branch
   git switch -c $branchname
   git config "branch.$branchname.description" "Branch for JIRA ticket $ticket
 
-  Ticket-Ref: $ticket
-  Ticket-Name: $args[2]"
+Ticket-Ref: $ticket
+Ticket-Name: $args[2]
+"
 end
 
 jira list --template list-separated --query "resolution = unresolved and assignee=currentuser() ORDER BY priority asc, created" | \
