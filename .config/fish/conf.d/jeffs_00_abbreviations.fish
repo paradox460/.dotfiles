@@ -7,6 +7,7 @@ abbr --add gst "git status"
 abbr --add gsy "gh repo sync"
 abbr --add gu "gh repo sync"
 abbr --add j "jira"
+abbr --add m "mise"
 abbr --add mr "mise run"
 abbr --add rtx "mise"
 
