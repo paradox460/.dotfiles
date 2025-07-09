@@ -1,17 +1,19 @@
 [tools]
-rust = "stable"
-node = "latest"
-elixir = "latest"
-erlang = "latest"
-deno = "latest"
 "cargo:cargo-generate" = "0.23.3"
 "cargo:lucky_commit" = "2.2.5"
 "cargo:sd" = "1.0.0"
 "cargo:spurdify" = "0.1.1"
 bun = "latest"
-slsa-verifier = "latest"
-cosign = "latest"
 cargo-binstall = "latest"
+cosign = "latest"
+deno = "latest"
+elixir = "latest"
+erlang = "latest"
+hk = "1.2.0"
+node = "latest"
+rust = "stable"
+slsa-verifier = "latest"
+usage = "2.1.1"
 
 [settings]
 jobs = 8
