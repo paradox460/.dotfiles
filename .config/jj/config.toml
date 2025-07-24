@@ -1,0 +1,32 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+# Username, gpg key, and other per-machine settings are in ./conf.d/local.toml
+
+[signing]
+behavior = "own"
+backend = "gpg"
+
+[revsets]
+log = 'present(@) | ancestors(immutable_heads().., 5) | present(trunk())'
+
+[ui]
+default-command = "log"
+diff-formatter = "difft"
+diff-editor = ":builtin"
+
+[aliases]
+e = ["edit"]
+p = ["git", "push"]
+n = ["new"]
+bu = ["bookmark", "set", "main"]
+foo = ['bar', 'baz']
+
+[revset-aliases]
+'local_trunk()' = '''
+latest(
+  bookmarks(exact:"main") |
+  bookmarks(exact:"master") |
+  bookmarks(exact:"trunk") |
+  root()
+)
+'''
