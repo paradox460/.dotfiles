@@ -10,11 +10,12 @@ deno = "latest"
 elixir = "latest"
 erlang = "latest"
 hk = "1.2.0"
-node = "latest"
 rust = "stable"
 slsa-verifier = "latest"
 usage = "2.1.1"
 "cargo:lazyjj" = "latest"
+pkl = "latest"
+watchexec = "latest"
 
 [settings]
 jobs = 8
