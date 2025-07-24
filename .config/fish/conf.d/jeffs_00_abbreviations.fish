@@ -7,9 +7,12 @@ abbr --add gst "git status"
 abbr --add gsy "gh repo sync"
 abbr --add gu "gh repo sync"
 abbr --add j "jira"
+abbr --add jbu "jj bookmark set main -r @-"
+abbr --add jp "jj git push"
 abbr --add ljj "lazyjj"
 abbr --add m "mise"
 abbr --add mr "mise run"
+
 
 function multicd
     echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
