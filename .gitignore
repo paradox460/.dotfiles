@@ -38,6 +38,7 @@
 !.config/mpv/script_sources/**
 !.config/mpv/scripts/
 !.config/mpv/scripts/**
+.config/mpv/scripts/**/*-local*
 !.config/nvim/init.vim
 !.config/ranger/commands.py
 !.config/ranger/rc.conf
