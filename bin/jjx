@@ -1,0 +1,8 @@
+#!/usr/bin/env fish
+
+while true
+  jj split -i
+  if jj show -T 'empty' | string match -q "true"
+    break
+  end
+end
