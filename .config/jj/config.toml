@@ -20,6 +20,7 @@ p = ["git", "push"]
 n = ["new"]
 bu = ["bookmark", "set", "main"]
 foo = ['bar', 'baz']
+d = ["describe"]
 
 [revset-aliases]
 'local_trunk()' = '''
