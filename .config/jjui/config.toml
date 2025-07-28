@@ -1,3 +1,6 @@
 [preview]
 revision_command = ["show", "--color", "always", "-r", "$change_id", "--tool", ":color-words"]
 file_command = ["diff", "--color", "always", "-r", "$change_id", "$file", "--tool", ":color-words"]
+[ui.colors]
+"selected" = { bg = "#373B41" }
+"revisions details selected" = { bg = "#373B41" }
