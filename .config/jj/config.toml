@@ -31,3 +31,6 @@ latest(
   root()
 )
 '''
+
+[templates]
+git_push_bookmark = '"jeffs/push/" ++ change_id.short()'
