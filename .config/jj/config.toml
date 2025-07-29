@@ -34,3 +34,9 @@ latest(
 
 [templates]
 git_push_bookmark = '"jeffs/push/" ++ change_id.short()'
+
+[core]
+fsmonitor = "watchman"
+
+[core.watchman]
+register-snapshot-trigger = true
