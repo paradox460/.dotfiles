@@ -13,7 +13,6 @@ hk = "1.2.2"
 rust = "stable"
 slsa-verifier = "latest"
 usage = "2.2.2"
-"cargo:lazyjj" = "latest"
 pkl = "latest"
 watchexec = "latest"
 

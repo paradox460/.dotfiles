@@ -10,7 +10,6 @@ abbr --add j "jira"
 abbr --add --set-cursor jbu "jj bu -r @%"
 abbr --add jp "jj git push"
 abbr --add jje "jj edit"
-abbr --add ljj "lazyjj"
 abbr --add m "mise"
 abbr --add mr "mise run"
 
