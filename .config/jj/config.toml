@@ -21,6 +21,8 @@ n = ["new"]
 bu = ["bookmark", "set", "main"]
 foo = ['bar', 'baz']
 d = ["describe"]
+s = ["show"]
+a = ["abandon"]
 
 [revset-aliases]
 'local_trunk()' = '''
