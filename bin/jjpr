@@ -1,0 +1,20 @@
+#!/usr/bin/env fish
+argparse -i "c/change=+" "p/push-args=" -- $argv
+
+set -l push_args
+set -q _flag_push_args; or set -a push_args "-c" "@"
+for rev in $_flag_change do
+  set -a push_args -c $rev
+end
+
+set -a push_args $_flag_push_args
+
+set -l push_result (jj git push $push_args)
+
+string match -q -g --all --regex  "Add bookmark (?<bookmarks>.*) \sto" $push_result
+
+for bookmark in $bookmarks
+  echo "Pushing bookmark $bookmark"
+  jj log -r "trunk()-..$bookmark"
+  gh pr create -H $bookmark
+end
