@@ -76,14 +76,21 @@
   cmd = difft "$LOCAL" "$REMOTE"
 [difftool "code"]
   cmd = code --diff --wait "$LOCAL" "$REMOTE"
+[difftool "ksdiff"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "ksdiff"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
 [difftool]
   prompt = false
+  trustExitCode = true
 [diff]
   tool = difftastic
   external = difft
   submodule = log
   colorMoved = default
   colorMovedWS = allow-indentation-change
+
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
