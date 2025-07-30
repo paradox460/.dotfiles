@@ -18,7 +18,7 @@ diff-editor = ":builtin"
 e = ["edit"]
 p = ["git", "push"]
 n = ["new"]
-bu = ["bookmark", "set", "main"]
+bu = ["bookmark", "move", "--from", "closest_main(@-)", "--to", "@-"]
 foo = ['bar', 'baz']
 d = ["describe"]
 s = ["show"]
@@ -35,6 +35,7 @@ latest(
 )
 '''
 'closest_bookmark(to)' = 'heads(::to & bookmarks())'
+'closest_main(to)' = "heads(::to & (bookmarks(exact:'main')|bookmarks(exact:'master')))"
 
 [templates]
 git_push_bookmark = '"jeffs/push/" ++ change_id.short()'
