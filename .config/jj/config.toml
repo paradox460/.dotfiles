@@ -36,6 +36,9 @@ latest(
 
 [templates]
 git_push_bookmark = '"jeffs/push/" ++ change_id.short()'
+commit_trailers = """
+if(!trailers.contains_key("JJ-Change-Id"), "JJ-Change-Id: " ++ self.change_id())
+"""
 
 [template-aliases]
 "format_timestamp(timestamp)" = """
