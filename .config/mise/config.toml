@@ -16,6 +16,7 @@ usage = "2.2.2"
 pkl = "latest"
 watchexec = "latest"
 "npm:jj-stack" = "latest"
+node = "latest"
 
 [settings]
 jobs = 8
