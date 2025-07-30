@@ -3,7 +3,7 @@ argparse -i "c/change=+" "p/push-args=" -- $argv
 
 set -l push_args
 set -q _flag_push_args; or set -a push_args "-c" "@"
-for rev in $_flag_change do
+for rev in $_flag_change
   set -a push_args -c $rev
 end
 
