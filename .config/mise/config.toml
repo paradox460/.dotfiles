@@ -15,6 +15,7 @@ slsa-verifier = "latest"
 usage = "2.2.2"
 pkl = "latest"
 watchexec = "latest"
+"npm:jj-stack" = "latest"
 
 [settings]
 jobs = 8
