@@ -11,10 +11,17 @@ set -a push_args $_flag_push_args
 
 set -l push_result (jj git push $push_args)
 
-string match -q -g --all --regex  "Add bookmark (?<bookmarks>.*) \sto" $push_result
+echo $push_result
+
+string match -q -g --all --regex  "Add bookmark (?<bookmarks>.*)\*? \sto" $push_result
+
+if not set -q bookmarks[1]
+  set bookmarks (jj log -r "heads(::@ & bookmarks(glob:'jeffs/push/*'))" -T "bookmarks ++ '"\n"'" --no-graph | string replace '*' '' )
+end
+
 
 for bookmark in $bookmarks
-  echo "Pushing bookmark $bookmark"
+  echo (set_color --bold cyan)"Opening PR for $bookmark"(set_color reset)
   jj log -r "trunk()-..$bookmark"
   gh pr create -H $bookmark
 end
