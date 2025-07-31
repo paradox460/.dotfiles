@@ -23,7 +23,7 @@ foo = ['bar', 'baz']
 d = ["describe"]
 s = ["show"]
 a = ["abandon"]
-tug = ["bookmark", "move", "--from", "closest_bookmark(@-)", "--to", "@-"]
+tug = ["bookmark", "move", "--from", "closest_bookmark(@)", "--to", "closest_pushable(@)"]
 
 [revset-aliases]
 'local_trunk()' = '''
@@ -36,6 +36,7 @@ latest(
 '''
 'closest_bookmark(to)' = 'heads(::to & bookmarks())'
 'closest_main(to)' = "heads(::to & (bookmarks(exact:'main')|bookmarks(exact:'master')))"
+'closest_pushable(to)' = 'heads(::to & ~description(exact:"") & (~empty() | merges()))'
 
 [templates]
 git_push_bookmark = '"jeffs/push/" ++ change_id.short()'
