@@ -4,3 +4,7 @@ file_command = ["diff", "--color", "always", "-r", "$change_id", "$file", "--too
 [ui.colors]
 "selected" = { bg = "#373B41" }
 "revisions details selected" = { bg = "#373B41" }
+
+[custom_commands]
+"tug" = { key = ["t"], args = ["bookmark", "move", "--from", "closest_bookmark($change_id)", "--to", "closest_pushable($change_id)"] }
+"ksdiff" = { key = ["k"], args = ["diff", "--tool", "ksdiff", "-r", "$change_id"], show="interactive" }
