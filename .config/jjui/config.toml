@@ -11,7 +11,15 @@ show_at_start = true
 "tug" = { key = ["t"], args = ["bookmark", "move", "--from", "closest_bookmark($change_id)", "--to", "closest_pushable($change_id)"] }
 "ksdiff" = { key = ["ctrl+k"], args = ["diff", "--tool", "ksdiff", "-r", "$change_id"], show="interactive" }
 
+[keys]
+split = ["S"]
 
 [keys.preview]
   half_page_down = ["ctrl+d", "pgdown"]
   half_page_up = ["ctrl+u", "pgup"]
+
+[keys.squash]
+mode = ["s"]
+
+[keys.details]
+split = ["S"]
