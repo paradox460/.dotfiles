@@ -53,10 +53,10 @@ timestamp.ago()
 )
 """
 
-[core]
-fsmonitor = "watchman"
+[fsmonitor]
+backend = "watchman"
 
-[core.watchman]
+[fsmonitor.watchman]
 register-snapshot-trigger = true
 
 [merge-tools.ksdiff]
