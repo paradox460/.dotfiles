@@ -63,3 +63,6 @@ register-snapshot-trigger = true
 diff-invocation-mode = "file-by-file"
 diff-args = ["--partial-changeset", "$left", "$right"]
 merge-args = ["--merge", "--output", "$output", "--base", "$base", "$left", "$right"]
+
+[git]
+private-commits = "description(glob:'private:*')"
