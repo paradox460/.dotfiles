@@ -4,7 +4,7 @@ argparse -i "c/change=+" "p/push-args=" "r/ref=+" -- $argv
 set -l push_args
 if set -q _flag_ref
   set -a push_args -N
-  for ref in _flag_ref
+  for ref in $_flag_ref
     set -a push_args -r $ref
   end
 else
@@ -21,11 +21,19 @@ jj git push $push_args &| read -z push_result
 string match -q -g --all --regex  "Add bookmark (?<bookmarks>.*)\*? to" $push_result
 
 if not set -q bookmarks[1]
-  set bookmarks (jj log -r "heads(::@ & bookmarks(glob:'jeffs/push/*'))" -T "bookmarks ++ '"\n"'" --no-graph | string replace '*' '' )
+  if set -q _flag_ref
+    set refs $_flag_ref
+  else
+    set refs "@"
+  end
+
+  for ref in $refs
+    set -a bookmarks (jj log -r "heads(::$ref & bookmarks())" -T "bookmarks ++ '"\n"'" --no-graph | string replace '*' '' )
+  end
 end
 
 for bookmark in $bookmarks
   echo (set_color --bold cyan)"Opening PR for $bookmark"(set_color reset)
   jj log -r "trunk()..$bookmark"
-  gh pr create -H $bookmark
+  gh pr create -H $bookmark $argv
 end
