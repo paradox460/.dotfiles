@@ -1,9 +1,12 @@
 #!/usr/bin/env fish
-argparse -i "c/change=+" "p/push-args=" "r/ref=" -- $argv
+argparse -i "c/change=+" "p/push-args=" "r/ref=+" -- $argv
 
 set -l push_args
 if set -q _flag_ref
-  set -a push_args -N -r $_flag_ref
+  set -a push_args -N
+  for ref in _flag_ref
+    set -a push_args -r $ref
+  end
 else
   set -q _flag_push_args; or set -q _flag_change; or set -a push_args "-c" "@-"
   for rev in $_flag_change
@@ -23,6 +26,6 @@ end
 
 for bookmark in $bookmarks
   echo (set_color --bold cyan)"Opening PR for $bookmark"(set_color reset)
-  jj log -r "trunk()-..$bookmark"
+  jj log -r "trunk()..$bookmark"
   gh pr create -H $bookmark
 end
