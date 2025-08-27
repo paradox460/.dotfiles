@@ -24,6 +24,12 @@ show_at_start = true
 "selected" = { bg = "#373B41" }
 "revisions details selected" = { bg = "#373B41" }
 
+[revisions]
+revset = "present(@) | ancestors(immutable_heads().., 10) | present(trunk())"
+
+[ui.tracer]
+enabled = true
+
 [custom_commands]
 "tug" = { key = [
   "t",
