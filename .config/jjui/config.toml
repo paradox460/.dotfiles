@@ -63,3 +63,4 @@ mode = ["s"]
 
 [keys.details]
 split = ["S"]
+squash = ["s"]
