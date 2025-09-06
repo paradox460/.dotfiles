@@ -62,3 +62,4 @@ merge-args = ["--merge", "--output", "$output", "--base", "$base", "$left", "$ri
 
 [git]
 private-commits = "description(glob:'private:*')"
+colocate = true
