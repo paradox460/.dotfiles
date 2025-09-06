@@ -53,10 +53,15 @@
 !.default-gems
 !.gemrc
 !.gitconfig
+!.github/
+!.github/**
+!.github/workflows/**
 !.gitignore
 !.gitmodules
 !.hammerspoon/
 !.hammerspoon/**
+!.mise
+!.mise/**
 !.pryrc
 !.ripgreprc
 !.rubocop.yml
