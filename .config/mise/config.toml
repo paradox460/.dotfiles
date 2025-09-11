@@ -16,6 +16,9 @@ pkl = "latest"
 watchexec = "latest"
 "npm:jj-stack" = "latest"
 node = "latest"
+uv = "latest"
+python = "latest"
+"pipx:jiratui" = "latest"
 
 [settings]
 jobs = 8
