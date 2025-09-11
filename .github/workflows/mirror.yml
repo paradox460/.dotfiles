@@ -1,29 +1,10 @@
-# Do not modify!
-# This file was generated from a template using https://github.com/StefMa/pkl-gha
-
 name: Sync Mirrors
 'on':
   push: {}
 jobs:
   mirror:
-    runs-on: ubuntu-latest
-    env:
-      SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Add SSH Key
-      env:
-        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      run: |2-
-          mkdir -p /home/runner/.ssh
-          ssh-keyscan tangled.sh >> /home/runner/.ssh/known_hosts
-          echo "${{ secrets.TANGLED_SSH_KEY }}" > /home/runner/.ssh/github_actions
-          chmod 600 /home/runner/.ssh/github_actions
-          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-          ssh-add /home/runner/.ssh/github_actions
-    - name: Push to mirrors
-      run: |2-
-          git remote add tangled git@tangled.sh:paradox.tngl.sh/dotfiles
-          git push --all --force tangled
+    uses: paradox460/workflows/.github/workflows/tangled.yml@main
+    secrets:
+      ssh_key: "${{ secrets.TANGLED_SSH_KEY }}"
+    with:
+      remote_repo: paradox.tngl.sh/dotfiles
